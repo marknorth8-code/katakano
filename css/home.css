@@ -56,9 +56,6 @@
 }
 
 /* --- 2. ASYMMETRICAL STRATEGY GRID --- */
-.strategy-section {
-  background-color: var(--bg-soft);
-}
 
 .grid-layout {
   display: grid;
