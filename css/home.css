@@ -30,7 +30,7 @@
   flex-direction: column;
   justify-content: flex-start; 
   align-items: flex-start;  /* Aligns text to the left of the right column */
-  padding: 80px 8%;        /* Breathing room around the text */
+  padding: 0 8% 80px 8%; 
   text-align: left;
 }
 
