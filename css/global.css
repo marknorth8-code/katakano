@@ -68,18 +68,15 @@ section {
   width: 100%; 
   min-height: 350px; 
   background-color: #fff;
-  
-  /* Remove top/bottom padding so elements can hit the edges */
   padding: 0; 
   
-  /* Flexbox makes the "margin-top: auto" trick work */
+  /* CRITICAL: This enables the vertical "push" */
   display: flex;
   flex-direction: column;
 }
 
 .intro-text {
-  /* This sits at the very top of the section */
-  margin-top: 20px; 
+  margin-top: 20px; /* Adjust this to move "Ashan..." closer to top edge */
   margin-left: 100px;
   font-family: Georgia, serif;
   font-size: 1.1rem;
@@ -87,12 +84,11 @@ section {
 }
 
 .intro-logo-wrapper {
-  /* This pushes the logo to the absolute bottom of the 350px height */
+  /* This pushes the logo to the very bottom of the 350px height */
   margin-top: auto; 
   margin-left: 100px;
   
-  /* Ensures no gap between this and the image below */
-  margin-bottom: 0; 
+  /* Line-height 0 prevents a tiny white gap below the logo image */
   line-height: 0; 
 }
 
@@ -101,7 +97,6 @@ section {
   height: auto;
   display: block;
 }
-
 
 
 /* --- 6. HERO SPLIT (Optimized Alignment) --- */
