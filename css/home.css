@@ -127,22 +127,6 @@
   line-height: 1.2;
 }
 
-.services-header .services-btn {
-  display: inline-block;
-  margin-top: 30px; 
-  padding: 18px 36px;
-  background-color: var(--primary-dark);
-  color: #fff;
-  font-size: 0.9rem;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;  
-  text-decoration: none; /* Recommended for <a> tags to remove underlines */
-}
-.services-header .services-btn:hover {
-  background-color: var(--accent-color); /* Or any color that stands out */
-  opacity: 0.9; /* Simple way to show a 'press' effect */
-  transition: all 0.3s ease; /* Makes the color change smooth */
-}
 
 /* Right Column (Grid) Styling */
 .services-grid {
