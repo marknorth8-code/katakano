@@ -127,16 +127,16 @@
   line-height: 1.2;
 }
 
-.services-header .btn-services {
+.services-header .btn-primary {
   display: inline-block;
   margin-top: 30px; 
-  
   padding: 18px 36px;
   background-color: var(--primary-dark);
   color: #fff;
   font-size: 0.9rem;
   letter-spacing: 0.1em;
   text-transform: uppercase;  
+  text-decoration: none; /* Recommended for <a> tags to remove underlines */
 }
 
 /* Right Column (Grid) Styling */
