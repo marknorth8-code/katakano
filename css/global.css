@@ -66,17 +66,20 @@ section {
 /* --- 5. INTRO & LOGO SYSTEM --- */
 .intro {
   width: 100%; 
-  min-height: 350px; 
   background-color: #fff;
-  padding: 0; 
-  
-  /* CRITICAL: This enables the vertical "push" */
+  padding: 0;
+}
+
+.intro-container {
+  /* This is the key: the flex must be on the direct parent of the text and logo */
+  min-height: 350px; 
   display: flex;
   flex-direction: column;
+  justify-content: space-between; /* Automatically pushes text to top and logo to bottom */
 }
 
 .intro-text {
-  margin-top: 20px; /* Adjust this to move "Ashan..." closer to top edge */
+  margin-top: 20px; 
   margin-left: 100px;
   font-family: Georgia, serif;
   font-size: 1.1rem;
@@ -84,12 +87,9 @@ section {
 }
 
 .intro-logo-wrapper {
-  /* This pushes the logo to the very bottom of the 350px height */
-  margin-top: auto; 
   margin-left: 100px;
-  
-  /* Line-height 0 prevents a tiny white gap below the logo image */
-  line-height: 0; 
+  margin-bottom: 0;
+  line-height: 0; /* Removes the tiny white gap below the image */
 }
 
 .intro-logo {
