@@ -1,4 +1,29 @@
-/* --- 1. HERO SPLIT  --- */
+/* --- 1. HERO SPLIT --- */
+.hero-content {
+  flex: 1.2;
+  display: flex;
+  flex-direction: column;   
+  /* Change 'center' to 'flex-start' if you want the text to start at the TOP of the image */
+  justify-content: center;  
+  align-items: flex-start;  
+  /* Matches your 'Intro' text alignment (100px) */
+  padding: 80px 100px;      
+  text-align: left;         
+}
+
+.hero-inner-text {
+  width: 100%;             /* Ensures text takes up the full flex area */
+  max-width: 600px;
+}
+
+.hero-visual {
+  flex: 1;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  min-height: 700px;        /* Increased height to match the large text scale */
+}
+
 .hero-split {
   padding: 0;
   min-height: auto;
@@ -14,19 +39,6 @@
   align-items: stretch;
 }
 
-.hero-content {
-  flex: 1.2;
-  display: flex;
-  align-items: center;
-    flex-direction: column;   /* Stack text vertically */
-  justify-content: center;  
-  padding: 80px 5%;
-}
-
-.hero-inner-text {
-  max-width: 600px;
-}
-
 .hero-lead {
   font-size: 1.25rem;
   color: var(--text-muted);
@@ -37,14 +49,6 @@
 .hero-actions {
   display: flex;
   gap: 20px;
-}
-
-.hero-visual {
-  flex: 1;
-  background-size: cover;
-  background-position: center;
-  position: relative;
-  min-height: 600px;
 }
 
 .location-overlay {
