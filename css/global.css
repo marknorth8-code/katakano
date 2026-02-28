@@ -68,7 +68,11 @@ section {
   min-height: 350px; 
   position: relative;
   background-color: #fff;
-  padding: 80px 0;
+  padding: 30px 0;
+  
+  /* CRITICAL: You need these two lines here */
+  display: flex;
+  flex-direction: column;
 }
 
 .intro-text {
@@ -79,7 +83,8 @@ section {
 }
 
 .intro-logo-wrapper {
-  margin-top: 60px;
+  /* This now works because the parent is a flex column */
+  margin-top: auto; 
   margin-left: 100px;
 }
 
@@ -88,6 +93,7 @@ section {
   height: auto;
   display: block;
 }
+
 
 /* --- 6. HERO SPLIT (Optimized Alignment) --- */
 .hero-split {
