@@ -226,6 +226,25 @@ a {
   font-size: 0.8rem;
   margin-top: 10px;
 }
+.footer-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  
+  /* Create the gaps at the edges */
+  padding: 40px 5%; /* 40px top/bottom, 5% left/right */
+  
+  /* Optional: Set a maximum width so it doesn't get too wide on big screens */
+  max-width: 1400px;
+  margin: 0 auto; /* Centers the footer content */
+}
+
+/* Ensure the divider also has side margins or is contained */
+.footer-divider-black {
+  border: 0;
+  border-top: 1px solid #000;
+  margin: 0 5%; /* Matches the footer padding for alignment */
+}
 
 
 /* Mobile Adjustments */
