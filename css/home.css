@@ -129,8 +129,14 @@
 
 .services-header .btn-primary {
   display: inline-block;
-  margin-top: 30px; /* Adjust this to match the spacing in the image */
-  /* Your existing button styles */
+  margin-top: 30px; 
+  
+  padding: 18px 36px;
+  background-color: var(--primary-dark);
+  color: #fff;
+  font-size: 0.9rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;  
 }
 
 /* Right Column (Grid) Styling */
