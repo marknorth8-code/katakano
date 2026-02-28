@@ -108,71 +108,92 @@
 .card-content h3 { font-size: 1.1rem; letter-spacing: 0.05em; }
 
 /* --- 3. MINIMALIST SERVICES --- */
+
 /* Container Layout */
 .services-container {
   display: grid;
-  grid-template-columns: 1fr 1.5fr; /* Left col is slightly smaller than right */
+  /* Fixed: This forces the 1fr (left) and 1.5fr (right) side-by-side layout */
+  grid-template-columns: 1fr 1.5fr; 
   border-top: 1px solid #e0e0e0;
+  align-items: stretch;
 }
 
 /* Left Column Styling */
 .services-header {
-  padding: 80px 40px;
-  background-color: #f9f9f9; /* Matches the light grey background */
+  padding: 80px 60px;
+  background-color: #f9f9f9; 
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
 }
 
 .services-header h2 {
-  font-size: 2.5rem;
+  font-size: clamp(2rem, 4vw, 3rem);
   margin-bottom: 20px;
-  line-height: 1.2;
+  line-height: 1.1;
+  font-weight: 300;
 }
 
+.services-header p {
+  color: #666;
+  margin-bottom: 40px;
+  max-width: 300px;
+}
+
+/* Specific Service Button Logic */
+.services-header .hero-actions {
+  margin-top: auto; /* Pushes button to bottom if header is tall */
+  padding-top: 30px;
+}
 
 /* Right Column (Grid) Styling */
 .services-grid {
   display: flex;
   flex-direction: column;
+  background-color: #fff;
 }
 
 .service-box {
   display: grid;
-  grid-template-columns: 1fr 2fr; /* Internal split for service name and text */
+  /* Splits the service title from the description */
+  grid-template-columns: 1fr 2fr; 
   padding: 60px 40px;
-  border-bottom: 1px solid #e0e0e0; /* Border between paragraphs */
+  border-bottom: 1px solid #e0e0e0;
   border-left: 1px solid #e0e0e0;
+  transition: background-color 0.3s ease;
+}
+
+.service-box:hover {
+  background-color: #fcfcfc;
 }
 
 .service-box h3 {
   font-size: 1.1rem;
   font-weight: 500;
-  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 
 .service-content p {
-  margin-top: 0;
   color: #555;
-  line-height: 1.6;
-}
-
-.learn-more {
-  display: inline-block;
-  margin-top: 20px;
-  text-decoration: underline;
-  color: #333;
-  font-weight: 500;
+  line-height: 1.7;
+  font-size: 1.05rem;
 }
 
 /* Responsive for Mobile */
-@media (max-width: 768px) {
+@media (max-width: 992px) {
   .services-container {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr; /* Stacks columns on tablet/mobile */
   }
+  
   .service-box {
     grid-template-columns: 1fr;
     gap: 20px;
+    border-left: none;
   }
-  .services-header, .service-box {
-    padding: 40px 20px;
+  
+  .services-header {
+    padding: 60px 40px;
   }
 }
 
