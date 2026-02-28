@@ -28,35 +28,35 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-/* --- 3. TYPOGRAPHY --- */
+/* --- 3. TYPOGRAPHY (Refined) --- */
 h1 {
-  font-size: 2rem;       /* Approx 48px - Used for main Hero titles */
+  font-size: 2.8rem;      /* Approx 44.8px - Strong Hero Title */
   font-weight: 500;
-  line-height: 1.1;
+  line-height: 1.2;       /* Reduced from 2.1; large text needs tighter leading */
   margin-bottom: 1.5rem;
   letter-spacing: -0.02em;
 }
 
 h2 {
-  font-size: 1.5rem;    /* Approx 36px - Used for major section headers */
+  font-size: 1.625rem;    /* Approx 26px - Major Section Header */
   font-weight: 400;
-  line-height: 1.2;
+  line-height: 1.4;       /* Tightened for better structure */
   margin-bottom: 1.25rem;
 }
 
 h3 {
-  font-size: 1.2rem;     /* Approx 24px - Used for sub-sections/cards */
+  font-size: 1.3125rem;   /* Approx 21px - Sub-sections/Cards */
   font-weight: 300;
-  line-height: 1.2;
+  line-height: 1.5;
   margin-bottom: 1rem;
 }
 
-/* Base Body Text for reference */
 p {
-  font-size: 1rem;       /* 16px standard */
-  line-height: 1.6;
-  color: #4a4a4a;        /* Soft black/grey for readability */
+  font-size: 1.125rem;    /* 18px - Modern readability standard */
+  line-height: 1.6;       /* Standard 1.4-1.6 range for body text */
+  color: #4a4a4a;
 }
+
 
 
 .display-title {
