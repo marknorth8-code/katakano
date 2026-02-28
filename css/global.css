@@ -204,34 +204,30 @@ a {
 
 .hero-split {
   width: 100%;
-  height: 400px; /* Locked height */
-  position: relative; /* Required to position children absolute */
+  height: 200px; /* Reduced from 400px to 200px */
+  position: relative;
   background-color: #fff;
-  overflow: hidden;
 }
 
 .intro-text {
   position: absolute;
-  top: 30px;    /* 30px from the top */
-  left: 100px;  /* 100px from the left edge */
+  top: 30px;    /* Keeps the 30px gap from the top */
+  left: 100px;  /* Keeps the 100px gap from the edge */
   font-family: Georgia, serif;
-  font-size: 1.1rem;
-  color: #000;
 }
 
 .intro-logo-wrapper {
   position: absolute;
-  bottom: 0;    /* Flushed to the bottom of the 400px section */
-  left: 100px;  /* 100px from the left edge to match the text */
+  bottom: 0;    /* Pins logo to the new 200px bottom */
+  left: 100px;  /* Keeps the 100px gap from the edge */
 }
 
 .intro-logo {
   width: 300px;
-  height: 100px;
-  display: block; /* Removes tiny bottom whitespace from images */
+  height: 100px; /* Logo stays its original size */
+  display: block;
   object-fit: contain;
 }
-
 
 
 /* -------------- Footer --------------------- */
