@@ -127,14 +127,10 @@
   line-height: 1.2;
 }
 
-.btn-services {
+.services-header .btn-primary {
   display: inline-block;
-  background: #333;
-  color: #fff;
-  padding: 12px 25px;
-  border-radius: 50px;
-  text-decoration: none;
-  margin-top: 30px;
+  margin-top: 30px; /* Adjust this to match the spacing in the image */
+  /* Your existing button styles */
 }
 
 /* Right Column (Grid) Styling */
