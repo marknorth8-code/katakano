@@ -1,17 +1,14 @@
 /* --- 1. DESIGN TOKENS (Omni-Inspired) --- */
 :root {
-  /* Colors - Minimalist Palette */
-  --primary-dark: #1a1a1a;  /* Deep off-black for text */
-  --accent-red: #E10600;    /* Your brand red */
-  --bg-light: #ffffff;      /* Clean white background */
-  --bg-soft: #f8f8f8;       /* Subtle section separation */
-  --border-light: #e0e0e0;  /* Architectural lines */
+  --primary-dark: #1a1a1a;
+  --accent-red: #E10600;
+  --bg-light: #ffffff;
+  --bg-soft: #f8f8f8;
+  --border-light: #e0e0e0;
   --text-muted: #666666;
-
-  /* Typography - Clean Sans-Serif */
   --font-main: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   
-  /* Spacing - Generous White Space */
+  /* Standardized Spacing */
   --section-padding: 120px;
   --container-width: 1300px;
 }
@@ -23,11 +20,6 @@
   padding: 0;
 }
 
-html {
-  scroll-behavior: smooth;
-  font-size: 16px;
-}
-
 body {
   font-family: var(--font-main);
   color: var(--primary-dark);
@@ -36,15 +28,14 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-/* --- 3. TYPOGRAPHY HIERARCHY --- */
-h1, h2, h3, h4 {
-  font-weight: 300; /* Light weight for a premium feel */
+/* --- 3. TYPOGRAPHY --- */
+h1, h2, h3 {
+  font-weight: 300;
   line-height: 1.1;
-  text-transform: none;
 }
 
 .display-title {
-  font-size: clamp(3rem, 8vw, 5.5rem); /* Responsive fluid typography */
+  font-size: clamp(3rem, 8vw, 5.5rem);
   margin-bottom: 2rem;
   letter-spacing: -0.02em;
 }
@@ -54,57 +45,86 @@ h1, h2, h3, h4 {
   margin-bottom: 1.5rem;
 }
 
-p.body-large {
-  font-size: 1.25rem;
-  color: var(--text-muted);
-  max-width: 600px;
-}
-
-/* --- 4. LAYOUT COMPONENTS --- */
+/* --- 4. LAYOUT COMPONENTS (Fixed Global Rule) --- */
 .container {
   max-width: var(--container-width);
   margin: 0 auto;
   padding: 0 40px;
 }
 
+/* GLOBAL RULE REMOVED: Sections are now 0 padding by default 
+   so the Hero can be flush. Use .section-padding class for others. */
 section {
+  padding: 0;
+}
+
+.section-padding {
   padding: var(--section-padding) 0;
 }
 
-/* The Horizontal Line Accent (Signature Omni Look) */
-.accent-line {
-  border: none;
-  border-top: 1px solid var(--border-light);
-  margin: 2rem 0;
+/* --- 5. INTRO & LOGO SYSTEM --- */
+.intro {
+  width: 100%; 
+  min-height: 350px; 
+  position: relative;
+  background-color: #fff;
+  padding: 80px 0;
+}
+
+.intro-text {
+  margin-left: 100px;
+  font-family: Georgia, serif;
+  font-size: 1.1rem;
+  color: var(--primary-dark);
+}
+
+.intro-logo-wrapper {
+  margin-top: 60px;
+  margin-left: 100px;
+}
+
+.intro-logo {
+  width: 300px;
+  height: auto;
+  display: block;
+}
+
+/* --- 6. HERO SPLIT (Optimized Alignment) --- */
+.hero-split {
+  background-color: var(--bg-light);
+}
+
+.hero-wrapper {
+  display: flex;
+  width: 100%;
+  flex-direction: row; /* Image Left, Text Right */
+  align-items: stretch;
+}
+
+.hero-visual {
+  flex: 1;
+  background-size: cover;
+  background-position: center;
+  min-height: 750px;
+  position: relative;
+}
+
+.hero-content {
+  flex: 1.2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 80px 8%;
+  text-align: left;
+}
+
+.hero-inner-text {
+  max-width: 600px;
   width: 100%;
 }
 
-/* --- 5. INTERACTIVE ELEMENTS --- */
-a {
-  text-decoration: none;
-  color: inherit;
-  transition: all 0.3s ease;
-}
-
-
-.text-link {
-  font-weight: 600;
-  color: var(--accent-red);
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.text-link:hover .arrow {
-  transform: translateX(5px);
-}
-
-/* --- 6. UTILITY CLASSES --- */
-.text-center { text-align: center; }
-.mt-2 { margin-top: 2rem; }
-
-/* --- FLOATING HEADER SYSTEM --- */
-
+/* --- 7. NAVIGATION SYSTEM --- */
 .fixed-nav-container {
     position: fixed;
     top: 0;
@@ -112,180 +132,45 @@ a {
     width: 100%;
     padding: 30px 40px;
     z-index: 1000;
-    pointer-events: none; /* Allows clicking through empty space */
-}
-
-.nav-inner {
-    max-width: 100%;
-    margin: 0 auto;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
+    pointer-events: none;
 }
 
 .nav-actions {
     display: flex;
-    align-items: center;
-    gap: 15px; /* Space between the two pills */
-    pointer-events: auto; /* Re-enables clicking for buttons */
+    justify-content: flex-end;
+    gap: 15px;
+    pointer-events: auto;
 }
 
-/* --- SHARED PILL STYLES --- */
-.btn-primary .button-get-in-touch, 
-.menu-toggle-pill {
+.btn-primary, .button-get-in-touch, .menu-toggle-pill {
     display: inline-flex;
     align-items: center;
-    justify-content: center;
-    gap: 10px;
     padding: 12px 24px;
     border-radius: 50px;
     font-size: 13px;
     font-weight: 500;
     text-transform: uppercase;
     letter-spacing: 0.05em;
-    cursor: pointer;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    border: 1px solid transparent;
+    transition: all 0.3s ease;
+    border: 1px solid #000;
     text-decoration: none;
-    font-family: inherit;
 }
 
+.btn-primary, .menu-toggle-pill { background: #000; color: #fff; }
+.button-get-in-touch { background: #fff; color: #000; }
 
-/* --- SHARED PILL STRUCTURE --- */
-.menu-toggle-pill, 
-.button-get-in-touch, 
-.btn-primary {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    padding: 12px 24px;
-    border-radius: 50px; /* This creates the rounded pill shape */
-    font-size: 13px;
-    font-weight: 500;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    cursor: pointer;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    border: 1px solid #000000; /* Ensures all have a consistent border base */
-    text-decoration: none;
-    font-family: inherit;
-}
-
-/* --- INDIVIDUAL COLOR SCHEMES --- */
-
-/* Black Pill (Menu & Primary) */
-.menu-toggle-pill,
-.btn-primary {
-    background-color: #000000;
-    color: #ffffff;
-}
-
-.menu-toggle-pill:hover,
-.btn-primary:hover {
-    background-color: #333333;
-    border-color: #333333;
-}
-
-/* White Pill (Get in Touch) */
-.button-get-in-touch {
-    background-color: #ffffff;
-    color: #000000;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-}
-
-.button-get-in-touch:hover {
-    background-color: #000000;
-    color: #ffffff;
-}
-
-
-/* -------------- Intro --------------------- */
-
-.intro {
-  width: 100%; 
-  height: 300px; 
-  min-height: 300px; 
-  position: relative;
-  background-color: #fff;
-  overflow: hidden; /* Ensures nothing spills out of the 200px box */
-}
-
-.intro-text {
-  position: absolute;
-  top: 30px;
-  left: 100px;
-  font-family: Georgia, serif;
-  font-size: 1.1rem;
-  margin: 0; /* Prevents default browser margins from adding height */
-}
-
-.intro-logo-wrapper {
-  position: absolute;
-  bottom: 0;
-  left: 100px;
-}
-
-.intro-logo {
-  width: 300px;
-  height: 100px;
-  display: block;
-  object-fit: contain;
-}
-
-
-/* -------------- Footer --------------------- */
-
-/* Force the container to have side spacing and center itself */
+/* --- 8. FOOTER --- */
 .footer-inner.container {
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
-  
-  /* Use !important if another global style is overriding this */
-  padding: 40px 40px !important; 
-  max-width: 1300px;
-  margin: 0 auto;
-  box-sizing: border-box; /* Ensures padding doesn't break the width */
-}
-
-.footer-right {
-  display: flex;
-  flex-direction: column;
-  text-align: right;
-  gap: 8px;
-}
-
-.footer-right a {
-  text-decoration: underline;
-  font-size: 0.9rem;
-  color: #000;
-  white-space: nowrap; /* Prevents links from breaking into two lines */
-}
-
-.footer-copy {
-  font-size: 0.8rem;
-  margin-top: 10px;
-}
-
-/* The divider line above the footer */
-.footer-divider-black {
-  border: 0;
+  padding: 40px 40px !important;
   border-top: 1px solid #000;
-  /* Use margins to match the footer-inner padding for perfect alignment */
-  margin: 0 40px; 
+  margin-top: 60px;
 }
 
-
-/* Mobile Adjustments */
-@media (max-width: 768px) {
-    .fixed-nav-container {
-        padding: 20px;
-    }
-    .nav-actions {
-        gap: 15px;
-    }
-    .toggle-label {
-        display: none; /* Hide 'Menu' text on mobile, keep just the icon */
-    }
+/* --- MOBILE --- */
+@media (max-width: 992px) {
+  .hero-wrapper { flex-direction: column; }
+  .hero-visual { min-height: 400px; }
+  .hero-content { padding: 60px 40px; align-items: center; text-align: center; }
 }
