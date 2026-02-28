@@ -86,19 +86,6 @@ a {
   transition: all 0.3s ease;
 }
 
-.btn-primary {
-  display: inline-block;
-  padding: 18px 36px;
-  background-color: var(--primary-dark);
-  color: #fff;
-  font-size: 0.9rem;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-}
-
-.btn-primary:hover {
-  background-color: var(--accent-red);
-}
 
 .text-link {
   font-weight: 600;
@@ -144,7 +131,7 @@ a {
 }
 
 /* --- SHARED PILL STYLES --- */
-.button-get-in-touch, 
+.btn-primary .button-get-in-touch, 
 .menu-toggle-pill {
     display: inline-flex;
     align-items: center;
@@ -162,6 +149,7 @@ a {
     text-decoration: none;
     font-family: inherit;
 }
+
 
 /* --- MENU PILL (LEFT) --- */
 .menu-toggle-pill {
@@ -202,6 +190,17 @@ a {
     transform: translate(2px, -2px);
 }
 
+
+.btn-primary {
+  display: inline-block;
+  background-color: var(--primary-dark);
+  color: #fff;
+   text-transform: uppercase;
+}
+
+.btn-primary:hover {
+  background-color: var(--accent-red);
+}
 
 
 /* Mobile Adjustments */
