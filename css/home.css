@@ -1,8 +1,9 @@
-/* --- 1. HERO SPLIT (Omni Style) --- */
+/* --- 1. HERO SPLIT  --- */
 .hero-split {
   padding: 0;
   min-height: auto;
   display: flex;
+  align-items: stretch;
   background-color: var(--bg-light);
 }
 
@@ -10,13 +11,16 @@
   display: flex;
   width: 100%;
   flex-direction: row-reverse;
+  align-items: stretch;
 }
 
 .hero-content {
   flex: 1.2;
   display: flex;
   align-items: center;
-  padding: 0px 5%;
+    flex-direction: column;   /* Stack text vertically */
+  justify-content: center;  
+  padding: 80px 5%;
 }
 
 .hero-inner-text {
@@ -40,7 +44,7 @@
   background-size: cover;
   background-position: center;
   position: relative;
-  min-height: 500px;
+  min-height: 600px;
 }
 
 .location-overlay {
