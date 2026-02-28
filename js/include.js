@@ -38,10 +38,10 @@ function initMenuToggle() {
     }
 }
 
-// Execute the load on page startup
 document.addEventListener('DOMContentLoaded', () => {
     includeHTML('partials/header.html', 'header');
-    
-    // Example: You can add this later when your footer is ready
-    // includeHTML('partials/footer.html', 'footer'); 
+    // Activate this line to load your footer
+    includeHTML('partials/footer.html', 'footer'); 
 });
+
+
