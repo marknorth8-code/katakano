@@ -202,16 +202,22 @@ a {
 
 /* -------------- Footer --------------------- */
 
-.footer-inner {
+/* Force the container to have side spacing and center itself */
+.footer-inner.container {
   display: flex;
-  justify-content: space-between; /* Pushes content to opposite sides */
+  justify-content: space-between;
   align-items: flex-start;
-  padding: 40px 0;
+  
+  /* Use !important if another global style is overriding this */
+  padding: 40px 40px !important; 
+  max-width: 1300px;
+  margin: 0 auto;
+  box-sizing: border-box; /* Ensures padding doesn't break the width */
 }
 
 .footer-right {
   display: flex;
-  flex-direction: column; /* Stacks links vertically */
+  flex-direction: column;
   text-align: right;
   gap: 8px;
 }
@@ -220,30 +226,20 @@ a {
   text-decoration: underline;
   font-size: 0.9rem;
   color: #000;
+  white-space: nowrap; /* Prevents links from breaking into two lines */
 }
 
 .footer-copy {
   font-size: 0.8rem;
   margin-top: 10px;
 }
-.footer-inner {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  
-  /* Create the gaps at the edges */
-  padding: 40px 5%; /* 40px top/bottom, 5% left/right */
-  
-  /* Optional: Set a maximum width so it doesn't get too wide on big screens */
-  max-width: 1400px;
-  margin: 0 auto; /* Centers the footer content */
-}
 
-/* Ensure the divider also has side margins or is contained */
+/* The divider line above the footer */
 .footer-divider-black {
   border: 0;
   border-top: 1px solid #000;
-  margin: 0 5%; /* Matches the footer padding for alignment */
+  /* Use margins to match the footer-inner padding for perfect alignment */
+  margin: 0 40px; 
 }
 
 
