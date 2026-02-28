@@ -151,29 +151,46 @@ a {
 }
 
 
-/* --- MENU PILL (LEFT) --- */
-.menu-toggle-pill {
-    background-color: #000000;
-    color: #ffffff;
-    border-color: #000000;
+/* --- SHARED PILL STRUCTURE --- */
+.menu-toggle-pill, 
+.button-get-in-touch, 
+.btn-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 12px 24px;
+    border-radius: 50px; /* This creates the rounded pill shape */
+    font-size: 13px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 1px solid #000000; /* Ensures all have a consistent border base */
+    text-decoration: none;
+    font-family: inherit;
 }
 
-.menu-toggle-pill:hover {
+/* --- INDIVIDUAL COLOR SCHEMES --- */
+
+/* Black Pill (Menu & Primary) */
+.menu-toggle-pill,
+.btn-primary {
+    background-color: #000000;
+    color: #ffffff;
+}
+
+.menu-toggle-pill:hover,
+.btn-primary:hover {
     background-color: #333333;
     border-color: #333333;
 }
 
-.icon-menu-toggle-lg {
-    stroke: currentColor;
-    stroke-width: 1.5px;
-    fill: none;
-}
-
-/* --- GET IN TOUCH PILL (RIGHT) --- */
+/* White Pill (Get in Touch) */
 .button-get-in-touch {
     background-color: #ffffff;
     color: #000000;
-    border-color: #000000;
     box-shadow: 0 4px 15px rgba(0,0,0,0.05);
 }
 
@@ -182,32 +199,6 @@ a {
     color: #ffffff;
 }
 
-.button-get-in-touch .icon {
-    transition: transform 0.3s ease;
-}
-
-.button-get-in-touch:hover .icon {
-    transform: translate(2px, -2px);
-}
-
-/* --- PRIMARY BUTTON (BLACK PILL) --- */
-.btn-primary {
-    background-color: #000000;
-    color: #ffffff;
-    border-color: #000000;
-}
-
-.btn-primary:hover {
-    background-color: #333333;
-    border-color: #333333;
-}
-
-/* If you are using an SVG icon inside the button */
-.btn-primary .icon-menu-toggle-lg {
-    stroke: currentColor;
-    stroke-width: 1.5px;
-    fill: none;
-}
 
 
 /* Mobile Adjustments */
