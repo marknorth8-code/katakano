@@ -108,32 +108,83 @@
 .card-content h3 { font-size: 1.1rem; letter-spacing: 0.05em; }
 
 /* --- 3. MINIMALIST SERVICES --- */
-.services-minimal .services-header {
-  margin-bottom: 60px;
+/* Container Layout */
+.services-container {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr; /* Left col is slightly smaller than right */
+  border-top: 1px solid #e0e0e0;
 }
 
+/* Left Column Styling */
+.services-header {
+  padding: 80px 40px;
+  background-color: #f9f9f9; /* Matches the light grey background */
+}
+
+.services-header h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  line-height: 1.2;
+}
+
+.btn-services {
+  display: inline-block;
+  background: #333;
+  color: #fff;
+  padding: 12px 25px;
+  border-radius: 50px;
+  text-decoration: none;
+  margin-top: 30px;
+}
+
+/* Right Column (Grid) Styling */
 .services-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 40px;
+  display: flex;
+  flex-direction: column;
 }
 
 .service-box {
-  padding-top: 20px;
-}
-
-.service-box .number {
-  font-size: 0.8rem;
-  color: var(--accent-red);
-  font-weight: 600;
-  display: block;
-  margin-bottom: 10px;
+  display: grid;
+  grid-template-columns: 1fr 2fr; /* Internal split for service name and text */
+  padding: 60px 40px;
+  border-bottom: 1px solid #e0e0e0; /* Border between paragraphs */
+  border-left: 1px solid #e0e0e0;
 }
 
 .service-box h3 {
-  font-size: 1.4rem;
-  margin-bottom: 15px;
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin: 0;
 }
+
+.service-content p {
+  margin-top: 0;
+  color: #555;
+  line-height: 1.6;
+}
+
+.learn-more {
+  display: inline-block;
+  margin-top: 20px;
+  text-decoration: underline;
+  color: #333;
+  font-weight: 500;
+}
+
+/* Responsive for Mobile */
+@media (max-width: 768px) {
+  .services-container {
+    grid-template-columns: 1fr;
+  }
+  .service-box {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .services-header, .service-box {
+    padding: 40px 20px;
+  }
+}
+
 
 /* --- 4. QUOTE SECTION --- */
 .quote-section {
