@@ -190,10 +190,23 @@ a {
     transform: translate(2px, -2px);
 }
 
-
+/* --- PRIMARY BUTTON (BLACK PILL) --- */
+.btn-primary {
+    background-color: #000000;
+    color: #ffffff;
+    border-color: #000000;
+}
 
 .btn-primary:hover {
-  background-color: var(--accent-red);
+    background-color: #333333;
+    border-color: #333333;
+}
+
+/* If you are using an SVG icon inside the button */
+.btn-primary .icon-menu-toggle-lg {
+    stroke: currentColor;
+    stroke-width: 1.5px;
+    fill: none;
 }
 
 
