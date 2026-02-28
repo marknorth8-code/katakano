@@ -1,42 +1,42 @@
-/* --- 1. HERO SPLIT --- */
-.hero-content {
-  flex: 1.2;
-  display: flex;
-  flex-direction: column;   
-  /* Change 'center' to 'flex-start' if you want the text to start at the TOP of the image */
-  justify-content: center;  
-  align-items: flex-start;  
-  /* Matches your 'Intro' text alignment (100px) */
-  padding: 80px 100px;      
-  text-align: left;         
-}
-
-.hero-inner-text {
-  width: 100%;             /* Ensures text takes up the full flex area */
-  max-width: 600px;
-}
-
-.hero-visual {
-  flex: 1;
-  background-size: cover;
-  background-position: center;
-  position: relative;
-  min-height: 700px;        /* Increased height to match the large text scale */
-}
-
+/* --- 1. HERO SPLIT (Image Left, Text Right) --- */
 .hero-split {
   padding: 0;
   min-height: auto;
   display: flex;
-  align-items: stretch;
   background-color: var(--bg-light);
+  overflow: hidden;
 }
 
 .hero-wrapper {
   display: flex;
   width: 100%;
-  flex-direction: row-reverse;
-  align-items: stretch;
+  flex-direction: row; /* Standard flow: Image first, then Text */
+  align-items: stretch; /* Forces both halves to be the same height */
+}
+
+/* LEFT SIDE: THE IMAGE */
+.hero-visual {
+  flex: 1;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  min-height: 700px; /* Controls the height of the entire section */
+}
+
+/* RIGHT SIDE: THE TEXT */
+.hero-content {
+  flex: 1.2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Centers text vertically against the image */
+  align-items: flex-start;  /* Aligns text to the left of the right column */
+  padding: 80px 8%;        /* Breathing room around the text */
+  text-align: left;
+}
+
+.hero-inner-text {
+  max-width: 600px;
+  width: 100%;
 }
 
 .hero-lead {
@@ -51,6 +51,7 @@
   gap: 20px;
 }
 
+/* THE RED ACCENT BOX (Inside hero-visual) */
 .location-overlay {
   position: absolute;
   bottom: 40px;
@@ -62,6 +63,24 @@
   text-transform: uppercase;
   border-left: 3px solid var(--accent-red);
 }
+
+/* MOBILE RESPONSIVENESS */
+@media (max-width: 992px) {
+  .hero-wrapper {
+    flex-direction: column; /* Stacks image on top of text on mobile */
+  }
+  
+  .hero-visual {
+    min-height: 400px;
+  }
+  
+  .hero-content {
+    padding: 60px 40px;
+    text-align: center;
+    align-items: center; /* Centers text on mobile for better look */
+  }
+}
+
 
 /* --- 2. ASYMMETRICAL STRATEGY GRID --- */
 
