@@ -123,51 +123,78 @@ a {
     top: 0;
     left: 0;
     width: 100%;
-    padding: 30px 40px; /* Generous padding from edges */
+    padding: 30px 40px;
     z-index: 1000;
-    pointer-events: none; /* Allows clicking through the empty middle space */
+    pointer-events: none; /* Allows clicking through empty space */
 }
 
 .nav-inner {
-    max-width: 100%; /* Or set to your container width */
+    max-width: 100%;
     margin: 0 auto;
     display: flex;
-    justify-content: flex-end; /* Aligns both buttons to the right */
+    justify-content: flex-end;
     align-items: center;
 }
 
 .nav-actions {
     display: flex;
     align-items: center;
-    gap: 30px; /* Space between the Pill and the Menu */
-    pointer-events: auto; /* Re-enables clicking for the buttons */
+    gap: 15px; /* Space between the two pills */
+    pointer-events: auto; /* Re-enables clicking for buttons */
 }
 
-/* --- GET IN TOUCH PILL --- */
-.button-get-in-touch {
+/* --- SHARED PILL STYLES --- */
+.button-get-in-touch, 
+.menu-toggle-pill {
     display: inline-flex;
     align-items: center;
-    background-color: #fff; /* White background to pop against images */
-    color: var(--primary-dark);
-    padding: 10px 24px;
-    border: 1px solid var(--border-light);
+    justify-content: center;
+    gap: 10px;
+    padding: 12px 24px;
     border-radius: 50px;
     font-size: 13px;
     font-weight: 500;
     text-transform: uppercase;
     letter-spacing: 0.05em;
+    cursor: pointer;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 1px solid transparent;
+    text-decoration: none;
+    font-family: inherit;
+}
+
+/* --- MENU PILL (LEFT) --- */
+.menu-toggle-pill {
+    background-color: #000000;
+    color: #ffffff;
+    border-color: #000000;
+}
+
+.menu-toggle-pill:hover {
+    background-color: #333333;
+    border-color: #333333;
+}
+
+.icon-menu-toggle-lg {
+    stroke: currentColor;
+    stroke-width: 1.5px;
+    fill: none;
+}
+
+/* --- GET IN TOUCH PILL (RIGHT) --- */
+.button-get-in-touch {
+    background-color: #ffffff;
+    color: #000000;
+    border-color: #000000;
     box-shadow: 0 4px 15px rgba(0,0,0,0.05);
 }
 
 .button-get-in-touch:hover {
-    background-color: var(--primary-dark);
-    color: #fff;
-    border-color: var(--primary-dark);
+    background-color: #000000;
+    color: #ffffff;
 }
 
 .button-get-in-touch .icon {
-    margin-left: 10px;
     transition: transform 0.3s ease;
 }
 
@@ -175,36 +202,7 @@ a {
     transform: translate(2px, -2px);
 }
 
-/* --- MENU TOGGLE --- */
-.menu-toggle-lg {
-    background: transparent;
-    border: none;
-    display: flex;
-    align-items: center;
-    cursor: pointer;
-    padding: 5px;
-    color: var(--primary-dark);
-    transition: opacity 0.3s ease;
-}
 
-.menu-toggle-lg:hover {
-    opacity: 0.7;
-}
-
-.toggle-label {
-    margin-right: 12px;
-    font-size: 13px;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    font-weight: 500;
-}
-
-.icon-menu-toggle-lg {
-    stroke: currentColor;
-    stroke-width: 1.5px;
-    fill: none;
-    transition: all 0.3s ease;
-}
 
 /* Mobile Adjustments */
 @media (max-width: 768px) {
