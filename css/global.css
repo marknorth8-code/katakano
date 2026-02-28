@@ -200,6 +200,33 @@ a {
 }
 
 
+/* -------------- Footer --------------------- */
+
+.footer-inner {
+  display: flex;
+  justify-content: space-between; /* Pushes content to opposite sides */
+  align-items: flex-start;
+  padding: 40px 0;
+}
+
+.footer-right {
+  display: flex;
+  flex-direction: column; /* Stacks links vertically */
+  text-align: right;
+  gap: 8px;
+}
+
+.footer-right a {
+  text-decoration: underline;
+  font-size: 0.9rem;
+  color: #000;
+}
+
+.footer-copy {
+  font-size: 0.8rem;
+  margin-top: 10px;
+}
+
 
 /* Mobile Adjustments */
 @media (max-width: 768px) {
