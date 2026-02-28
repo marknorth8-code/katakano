@@ -88,7 +88,7 @@ section {
 
 .intro-logo-wrapper {
   margin-left: 100px;
-  margin-bottom: 0;
+  margin-bottom: 20;
   line-height: 0; /* Removes the tiny white gap below the image */
 }
 
@@ -97,6 +97,9 @@ section {
   height: auto;
   display: block;
 }
+
+
+
 
 
 /* --- 6. HERO SPLIT (Optimized Alignment) --- */
