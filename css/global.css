@@ -62,20 +62,24 @@ section {
   padding: var(--section-padding) 0;
 }
 
+
 /* --- 5. INTRO & LOGO SYSTEM --- */
 .intro {
   width: 100%; 
   min-height: 350px; 
-  position: relative;
   background-color: #fff;
-  padding: 30px 0;
   
-  /* CRITICAL: You need these two lines here */
+  /* Remove top/bottom padding so elements can hit the edges */
+  padding: 0; 
+  
+  /* Flexbox makes the "margin-top: auto" trick work */
   display: flex;
   flex-direction: column;
 }
 
 .intro-text {
+  /* This sits at the very top of the section */
+  margin-top: 20px; 
   margin-left: 100px;
   font-family: Georgia, serif;
   font-size: 1.1rem;
@@ -83,9 +87,13 @@ section {
 }
 
 .intro-logo-wrapper {
-  /* This now works because the parent is a flex column */
+  /* This pushes the logo to the absolute bottom of the 350px height */
   margin-top: auto; 
   margin-left: 100px;
+  
+  /* Ensures no gap between this and the image below */
+  margin-bottom: 0; 
+  line-height: 0; 
 }
 
 .intro-logo {
@@ -93,6 +101,7 @@ section {
   height: auto;
   display: block;
 }
+
 
 
 /* --- 6. HERO SPLIT (Optimized Alignment) --- */
