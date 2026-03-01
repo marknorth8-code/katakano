@@ -72,6 +72,55 @@ p {
   margin-bottom: 1.5rem;
 }
 
+
+
+/*------------------ Full Page Overlay---------------- */
+.menu-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #1a1a1a; /* Match your dark theme */
+  z-index: 10;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.4s ease;
+}
+
+.menu-overlay.is-active {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Morphing Icon Lines */
+.icon-wrapper {
+  position: relative;
+  width: 24px;
+  height: 16px;
+}
+
+.line {
+  display: block;
+  position: absolute;
+  height: 2px;
+  width: 100%;
+  background: currentColor;
+  transition: 0.3s ease;
+}
+
+.line-1 { top: 0; }
+.line-2 { top: 7px; width: 70%; right: 0; } /* Matches the offset in your SVG */
+.line-3 { top: 14px; }
+
+/* When menu is open (X shape) */
+#menuToggle.is-active .line-1 { transform: translateY(7px) rotate(45deg); }
+#menuToggle.is-active .line-2 { opacity: 0; }
+#menuToggle.is-active .line-3 { transform: translateY(-7px) rotate(-45deg); }
+#menuToggle.is-active .toggle-label { opacity: 0.5; } /* Faded effect */
+
+
+
 /* --- 4. LAYOUT COMPONENTS (Fixed Global Rule) --- */
 .container {
   max-width: var(--container-width);
