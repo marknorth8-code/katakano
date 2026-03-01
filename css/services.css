@@ -183,102 +183,122 @@
     }
 }
 
-/* --- SOLUTIONS SECTION STYLING --- */
+/* --- SOLUTIONS SPLIT SECTION --- */
 
-/* Main background matching the header style */
-.solutions-content {
-    background-color: #f9f9f9;
-    padding: 80px 60px;
+/* The main parent that forces the side-by-side layout */
+.solutions-wrapper {
+    display: grid;
+    /* 1fr for image (left), 1.5fr for text (right) to match your Services layout */
+    grid-template-columns: 1fr 1.5fr;
+    min-height: 80vh; /* Adjust height as needed */
+    border-top: 1px solid #e0e0e0;
 }
 
+/* Left Side: The Image */
+.solutions-visual {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: #f9f9f9;
+}
+
+/* Right Side: The Content */
+.solutions-content {
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centers text vertically */
+    border-left: 1px solid #e0e0e0;
+}
+
+/* Top Text Padding */
 .solutions-inner-text {
-    max-width: 800px; /* Keeps text readable */
-    margin-bottom: 60px;
+    padding: 80px 60px 40px 60px;
+    max-width: 700px;
 }
 
 .breadcrumb-label {
     text-transform: uppercase;
-    letter-spacing: 0.1em;
-    font-size: 0.8rem;
+    letter-spacing: 0.12em;
+    font-size: 0.75rem;
     color: #888;
     display: block;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
 }
 
 .display-title {
-    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-size: clamp(2.5rem, 5vw, 3.5rem);
     font-weight: 300;
     margin-bottom: 25px;
     line-height: 1.1;
 }
 
-/* Matching the minimalist divider */
-.section-divider {
-    border: 0;
-    border-top: 1px solid #e0e0e0;
-    margin: 0 0 0 0;
-}
-
-/* Columns Container - Creating the Grid */
+/* Horizontal Grid of Links at the Bottom */
 .column-container {
     display: grid;
-    /* This creates the horizontal 4-column layout */
+    /* Creates 4 equal columns for the titles */
     grid-template-columns: repeat(4, 1fr);
-    background-color: #fff; /* White background for the boxes */
     border-top: 1px solid #e0e0e0;
+    margin-top: auto; /* Pushes the grid to the bottom of the content area */
 }
 
 .column-item {
-    padding: 40px;
+    padding: 40px 20px;
     border-right: 1px solid #e0e0e0;
-    border-bottom: 1px solid #e0e0e0;
     transition: background-color 0.3s ease;
+    text-align: center; /* Optional: centers the titles */
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .column-item:last-child {
-    border-right: none; /* Removes double border on the edge */
+    border-right: none;
 }
 
 .column-item:hover {
-    background-color: #fcfcfc;
+    background-color: #f9f9f9;
 }
 
 .column-item a {
     text-decoration: none;
-    color: inherit;
+    color: #333;
 }
 
 .column-item h3 {
-    font-size: 1.1rem;
+    font-size: 0.9rem;
     font-weight: 500;
     text-transform: uppercase;
     letter-spacing: 0.05em;
     line-height: 1.4;
 }
 
-/* Responsive: Stacks columns on smaller screens */
-@media (max-width: 992px) {
+/* Responsive: Stacks the image on top of text for mobile */
+@media (max-width: 1024px) {
+    .solutions-wrapper {
+        grid-template-columns: 1fr;
+    }
+    
+    .solutions-visual {
+        height: 400px; /* Give the image height when stacked */
+    }
+
     .column-container {
-        grid-template-columns: 1fr 1fr; /* 2x2 grid on tablets */
+        grid-template-columns: repeat(2, 1fr); /* 2x2 grid on tablets */
     }
-    
-    .column-item:nth-child(2n) {
+
+    .column-item:nth-child(2) {
         border-right: none;
-    }
-    
-    .solutions-content {
-        padding: 60px 40px;
     }
 }
 
 @media (max-width: 600px) {
     .column-container {
-        grid-template-columns: 1fr; /* Stacks fully on mobile */
+        grid-template-columns: 1fr; /* Full stack on mobile */
     }
     
     .column-item {
         border-right: none;
+        border-bottom: 1px solid #e0e0e0;
     }
 }
-
-
