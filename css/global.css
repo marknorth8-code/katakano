@@ -57,11 +57,11 @@ p {
 
 /* Global Utility for Refined/Smaller Headings */
 .h2-refined {
-  font-size: 22px !important; /* Matches your H1 fixed size */
-  font-weight: 400; !important;          /* Matches your H1 weight */
-  line-height: 1.2;           /* Matches your H1 spacing */
+  font-size: 22px !important;
+  font-weight: 400 !important;        /* Fixed: moved semicolon to the end */
+  line-height: 1.2;
   letter-spacing: -0.01em; 
-  margin-bottom: 0rem;
+  margin-bottom: 0rem !important;     /* Fixed: moved semicolon to the end */
 }
 
 /* Global Utility for Smaller Body Text */
