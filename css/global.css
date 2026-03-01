@@ -157,34 +157,39 @@ p {
   padding: var(--section-padding) 0;
 }
 
-/* 1. The Section must be the anchor */
+/* 1. Set the section to be a Flexbox column */
 .intro {
-  position: relative; 
-  width: 100%;
-  min-height: 500px; /* Give it enough height to see the 'top' */
-  padding: 80px 40px; /* Space for the logo at the bottom */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Pushes text to top, logo to bottom */
+  height: 90vh; /* Gives the section actual height (90% of screen) */
+  padding: 40px 8%; /* Adjust to match your side margins */
+  background-color: var(--bg-light);
 }
 
-/* 2. The Container needs to span the full height */
+/* 2. Style the container to occupy the available space */
 .intro-container {
-  position: relative;
-  height: 100%;
-  width: 100%;
+  display: contents; /* Allows children to participate in the .intro flexbox */
 }
 
-/* 3. The Text needs position: absolute to honor 'top' */
+/* 3. Style the top text */
 .intro-text {
-  position: absolute;
-  top: 20px;       /* This will now work */
-  left: 0;
-  font-size: 14px;
+  font-size: 0.9rem;
   text-transform: uppercase;
+  letter-spacing: 0.1em;
   color: var(--primary-dark);
+  margin-bottom: 20px; /* Safety gap */
 }
 
-/* 4. Ensure the logo stays at the bottom */
+/* 4. Style the bottom logo */
 .intro-logo-wrapper {
-  margin-top: 200px; /* Pushes the logo down so it doesn't overlap the text */
+  margin-top: auto; /* Extra insurance to push it to the bottom */
+}
+
+.intro-logo {
+  max-width: 400px;
+  height: auto;
+  display: block;
 }
 
 
