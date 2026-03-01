@@ -368,6 +368,38 @@ section {
 }
 
 /* --- 7. NAVIGATION SYSTEM --- */
+/* Container for the Menu Pill and Get in Touch button */
+.nav-actions {
+  display: flex;
+  flex-direction: column; /* Stacks buttons vertically */
+  align-items: flex-end;  /* Aligns both buttons to the right edge */
+  gap: 12px;             /* Vertical spacing between buttons */
+  pointer-events: auto; 
+}
+
+/* The Close Button (X) inside the overlay */
+.menu-close-btn {
+  position: absolute;
+  /* Top 30px + Get in Touch height (~45px) + Gap (12px) = approx 87px */
+  top: 87px; 
+  right: 4%; /* Aligns exactly with the right edge of the stacked buttons */
+  width: 50px;
+  height: 50px;
+  background-color: #ffffff;
+  border-radius: 50%;
+  border: none;
+  font-size: 28px;
+  font-weight: 300;
+  color: #000000;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1100;
+  transition: transform 0.2s ease;
+}
+
+
 .fixed-nav-container {
     position: fixed;
     top: 0;
@@ -375,14 +407,11 @@ section {
     width: 100%;
     padding: 30px 40px;
     z-index: 1000;
-    pointer-events: none;
-}
-
-.nav-actions {
+    pointer-events: none; /* Allows clicks to pass through the empty bar */
+    
+    /* ADD THESE TWO LINES TO FIX POSITIONING: */
     display: flex;
-    justify-content: flex-end;
-    gap: 15px;
-    pointer-events: auto;
+    justify-content: flex-end; 
 }
 
 .btn-primary, .button-get-in-touch, .menu-toggle-pill {
@@ -398,6 +427,8 @@ section {
     border: 1px solid #000;
     text-decoration: none;
 }
+
+
 
 .btn-primary, .menu-toggle-pill { background: #000; color: #fff; }
 .button-get-in-touch { background: #fff; color: #000; }
