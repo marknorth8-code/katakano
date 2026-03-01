@@ -28,35 +28,37 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-/* --- 3. TYPOGRAPHY (Refined) --- */
+/* --- 3. TYPOGRAPHY (Omni-Style) --- */
 h1 {
-  font-size: 2.8rem;      /* Approx 44.8px - Strong Hero Title */
+  /* Significantly larger for that 'Hero' impact */
+  font-size: clamp(2.5rem, 5vw, 4.5rem); 
   font-weight: 500;
-  line-height: 1.2;       /* Reduced from 2.1; large text needs tighter leading */
-  margin-bottom: 1.5rem;
-  letter-spacing: -0.02em;
+  /* KEY CHANGE: Tighter line-height makes the heading look "tall" and compact */
+  line-height: 1.1; 
+  margin-bottom: 2rem;
+  letter-spacing: -0.03em; /* Tighter tracking for a premium feel */
 }
 
 h2 {
-  font-size: 1.625rem;    /* Approx 26px - Major Section Header */
+  font-size: 2.25rem;    /* Approx 36px */
   font-weight: 400;
-  line-height: 1.4;       /* Tightened for better structure */
-  margin-bottom: 1.25rem;
+  line-height: 1.2;      /* Keep section headers tight too */
+  margin-bottom: 1.5rem;
 }
 
 h3 {
-  font-size: 1.3125rem;   /* Approx 21px - Sub-sections/Cards */
-  font-weight: 300;
-  line-height: 1.5;
+  font-size: 1.5rem;     /* Approx 24px */
+  font-weight: 500;
+  line-height: 1.3;
   margin-bottom: 1rem;
 }
 
+/* Base Body Text */
 p {
-  font-size: 1.125rem;    /* 18px - Modern readability standard */
-  line-height: 1.6;       /* Standard 1.4-1.6 range for body text */
-  color: #4a4a4a;
+  font-size: 1.125rem;   /* 18px for better modern readability */
+  line-height: 1.6;      /* Body text needs more 'breath' than headings */
+  color: #333333;        /* Slightly darker for stronger contrast */
 }
-
 
 
 .display-title {
