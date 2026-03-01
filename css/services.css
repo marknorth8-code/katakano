@@ -1,316 +1,114 @@
-/* =========================================================
-   SERVICES Generak PAGE – CLEAN MONOCHROME STRUCTURE
-   ========================================================= */
-
-
-/* ===============================
-   1. VARIABLES
-   =============================== */
-
-:root {
-  --max-width: 1200px;
-  --text-width: 760px;
-
-  --black: #111;
-  --dark: #1a1a1a;
-  --mid: #555;
-  --light: #f5f5f5;
-  --border: #e5e5e5;
-
-  --spacing-xl: 120px;
-  --spacing-lg: 80px;
-  --spacing-md: 50px;
-  --spacing-sm: 30px;
-}
-
-
-/* ===============================
-   2. GLOBAL STRUCTURE
-   =============================== */
-
-body {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  color: var(--dark);
-  line-height: 1.7;
-  margin: 0;
-  background: #fff;
-}
-
-.container {
-  width: 90%;
-  max-width: var(--max-width);
-  margin: 0 auto;
-}
-
-
-
-
-/* ===============================
-   4. HERO SECTION
-   =============================== */
-
-/* Ensure the wrapper is a flex container */
-.hero-wrapper {
-    display: flex;
-    flex-wrap: wrap; /* Allows stacking on mobile */
-    min-height: 80vh; /* Adjust height as needed */
-    width: 100%;
-}
-
-/* Restrict the image container to the left 50% */
-.hero-visual {
-    flex: 0 0 50%; /* Grow: 0, Shrink: 0, Basis: 50% */
-    background-size: cover;
-    background-position: center;
-    min-height: 400px; /* Ensures visibility on mobile */
-}
-
-/* Restrict the text container to the right 50% */
-.hero-content {
-    flex: 0 0 50%;
-    display: flex;
-    align-items: center; /* Vertically centers text */
-    justify-content: center;
-    padding: 3rem; /* Adds breathing room around text */
-    background-color: #ffffff; /* Or your preferred brand color */
-}
-
-/* Mobile Responsiveness */
-@media (max-width: 768px) {
-    .hero-visual, .hero-content {
-        flex: 0 0 100%; /* Stacks them on top of each other on small screens */
-    }
-}
-
-
-
-.page-hero {
-  position: relative;
-  height: 60vh;
-  min-height: 500px;
+/* --- Solutions Split Section --- */
+.solutions-split {
+  width: 100%;
   overflow: hidden;
 }
 
-.hero-image img {
+.solutions-wrapper {
+  display: flex;
+  flex-wrap: wrap; /* Allows stacking on mobile */
+  min-height: 80vh;
+}
+
+.solutions-visual {
+  flex: 1;
+  flex-basis: 50%;
+  background-size: cover;
+  background-position: center;
+  min-height: 400px; /* Ensures visibility on mobile */
+}
+
+.solutions-content {
+  flex: 1;
+  flex-basis: 50%;
+  padding: 6% 5%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #fff;
+}
+
+/* --- Typography & Elements --- */
+.breadcrumb-label {
+  display: block;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  font-size: 0.75rem;
+  margin-bottom: 1rem;
+  color: #888;
+}
+
+.display-title {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+  font-weight: 400;
+}
+
+.section-divider {
+  border: 0;
+  border-top: 1px solid #e0e0e0;
+  margin: 2.5rem 0;
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+}
+
+/* --- The 4-Column Grid --- */
+.column-container {
+  display: grid;
+  /* Creates 2x2 grid on tablets, 4 columns on desktop */
+  grid-template-columns: repeat(2, 1fr); 
+  gap: 30px 20px;
+}
+
+.column-item a {
+  text-decoration: none;
   display: block;
 }
 
-.hero-content {
-  position: absolute;
-  bottom: 80px;
-  left: 0;
-  width: 100%;
-  color: #fff;
-}
-
-.hero-content h1 {
-  font-size: 56px;
-  font-weight: 600;
-  margin: 0 0 20px 0;
-}
-
-.hero-content .lead {
-  font-size: 20px;
-  max-width: 600px;
-  opacity: 0.9;
-}
-
-
-/* ===============================
-   5. SECTIONS
-   =============================== */
-
-.section {
-  padding: var(--spacing-xl) 0;
-}
-
-.section-intro .content-wrapper {
-  max-width: var(--text-width);
-  margin: 0 auto;
-  font-size: 20px;
-  color: var(--mid);
-}
-
-
-/* ===============================
-   6. CONTENT BLOCKS
-   =============================== */
-
-.content-block {
-  max-width: var(--text-width);
-  margin: 0 auto var(--spacing-lg) auto;
-}
-
-.content-block h2 {
-  font-size: 30px;
-  font-weight: 600;
-  margin-bottom: 20px;
-}
-
-.content-block p {
-  font-size: 18px;
-  color: var(--mid);
+.column-item h3 {
+  font-size: 1.1rem;
+  line-height: 1.4;
+  color: #1a1a1a;
   margin: 0;
+  font-weight: 500;
+  transition: color 0.3s ease, transform 0.3s ease;
 }
 
-
-/* ===============================
-   7. CTA SECTION
-   =============================== */
-
-.section-cta {
-  background: var(--black);
-  color: #fff;
-  text-align: center;
-  padding: var(--spacing-lg) 0;
+/* Hover Effect: Modern and subtle */
+.column-item a:hover h3 {
+  color: #555; 
+  transform: translateX(5px);
 }
 
-.section-cta h2 {
-  font-size: 34px;
-  margin-bottom: 20px;
-}
+/* --- Responsive Adjustments --- */
 
-.section-cta p {
-  font-size: 18px;
-  margin-bottom: 30px;
-  opacity: 0.85;
-}
-
-.btn {
-  display: inline-block;
-  padding: 14px 40px;
-  font-size: 14px;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  text-decoration: none;
-  border: 1px solid #fff;
-  transition: all 0.3s ease;
-}
-
-.btn-primary {
-  background: #fff;
-  color: var(--black);
-}
-
-.btn-primary:hover {
-  background: transparent;
-  color: #fff;
-}
-
-
-/* Ensure the Breadcrumb matches the Omni style inside the Hero */
-.breadcrumb {
-    font-size: 11px;
-    text-transform: uppercase;
-    letter-spacing: 0.15em;
-    margin-bottom: 2rem;
-    color: var(--text-muted);
-}
-
-/* The "Large Text" Serif style seen in the Intro */
-.large-text {
-    font-family: Georgia, serif; /* Or Playfair Display if linked */
-    font-size: clamp(1.8rem, 3vw, 2.5rem);
-    line-height: 1.3;
-    font-style: italic;
-    color: var(--primary-dark);
-}
-
-/* Staggered Row Logic (2-Column) */
-.staggered-row {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 80px;
-    align-items: center;
-    margin-bottom: 100px;
-}
-
-.staggered-row.reverse {
-    direction: rtl; /* Flips image and text position */
-}
-.staggered-row.reverse .row-text {
-    direction: ltr; /* Keeps text reading left-to-right */
-}
-
-.row-image img {
-    width: 100%;
-    height: auto;
-    display: block;
-}
-
-/* Grid Layout for "What we do" */
-.grid-2-col {
-    display: grid;
-    grid-template-columns: 250px 1fr;
-    gap: 40px;
-}
-
-.label {
-    text-transform: uppercase;
-    font-size: 12px;
-    letter-spacing: 0.1em;
-    font-weight: 600;
-    color: var(--text-muted);
-}
-
-.bg-soft {
-    background-color: var(--bg-soft);
-}
-
-
-/* ===============================
-   8. FOOTER
-   =============================== */
-
-.site-footer {
-  padding: 40px 0;
-  text-align: center;
-  border-top: 1px solid var(--border);
-  font-size: 14px;
-  color: var(--mid);
-}
-
-
-/* ===============================
-   9. RESPONSIVE
-   =============================== */
-
-@media (max-width: 1024px) {
-  .hero-content h1 {
-    font-size: 44px;
-  }
-
-  .section {
-    padding: var(--spacing-lg) 0;
+/* Desktop: Switch to 4 columns */
+@media (min-width: 1024px) {
+  .column-container {
+    grid-template-columns: repeat(4, 1fr);
   }
 }
 
-@media (max-width: 768px) {
-
-  .hero-content {
-    bottom: 50px;
+/* Tablet/Mobile: Stack the main split */
+@media (max-width: 900px) {
+  .solutions-wrapper {
+    flex-direction: column;
   }
-
-  .hero-content h1 {
-    font-size: 34px;
+  .solutions-visual, .solutions-content {
+    flex-basis: 100%;
   }
-
-  .hero-content .lead {
-    font-size: 16px;
+  .solutions-content {
+    padding: 10% 5%;
   }
+}
 
-  .content-block h2 {
-    font-size: 24px;
-  }
-
-  .content-block p {
-    font-size: 16px;
-  }
-
-  .main-nav ul {
+/* Mobile: Stack the 4 columns */
+@media (max-width: 600px) {
+  .column-container {
+    grid-template-columns: 1fr;
     gap: 20px;
+  }
+  .display-title {
+    font-size: 2.2rem;
   }
 }
