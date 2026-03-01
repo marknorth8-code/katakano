@@ -61,7 +61,7 @@ p {
   font-weight: 400; !important;          /* Matches your H1 weight */
   line-height: 1.2;           /* Matches your H1 spacing */
   letter-spacing: -0.01em; 
-  margin-bottom: 1.2rem;
+  margin-bottom: 0rem;
 }
 
 /* Global Utility for Smaller Body Text */
