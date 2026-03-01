@@ -21,7 +21,6 @@ body {
 }
 
 /* --- 3. TYPOGRAPHY --- */
-/* --- 3. TYPOGRAPHY (Static Sizes) --- */
 h1, .display-title {
   font-size: 26px; /* Fixed size: no more scaling */
   font-weight: 400;
@@ -44,6 +43,9 @@ h3 {
   margin-bottom: 1rem;
 }
 
+/* Specific Classes (Only use these if you want to override the tags above) */
+.display-title { font-size: 26px; }
+.section-title { font-size: 26px; }
 
 p {
   font-size: 1.125rem;
