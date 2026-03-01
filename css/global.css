@@ -75,48 +75,81 @@ p {
 
 
 /*------------------ Full Page Overlay---------------- */
+/* Persistent Header Layout */
+.fixed-nav-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 5%;
+  z-index: 900; /* Just below the menu overlay */
+  color: white;
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+/* The "X" Close Button Styling */
+.menu-close-btn {
+  position: absolute;
+  top: 30px;
+  right: 180px; /* Aligned with the "Get in touch" button position */
+  width: 50px;
+  height: 50px;
+  background: white;
+  border-radius: 50%;
+  border: none;
+  font-size: 30px;
+  color: black;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s;
+  z-index: 1100;
+}
+
+.menu-close-btn:hover {
+  transform: scale(1.1);
+}
+
+/* Updated Overlay Background & Text */
 .menu-overlay {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: #011d01; /* Your custom dark green */
+  background-color: #011d01;
   color: #ffffff;
-  z-index: 1000;
-  display: flex;
+  display: none; /* Controlled by JS */
   flex-direction: column;
-  padding: 100px 8% 60px; /* Adjust top padding based on your header height */
-  box-sizing: border-box;
+  padding: 150px 8% 60px;
+  z-index: 1000;
 }
 
-/* 3-Column Layout Container */
+/* Ensure the layout content matches Omni's spacing */
 .overlay-content {
   display: grid;
-  grid-template-columns: 1.5fr 1fr 1fr; /* First column is wider like the image */
-  gap: 40px;
-  align-items: start;
-}
-
-/* Column 1: Main Navigation (Larger Font) */
-.menu-column.main-nav {
-  display: flex;
-  flex-direction: column;
+  grid-template-columns: 1.5fr 1fr 1fr;
+  gap: 60px;
 }
 
 .menu-column.main-nav a {
-  font-size: 3.5rem; /* Larger letters */
-  font-weight: 500;
-  color: #ffffff;
+  font-size: 4rem;
+  font-weight: 400;
+  line-height: 1;
   text-decoration: none;
-  line-height: 1.1;
-  margin-bottom: 10px;
-  transition: opacity 0.3s;
+  color: white;
+  margin-bottom: 15px;
 }
 
-.menu-column.main-nav a:hover {
-  opacity: 0.7;
-}
 
 /* Column 2 & 3: Headers and Lists */
 .menu-label {
