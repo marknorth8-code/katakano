@@ -199,3 +199,9 @@
   border-top: 1px solid #e0e0e0; 
 }
 
+.section-gap {
+  height: 100px; /* Adjust size here */
+  background-color: #ffffff; /* Matches your background */
+  width: 100%;
+}
+
