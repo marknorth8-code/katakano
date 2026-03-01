@@ -130,6 +130,32 @@ p {
   z-index: 1100;
 }
 
+.menu-intro-branding {
+  position: absolute;
+  top: 60px;  /* Adjust this to match your homepage's exact padding */
+  left: 60px; /* Adjust this to match your homepage's exact padding */
+}
+
+.menu-intro-branding .text-link {
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #000;
+  text-decoration: none;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+}
+
+.menu-intro-branding .arrow {
+  margin-left: 10px;
+  transition: transform 0.3s ease;
+}
+
+.menu-intro-branding .text-link:hover .arrow {
+  transform: translateX(5px);
+}
+
 .overlay-content {
   display: grid;
   grid-template-columns: 1.5fr 1fr 1fr;
@@ -146,6 +172,8 @@ p {
   display: block;
   margin-bottom: 15px;
 }
+
+
 
 /* Labels & Column Links */
 .menu-label { font-size: 1.1rem; color: rgba(255,255,255,0.5); margin-bottom: 20px; }
