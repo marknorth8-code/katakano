@@ -120,6 +120,33 @@ p {
 #menuToggle.is-active .toggle-label { opacity: 0.5; } /* Faded effect */
 
 
+/* Change cursor to pointer (the hand icon) on hover */
+.menu-toggle-pill, 
+.button-get-in-touch {
+  cursor: pointer;
+  border: none;
+  background: none;
+  display: flex;
+  align-items: center;
+  transition: opacity 0.3s ease;
+}
+
+/* Subtle hover effect for the menu button */
+.menu-toggle-pill:hover .toggle-label {
+  opacity: 0.7;
+}
+
+/* Make the middle line expand to full width on hover */
+.menu-toggle-pill:hover .line-2 {
+  width: 100%;
+}
+
+/* Ensure the pointer remains when the menu is active (the X state) */
+#menuToggle.is-active {
+  cursor: pointer;
+}
+
+
 
 /* --- 4. LAYOUT COMPONENTS (Fixed Global Rule) --- */
 .container {
