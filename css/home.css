@@ -16,6 +16,7 @@
 .split-visual {
   flex: 1;
   min-width: 50%;
+  
 }
 
 .split-visual img {
@@ -78,25 +79,14 @@
 
 
 
-
-/* ADD THIS: Missing Button Style */
-.btn-secondary {
-  display: inline-block;
-  padding: 12px 30px;
-  background-color: #333; /* Or your brand color */
-  color: #fff;
-  text-decoration: none;
-  transition: opacity 0.3s;
-}
-
-/* FIX THIS: Update Mobile Selectors to match your HTML */
+/* --- MOBILE RESPONSIVE --- */
 @media (max-width: 992px) {
   .split-grid {
-    flex-direction: column; /* Stack vertically */
+     flex-direction: column; /* Stack vertically */
   }
-  
   .split-visual {
     height: 300px; /* Give the image a set height on mobile */
+     flex: none;
   }
   
   .split-content {
@@ -116,55 +106,6 @@
 
   .actions {
     justify-content: center;
-  }
-}
-
-
-
-
-
-
-/* --- MOBILE RESPONSIVE --- */
-@media (max-width: 992px) {
-  .split-grid {
-    flex-wrap: wrap; /* Allows stacking ONLY on smaller screens */
-  }
-  .split-visual, .split-content {
-    min-width: 100%;
-  }
-  .details-grid {
-    flex-direction: column;
-  }
-}
-
-
-/* THE RED ACCENT BOX (Inside hero-visual) */
-.location-overlay {
-  position: absolute;
-  bottom: 40px;
-  left: 40px;
-  background: rgba(255, 255, 255, 0.9);
-  padding: 10px 20px;
-  font-size: 0.8rem;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  border-left: 3px solid var(--accent-red);
-}
-
-/* MOBILE RESPONSIVENESS */
-@media (max-width: 992px) {
-  .hero-wrapper {
-    flex-direction: column; /* Stacks image on top of text on mobile */
-  }
-  
-  .hero-visual {
-    min-height: 400px;
-  }
-  
-  .hero-content {
-    padding: 60px 40px;
-    text-align: center;
-    align-items: center; /* Centers text on mobile for better look */
   }
 }
 
