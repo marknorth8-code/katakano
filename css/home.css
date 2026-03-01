@@ -1,32 +1,21 @@
-/* --- SECTION 2: CONTENT SPLIT --- */
+/* --- SECTION 2: REFINED CONTENT SPLIT --- */
 
-/* 1. Ensure the section ignores any parent container padding */
 .split-section {
-  width: 100vw;       /* Forces it to the full viewport width */
-  position: relative;
-  left: 50%;
-  right: 50%;
-  margin-left: -50vw;
-  margin-right: -50vw;
-  overflow: hidden;
+  width: 100%;
   background-color: #ffffff;
+  overflow: hidden;
 }
 
-/* 2. Adjust the Grid to be truly edge-to-edge */
 .split-grid {
   display: flex;
   width: 100%;
-  margin: 0;
-  padding: 0;
+  align-items: stretch;
 }
 
-/* 3. Ensure the image container has zero margin/padding */
+/* Image stays flush to the left */
 .split-visual {
   flex: 1;
   min-width: 50%;
-  margin: 0;
-  padding: 0;
-  line-height: 0; /* Removes tiny bottom gaps often found in images */
 }
 
 .split-visual img {
@@ -36,47 +25,57 @@
   display: block;
 }
 
-/* 4. Text Side: Force content to the right */
+/* Text container pushes content to the right */
 .split-content {
   flex: 1;
   min-width: 50%;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 80px 5%;
   
-  /* This aligns the "boxes" of the text to the right side of the container */
+  /* IMPORTANT: Pushes children to the right edge */
   align-items: flex-end; 
+  text-align: right;
+  
+  /* Increased right padding to prevent text hitting the very edge of screen */
+  padding: 80px 8% 80px 5%; 
 }
 
 .split-content h3 {
-  /* This makes the <h3> only as wide as its text, allowing it to be moved */
-  width: fit-content; 
-  
-  /* This ensures the text inside the <h3> is right-aligned */
-  text-align: right; 
-  
+  width: 100%; /* Keeps text block full width but text-align handles position */
   margin-bottom: 20px;
+  max-width: 600px; /* Optional: keeps lines from getting too long on huge screens */
 }
 
-/* Ensure the sub-grid below also moves to the right */
 .details-grid {
   display: flex;
   gap: 30px;
   margin-top: 30px;
   border-top: 1px solid #eee;
   padding-top: 30px;
-  
-  /* Pushes the columns to the right side of the container */
-  justify-content: flex-end; 
-  text-align: right;
+  width: 100%;
+  justify-content: flex-end; /* Aligns the two columns to the right */
 }
-
-
 
 .detail-column {
   flex: 1;
+  max-width: 300px; /* Prevents columns from stretching too wide */
 }
+
+.detail-column hr {
+  margin-left: auto; /* Aligns the <hr> lines to the right */
+  margin-right: 0;
+  width: 50px; /* Makes the divider a neat short line */
+}
+
+/* Ensure button also moves right */
+.actions {
+  margin-top: 40px;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+
 
 /* --- MOBILE RESPONSIVE --- */
 @media (max-width: 992px) {
