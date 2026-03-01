@@ -89,7 +89,7 @@ p {
 .line-2 { top: 7px; width: 70%; right: 0; }
 .line-3 { top: 14px; }
 
-/* --- 5. MENU OVERLAY (The Omni 3-Column Layout) --- */
+/* --- 5. MENU OVERLAY (The  3-Column Layout) --- */
 .menu-overlay {
   position: fixed;
   top: 0;
@@ -143,6 +143,28 @@ p {
   justify-content: center;
   z-index: 1200;
 }
+
+/* Fix the narrow container */
+:root { --container-width: 1200px; }
+
+.container {
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.section-padding {
+  padding: var(--section-padding) 0;
+}
+
+/* Fix the missing Intro Section */
+.intro {
+  height: 60vh;
+  display: flex;
+  align-items: flex-end;
+  padding: 40px 8%;
+}
+
 
 /* --- 6. LOGO & FOOTER --- */
 .menu-footer-logo { margin-top: auto; padding-bottom: 20px; }
