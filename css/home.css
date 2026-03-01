@@ -1,5 +1,4 @@
 /* --- SECTION 2: REFINED CONTENT SPLIT --- */
-
 .split-section {
   width: 100%;
   background-color: #ffffff;
@@ -16,8 +15,7 @@
 .split-visual {
   flex: 1;
   min-width: 50%;
-  
-}
+  }
 
 .split-visual img {
   width: 100%;
@@ -64,15 +62,12 @@
   width: 50px;
 }
 
-
 .actions {
   margin-top: 40px;
   width: 100%;
   display: flex;
   justify-content: flex-start;
 }
-
-
 
 /* --- MOBILE RESPONSIVE --- */
 @media (max-width: 992px) {
@@ -103,7 +98,6 @@
     justify-content: center;
   }
 }
-
 
 /* --- 2. ASYMMETRICAL STRATEGY GRID --- */
 
@@ -244,7 +238,6 @@
   }
 }
 
-
 /* --- 4. QUOTE SECTION --- */
 .quote-section {
   padding: 150px 0;
@@ -288,7 +281,6 @@
 .contact-action {
   margin-top: 40px; /* Space between text and button */
 }
-
 
 /* --- MOBILE RESPONSIVENESS --- */
 @media (max-width: 992px) {
