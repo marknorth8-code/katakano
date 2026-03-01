@@ -26,19 +26,14 @@
   display: block;
 }
 
-/* Text container pushes content to the right */
 .split-content {
   flex: 1;
   min-width: 50%;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  
-  /* IMPORTANT: Pushes children to the right edge */
-  align-items: flex-end; 
-  text-align: right;
-  
-  /* Increased right padding to prevent text hitting the very edge of screen */
+  align-items: flex-start; 
+  text-align: left;
   padding: 80px 8% 80px 5%; 
 }
 
@@ -64,10 +59,11 @@
 }
 
 .detail-column hr {
-  margin-left: auto; /* Aligns the <hr> lines to the right */
-  margin-right: 0;
-  width: 50px; /* Makes the divider a neat short line */
+  margin-left: 0;  /* Changed from auto */
+  margin-right: auto; 
+  width: 50px;
 }
+
 
 /* Ensure button also moves right */
 .actions {
