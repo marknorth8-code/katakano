@@ -39,9 +39,8 @@
 .split-content {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  padding: 80px 8% 80px 5%;
-  text-align: right;
+  justify-content: flex-start;   /* pushes content to top */
+  padding-top: 100px;            /* control vertical offset */
 }
 
 /* Limit line length without breaking layout balance */
