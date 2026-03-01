@@ -35,12 +35,11 @@
 }
 
 /* --- Content Side --- */
-
 .split-content {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;   /* pushes content to top */
-  padding-top: 100px;            /* control vertical offset */
+  justify-content: flex-start;
+  padding: 120px 8% 80px 5%;
 }
 
 /* Limit line length without breaking layout balance */
