@@ -56,6 +56,13 @@
   max-width: 500px;
 }
 
+.split-content .actions {
+  margin-top: 80px; /* Increased from 40px to push the button down */
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+}
+
 .details-grid {
   display: flex;
   gap: 40px;
@@ -68,6 +75,7 @@
 .detail-column {
   flex: 1;
 }
+
 
 /* OVERRIDE: Specific small font for the Investment/Development text */
 .detail-column p {
