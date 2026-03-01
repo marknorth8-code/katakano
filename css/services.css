@@ -112,3 +112,73 @@
     font-size: 2.2rem;
   }
 }
+
+.subject-split-triple {
+    width: 100%;
+    background-color: #fff; /* Or your preferred background */
+}
+
+.triple-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    min-height: 80vh; /* Adjust height as needed */
+}
+
+/* 30% Left Spacer */
+.col-spacer {
+    flex: 0 0 30%;
+}
+
+/* 40% Middle Content */
+.col-content {
+    flex: 0 0 40%;
+    padding: 80px 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* 30% Right Image */
+.col-visual {
+    flex: 0 0 30%;
+    background-size: cover;
+    background-position: center;
+    min-height: 400px;
+}
+
+/* Typography refinement */
+.sub-heading {
+    font-size: 1.25rem;
+    line-height: 1.5;
+    margin-bottom: 1.5rem;
+    font-weight: 500;
+    color: #333;
+}
+
+/* Responsive: Stack columns on tablets and mobile */
+@media (max-width: 1024px) {
+    .col-spacer {
+        display: none; /* Hide spacer on smaller screens to give text more room */
+    }
+    .col-content {
+        flex: 0 0 60%; /* Text takes up more space */
+    }
+    .col-visual {
+        flex: 0 0 40%;
+    }
+}
+
+@media (max-width: 768px) {
+    .triple-wrapper {
+        flex-direction: column;
+    }
+    .col-content, .col-visual {
+        flex: 0 0 100%;
+    }
+    .col-visual {
+        order: -1; /* Puts image at the top on mobile */
+    }
+}
+
+
+
