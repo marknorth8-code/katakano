@@ -77,6 +77,53 @@
 }
 
 
+
+
+/* ADD THIS: Missing Button Style */
+.btn-secondary {
+  display: inline-block;
+  padding: 12px 30px;
+  background-color: #333; /* Or your brand color */
+  color: #fff;
+  text-decoration: none;
+  transition: opacity 0.3s;
+}
+
+/* FIX THIS: Update Mobile Selectors to match your HTML */
+@media (max-width: 992px) {
+  .split-grid {
+    flex-direction: column; /* Stack vertically */
+  }
+  
+  .split-visual {
+    height: 300px; /* Give the image a set height on mobile */
+  }
+  
+  .split-content {
+    padding: 40px 5%;
+    text-align: center;
+    align-items: center; /* Center content on mobile */
+  }
+
+  .details-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .detail-column hr {
+    margin: 10px auto; /* Center lines on mobile */
+  }
+
+  .actions {
+    justify-content: center;
+  }
+}
+
+
+
+
+
+
 /* --- MOBILE RESPONSIVE --- */
 @media (max-width: 992px) {
   .split-grid {
