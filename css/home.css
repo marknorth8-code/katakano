@@ -3,6 +3,7 @@
   width: 100%;
   background-color: #ffffff;
   overflow: hidden;
+  border-bottom: 1px solid #eee; /* Adds clean separation */
 }
 
 .split-grid {
@@ -11,11 +12,10 @@
   align-items: stretch;
 }
 
-/* Image stays flush to the left */
 .split-visual {
   flex: 1;
   min-width: 50%;
-  }
+}
 
 .split-visual img {
   width: 100%;
@@ -32,72 +32,63 @@
   justify-content: center;
   align-items: flex-start; 
   text-align: left;
-  padding: 80px 8% 80px 5%; 
+  padding: 100px 8%; /* Increased padding for more white space */
 }
 
+/* OVERRIDE: Smaller font for Section 2 Title */
+.split-content h2 {
+  font-size: clamp(1.8rem, 3vw, 2.5rem); 
+  font-weight: 500;
+  line-height: 1.2;
+  margin-bottom: 1.5rem;
+}
+
+/* OVERRIDE: Refined font for Section 2 Sub-headline */
 .split-content h3 {
-  width: 100%; /* Keeps text block full width but text-align handles position */
-  margin-bottom: 20px;
-  max-width: 600px; /* Optional: keeps lines from getting too long on huge screens */
+  font-size: 1.1rem; /* Smaller, more sophisticated size */
+  font-weight: 400;
+  line-height: 1.6;
+  color: #555;
+  margin-bottom: 30px;
+  max-width: 500px;
 }
 
 .details-grid {
   display: flex;
-  gap: 30px;
-  margin-top: 30px;
+  gap: 40px;
+  margin-top: 20px;
   border-top: 1px solid #eee;
-  padding-top: 30px;
+  padding-top: 40px;
   width: 100%;
-  justify-content: flex-end; /* Aligns the two columns to the right */
 }
 
 .detail-column {
   flex: 1;
-  max-width: 300px; /* Prevents columns from stretching too wide */
+}
+
+/* OVERRIDE: Specific small font for the Investment/Development text */
+.detail-column p {
+  font-size: 0.9rem !important; /* Forces override of global 1.125rem */
+  line-height: 1.6;
+  color: #666;
+}
+
+.detail-column p strong {
+  font-size: 1rem;
+  color: var(--primary-dark);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  display: block;
+  margin-bottom: 10px;
 }
 
 .detail-column hr {
-  margin-left: 0;  /* Changed from auto */
-  margin-right: auto; 
-  width: 50px;
+  border: none;
+  border-top: 2px solid var(--accent-red); /* Uses your brand red */
+  width: 30px;
+  margin: 0 0 15px 0;
 }
 
-.actions {
-  margin-top: 40px;
-  width: 100%;
-  display: flex;
-  justify-content: flex-start;
-}
-
-/* --- MOBILE RESPONSIVE --- */
-@media (max-width: 992px) {
-  .split-grid {
-     flex-direction: column; /* Stack vertically */
-  }
-  .split-visual {
-    height: 300px; /* Give the image a set height on mobile */
-     flex: none;
-  }
-  
-  .split-content {
-    padding: 40px 5%;
-    text-align: center;
-    align-items: center; /* Center content on mobile */
-  }
-
-  .details-grid {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .detail-column hr {
-    margin: 10px auto; /* Center lines on mobile */
-  }
-
-  .actions {
-    justify-content: center;
-  }
-}
 
 /* --- 2. ASYMMETRICAL STRATEGY GRID --- */
 
