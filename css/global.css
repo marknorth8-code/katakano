@@ -165,8 +165,25 @@ p {
   padding: 40px 8%;
 }
 
+.intro-container {
+  position: relative; /* This creates the "anchor" for the text */
+  min-height: 400px;  /* Ensure the section has height to move within */
+  width: 100%;
+}
+
 .intro-text {
-    top: 20px; 
+  position: absolute; 
+  top: 20px;          /* Distance from the top of .intro-container */
+  left: 40px;         /* Match your site's side padding */
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.intro-logo-wrapper {
+  padding-top: 100px; /* Prevents the logo from overlapping the text */
+}
+
 
 /* --- 6. LOGO & FOOTER --- */
 .menu-footer-logo { margin-top: auto; padding-bottom: 20px; }
