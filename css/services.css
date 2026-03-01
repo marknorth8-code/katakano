@@ -12,7 +12,7 @@
 
 .solutions-visual {
   flex: 1;
-  flex-basis: 50%;
+  flex-basis: 35%;
   background-size: cover;
   background-position: center;
   min-height: 400px; /* Ensures visibility on mobile */
@@ -20,7 +20,7 @@
 
 .solutions-content {
   flex: 1;
-  flex-basis: 50%;
+  flex-basis: 65%;
   padding: 6% 5%;
   display: flex;
   flex-direction: column;
