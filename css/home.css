@@ -1,4 +1,12 @@
-/* --- SECTION 2: REFINED CONTENT SPLIT --- */
+/* =========================================================
+   KATAKANO – MASTER HOME STYLESHEET
+   Clean Production Version
+   ========================================================= */
+
+
+/* =========================================================
+   1. SECTION 2 – 50/50 SPLIT
+   ========================================================= */
 
 .split-section {
   width: 100%;
@@ -8,15 +16,16 @@
 
 .split-grid {
   display: flex;
-  width: 100%;
   align-items: stretch;
 }
 
-/* Image stays flush to the left */
-.split-visual {
-  flex: 1;
-  min-width: 50%;
+/* Lock true 50/50 */
+.split-visual,
+.split-content {
+  flex: 0 0 50%;
 }
+
+/* --- Image Side --- */
 
 .split-visual img {
   width: 100%;
@@ -25,104 +34,61 @@
   display: block;
 }
 
-/* Text container pushes content to the right */
+/* --- Content Side --- */
+
 .split-content {
-  flex: 1;
-  min-width: 50%;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  
-  /* IMPORTANT: Pushes children to the right edge */
-  align-items: flex-end; 
+  padding: 80px 8% 80px 5%;
   text-align: right;
-  
-  /* Increased right padding to prevent text hitting the very edge of screen */
-  padding: 80px 8% 80px 5%; 
+}
+
+/* Limit line length without breaking layout balance */
+.split-content h3,
+.split-content p {
+  max-width: 600px;
+  margin-left: auto;
 }
 
 .split-content h3 {
-  width: 100%; /* Keeps text block full width but text-align handles position */
   margin-bottom: 20px;
-  max-width: 600px; /* Optional: keeps lines from getting too long on huge screens */
 }
+
+/* --- Detail Grid --- */
 
 .details-grid {
   display: flex;
   gap: 30px;
   margin-top: 30px;
-  border-top: 1px solid #eee;
   padding-top: 30px;
-  width: 100%;
-  justify-content: flex-end; /* Aligns the two columns to the right */
+  border-top: 1px solid #eee;
 }
 
 .detail-column {
   flex: 1;
-  max-width: 300px; /* Prevents columns from stretching too wide */
+  max-width: 300px;
+  text-align: right;
 }
 
 .detail-column hr {
-  margin-left: auto; /* Aligns the <hr> lines to the right */
-  margin-right: 0;
-  width: 50px; /* Makes the divider a neat short line */
+  width: 50px;
+  margin: 10px 0 15px auto;
+  border: none;
+  border-top: 1px solid #000;
 }
 
-/* Ensure button also moves right */
+/* --- Button --- */
+
 .actions {
   margin-top: 40px;
-  width: 100%;
-  display: flex;
-  justify-content: flex-end;
+  align-self: flex-end;
 }
 
 
-/* --- MOBILE RESPONSIVE --- */
-@media (max-width: 992px) {
-  .split-grid {
-    flex-wrap: wrap; /* Allows stacking ONLY on smaller screens */
-  }
-  .split-visual, .split-content {
-    min-width: 100%;
-  }
-  .details-grid {
-    flex-direction: column;
-  }
-}
-
-
-/* THE RED ACCENT BOX (Inside hero-visual) */
-.location-overlay {
-  position: absolute;
-  bottom: 40px;
-  left: 40px;
-  background: rgba(255, 255, 255, 0.9);
-  padding: 10px 20px;
-  font-size: 0.8rem;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  border-left: 3px solid var(--accent-red);
-}
-
-/* MOBILE RESPONSIVENESS */
-@media (max-width: 992px) {
-  .hero-wrapper {
-    flex-direction: column; /* Stacks image on top of text on mobile */
-  }
-  
-  .hero-visual {
-    min-height: 400px;
-  }
-  
-  .hero-content {
-    padding: 60px 40px;
-    text-align: center;
-    align-items: center; /* Centers text on mobile for better look */
-  }
-}
-
-
-/* --- 2. ASYMMETRICAL STRATEGY GRID --- */
+/* =========================================================
+   2. ASYMMETRICAL STRATEGY GRID
+   ========================================================= */
 
 .grid-layout {
   display: grid;
@@ -151,13 +117,17 @@
   background-position: center;
   position: relative;
   height: 150px;
-  transition: transform 0.5s ease;
+  transition: transform 0.4s ease;
 }
 
-.card-tall { transform: translateY(-40px); } /* Staggered effect */
+/* Staggered layout */
+.card-tall { transform: translateY(-40px); }
 .card-short { transform: translateY(40px); }
 
-.card-item:hover { transform: translateY(0) scale(1.02); }
+/* Hover keeps stagger, only scales */
+.card-item:hover {
+  transform: scale(1.02);
+}
 
 .card-content {
   position: absolute;
@@ -166,29 +136,33 @@
   right: 0;
   padding: 30px;
   background: linear-gradient(transparent, rgba(0,0,0,0.7));
-  color: white;
+  color: #fff;
 }
 
-.card-content h3 { font-size: 1.1rem; letter-spacing: 0.05em; }
+.card-content h3 {
+  font-size: 1.1rem;
+  letter-spacing: 0.05em;
+}
 
-/* --- 3. MINIMALIST SERVICES --- */
 
-/* Container Layout */
+/* =========================================================
+   3. SERVICES SECTION
+   ========================================================= */
+
 .services-container {
   display: grid;
-  /* Fixed: This forces the 1fr (left) and 1.5fr (right) side-by-side layout */
-  grid-template-columns: 1fr 1.5fr; 
+  grid-template-columns: 1fr 1.5fr;
   border-top: 1px solid #e0e0e0;
   align-items: stretch;
 }
 
-/* Left Column Styling */
+/* Left Column */
+
 .services-header {
   padding: 80px 60px;
-  background-color: #f9f9f9; 
+  background-color: #f9f9f9;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
 }
 
 .services-header h2 {
@@ -204,13 +178,13 @@
   max-width: 300px;
 }
 
-/* Specific Service Button Logic */
 .services-header .hero-actions {
-  margin-top: auto; /* Pushes button to bottom if header is tall */
+  margin-top: auto;
   padding-top: 30px;
 }
 
-/* Right Column (Grid) Styling */
+/* Right Column */
+
 .services-grid {
   display: flex;
   flex-direction: column;
@@ -219,8 +193,7 @@
 
 .service-box {
   display: grid;
-  /* Splits the service title from the description */
-  grid-template-columns: 1fr 2fr; 
+  grid-template-columns: 1fr 2fr;
   padding: 60px 40px;
   border-bottom: 1px solid #e0e0e0;
   border-left: 1px solid #e0e0e0;
@@ -244,29 +217,14 @@
   font-size: 1.05rem;
 }
 
-/* Responsive for Mobile */
-@media (max-width: 992px) {
-  .services-container {
-    grid-template-columns: 1fr; /* Stacks columns on tablet/mobile */
-  }
-  
-  .service-box {
-    grid-template-columns: 1fr;
-    gap: 20px;
-    border-left: none;
-  }
-  
-  .services-header {
-    padding: 60px 40px;
-  }
-}
 
+/* =========================================================
+   4. QUOTE SECTION
+   ========================================================= */
 
-/* --- 4. QUOTE SECTION --- */
 .quote-section {
   padding: 150px 0;
   background-color: #f8f8f8;
-  color: black;
   text-align: center;
 }
 
@@ -284,41 +242,98 @@
   font-size: 0.9rem;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: rgba(0, 0, 0, 0.6); /* Changed from white to black */
+  color: rgba(0,0,0,0.6);
 }
 
-/* --- 5. COMPACT CONTACT --- */
+
+/* =========================================================
+   5. CONTACT SECTION
+   ========================================================= */
+
 .contact-section {
   padding: 80px 0;
-  text-align: center; /* Centers text and the button button */
+  text-align: center;
 }
 
 .contact-text-area h3 {
   font-weight: bold;
   margin-top: 20px;
   line-height: 1.5;
-  max-width: 800px; /* Keeps the long text from stretching too wide */
+  max-width: 800px;
   margin-left: auto;
   margin-right: auto;
 }
 
 .contact-action {
-  margin-top: 40px; /* Space between text and button */
+  margin-top: 40px;
 }
 
 
-/* --- MOBILE RESPONSIVENESS --- */
+/* =========================================================
+   GLOBAL RESPONSIVE (Single Breakpoint)
+   ========================================================= */
+
 @media (max-width: 992px) {
-  .hero-wrapper, .grid-layout, .split-footer {
+
+  /* Section 2 */
+  .split-grid {
     flex-direction: column;
-    text-align: center;
   }
-  
-  .hero-content { padding: 60px 20px; order: 2; }
-  .hero-visual { order: 1; height: 400px; }
-  
-  .grid-layout { grid-template-columns: 1fr; }
-  .card-tall, .card-short { transform: none; }
-  
-  .split-footer { align-items: center; gap: 40px; }
+
+  .split-visual,
+  .split-content {
+    flex: 0 0 100%;
+  }
+
+  .split-content {
+    padding: 60px 8%;
+    text-align: left;
+  }
+
+  .split-content h3,
+  .split-content p {
+    margin-left: 0;
+  }
+
+  .detail-column {
+    text-align: left;
+  }
+
+  .actions {
+    align-self: flex-start;
+  }
+
+  .details-grid {
+    flex-direction: column;
+  }
+
+  /* Strategy Grid */
+  .grid-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .featured-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .card-tall,
+  .card-short {
+    transform: none;
+  }
+
+  /* Services */
+  .services-container {
+    grid-template-columns: 1fr;
+  }
+
+  .services-header {
+    padding: 60px 40px;
+  }
+
+  .service-box {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    border-left: none;
+  }
+
 }
