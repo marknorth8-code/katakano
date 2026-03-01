@@ -57,4 +57,17 @@ document.getElementById('menuToggle').addEventListener('click', function() {
     // document.querySelector('.menu-overlay').classList.toggle('is-active');
 });
 
+const menuToggle = document.getElementById('menuToggle');
+const menuClose = document.getElementById('menuClose');
+const fullScreenMenu = document.getElementById('fullScreenMenu');
+
+// Open menu
+menuToggle.addEventListener('click', () => {
+  fullScreenMenu.style.display = 'flex';
+});
+
+// Close menu
+menuClose.addEventListener('click', () => {
+  fullScreenMenu.style.display = 'none';
+});
 
