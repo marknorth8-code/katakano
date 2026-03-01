@@ -247,7 +247,7 @@ p {
   display: flex;
   flex-direction: column;
   justify-content: space-between; /* Pushes text to top, logo to bottom */
-  height: 60vh; /* Gives the section actual height (90% of screen) */
+  height: 20vh; /* Gives the section actual height (90% of screen) */
   padding: 40px 8%; /* Adjust to match your side margins */
   background-color: var(--bg-light);
 }
