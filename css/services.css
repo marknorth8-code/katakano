@@ -43,46 +43,46 @@ body {
 }
 
 
-/* ===============================
-   3. HEADER
-   =============================== */
-
-.site-header {
-  padding: 25px 0;
-  border-bottom: 1px solid var(--border);
-  background: #fff;
-}
-
-.site-header .container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.main-nav ul {
-  display: flex;
-  gap: 40px;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.main-nav a {
-  text-decoration: none;
-  color: var(--dark);
-  font-weight: 500;
-  font-size: 14px;
-  letter-spacing: 0.5px;
-}
-
-.main-nav a:hover {
-  opacity: 0.6;
-}
 
 
 /* ===============================
    4. HERO SECTION
    =============================== */
+
+/* Ensure the wrapper is a flex container */
+.hero-wrapper {
+    display: flex;
+    flex-wrap: wrap; /* Allows stacking on mobile */
+    min-height: 80vh; /* Adjust height as needed */
+    width: 100%;
+}
+
+/* Restrict the image container to the left 50% */
+.hero-visual {
+    flex: 0 0 50%; /* Grow: 0, Shrink: 0, Basis: 50% */
+    background-size: cover;
+    background-position: center;
+    min-height: 400px; /* Ensures visibility on mobile */
+}
+
+/* Restrict the text container to the right 50% */
+.hero-content {
+    flex: 0 0 50%;
+    display: flex;
+    align-items: center; /* Vertically centers text */
+    justify-content: center;
+    padding: 3rem; /* Adds breathing room around text */
+    background-color: #ffffff; /* Or your preferred brand color */
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .hero-visual, .hero-content {
+        flex: 0 0 100%; /* Stacks them on top of each other on small screens */
+    }
+}
+
+
 
 .page-hero {
   position: relative;
