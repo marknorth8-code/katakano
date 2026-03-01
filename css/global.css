@@ -74,50 +74,72 @@ p {
 
 
 
-/*------------------ Full Page Overlay---------------- */
-/* Persistent Header Layout */
+/*------------------ Fixed Header & Overlay Controls ---------------- */
+
+/* Fixed Header Container - Pushes buttons to the top right */
 .fixed-nav-container {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end; /* This pushes the buttons to the right */
   align-items: center;
-  padding: 30px 5%;
-  z-index: 900; /* Just below the menu overlay */
-  color: white;
+  padding: 30px 4%; 
+  z-index: 1001; 
+  box-sizing: border-box;
+  pointer-events: none; 
 }
 
+/* Container for the Menu Pill and Get in Touch button */
 .nav-actions {
   display: flex;
   align-items: center;
-  gap: 20px;
+  gap: 15px; 
+  pointer-events: auto; 
 }
 
-/* The "X" Close Button Styling */
+/* The Close Button (X) inside the overlay */
 .menu-close-btn {
   position: absolute;
   top: 30px;
-  right: 180px; /* Aligned with the "Get in touch" button position */
+  /* Adjust this value until the X aligns with the Menu button location */
+  right: 185px; 
   width: 50px;
   height: 50px;
-  background: white;
+  background-color: #ffffff;
   border-radius: 50%;
   border: none;
-  font-size: 30px;
-  color: black;
+  font-size: 28px;
+  font-weight: 300;
+  color: #000000;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: transform 0.2s;
   z-index: 1100;
+  transition: transform 0.2s ease;
 }
 
 .menu-close-btn:hover {
   transform: scale(1.1);
 }
+
+/* Ensure 'Get in Touch' maintains its look */
+.button-get-in-touch {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: white;
+  padding: 10px 20px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-size: 14px;
+  backdrop-filter: blur(10px);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
 
 /* Updated Overlay Background & Text */
 .menu-overlay {
