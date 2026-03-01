@@ -36,22 +36,30 @@
   display: block;
 }
 
-/* 4. Text Side: Aligned to the right */
+/* 4. Text Side: Force content to the right */
 .split-content {
   flex: 1;
   min-width: 50%;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  padding: 80px 5%;
   
-  /* ADD THESE LINES */
-  align-items: flex-end; /* Aligns child elements (h3, p, etc.) to the right side */
-  text-align: right;     /* Ensures text within those elements flows from the right */
-  
-  padding: 80px 5%; 
+  /* This aligns the "boxes" of the text to the right side of the container */
+  align-items: flex-end; 
 }
 
-/* Also ensure your sub-grid is pushed to the right */
+.split-content h3 {
+  /* This makes the <h3> only as wide as its text, allowing it to be moved */
+  width: fit-content; 
+  
+  /* This ensures the text inside the <h3> is right-aligned */
+  text-align: right; 
+  
+  margin-bottom: 20px;
+}
+
+/* Ensure the sub-grid below also moves to the right */
 .details-grid {
   display: flex;
   gap: 30px;
@@ -59,9 +67,11 @@
   border-top: 1px solid #eee;
   padding-top: 30px;
   
-  /* ADD THIS LINE */
-  justify-content: flex-end; /* Keeps the internal columns on the right */
+  /* Pushes the columns to the right side of the container */
+  justify-content: flex-end; 
+  text-align: right;
 }
+
 
 
 .detail-column {
