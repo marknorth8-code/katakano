@@ -157,31 +157,34 @@ p {
   padding: var(--section-padding) 0;
 }
 
-/* Fix the missing Intro Section */
+/* 1. The Section must be the anchor */
 .intro {
-  height: 60vh;
-  display: flex;
-  align-items: flex-end;
-  padding: 40px 8%;
+  position: relative; 
+  width: 100%;
+  min-height: 500px; /* Give it enough height to see the 'top' */
+  padding: 80px 40px; /* Space for the logo at the bottom */
 }
 
+/* 2. The Container needs to span the full height */
 .intro-container {
-  position: relative; /* This creates the "anchor" for the text */
-  min-height: 400px;  /* Ensure the section has height to move within */
+  position: relative;
+  height: 100%;
   width: 100%;
 }
 
+/* 3. The Text needs position: absolute to honor 'top' */
 .intro-text {
-  position: absolute; 
-  top: 20px;          /* Distance from the top of .intro-container */
-  left: 40px;         /* Match your site's side padding */
-  font-size: 0.9rem;
+  position: absolute;
+  top: 20px;       /* This will now work */
+  left: 0;
+  font-size: 14px;
   text-transform: uppercase;
-  letter-spacing: 0.1em;
+  color: var(--primary-dark);
 }
 
+/* 4. Ensure the logo stays at the bottom */
 .intro-logo-wrapper {
-  padding-top: 100px; /* Prevents the logo from overlapping the text */
+  margin-top: 200px; /* Pushes the logo down so it doesn't overlap the text */
 }
 
 
