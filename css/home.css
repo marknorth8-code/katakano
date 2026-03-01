@@ -36,28 +36,33 @@
   display: block;
 }
 
-/* 4. Text Side: Make it take exactly 50% */
+/* 4. Text Side: Aligned to the right */
 .split-content {
   flex: 1;
   min-width: 50%;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 80px 5%; /* Generous padding for that premium feel */
+  
+  /* ADD THESE LINES */
+  align-items: flex-end; /* Aligns child elements (h3, p, etc.) to the right side */
+  text-align: right;     /* Ensures text within those elements flows from the right */
+  
+  padding: 80px 5%; 
 }
 
-h3 {
-  margin-bottom: 20px; /* Adjust the "20px" to increase or decrease the space */
-}
-
-/* --- INTERNAL GRID (The two small columns) --- */
+/* Also ensure your sub-grid is pushed to the right */
 .details-grid {
   display: flex;
   gap: 30px;
   margin-top: 30px;
   border-top: 1px solid #eee;
   padding-top: 30px;
+  
+  /* ADD THIS LINE */
+  justify-content: flex-end; /* Keeps the internal columns on the right */
 }
+
 
 .detail-column {
   flex: 1;
