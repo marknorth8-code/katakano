@@ -3,31 +3,49 @@
     <div class="nav-inner">
       <div class="nav-spacer"></div>
       <div class="nav-actions">
-        <!-- Wrap the button to manage the 'X' state -->
+        <!-- The button that triggers the JS toggle -->
         <button class="menu-toggle-pill" id="menuToggle" aria-label="Toggle Menu">
           <span class="toggle-label">Menu</span>
           <div class="icon-wrapper">
-             <!-- Hamburger lines -->
              <span class="line line-1"></span>
              <span class="line line-2"></span>
              <span class="line line-3"></span>
           </div>
         </button>
-        <a href="contact.html" class="button-get-in-touch">Get in touch</a>
+        <a href="contact.html" class="button-get-in-touch">
+          <span>Get in touch</span>
+          <svg class="icon" width="12" height="12" viewBox="0 0 12 12" fill="none">
+            <path d="M1 11L11 11M11 1H3M11 1V9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+        </a>
       </div>
     </div>
   </nav>
 </header>
 
-<!-- Full screen overlay -->
+<!-- Full screen overlay container -->
 <div id="fullScreenMenu" class="menu-overlay">
   <div class="overlay-content">
-    <div class="menu-column">
-      <a href="/">Home</a>
-      <a href="/services">Services</a>
-      <a href="/partners">Our Partners</a>
-      <a href="/contact">Contact</a>
+    <div class="menu-column main-nav">
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="partners.html">Our Partners</a>
+      <a href="contact.html">Contact</a>
     </div>
-    <!-- Add other columns like "We work for" or "Our expertise" here -->
+    
+    <div class="menu-column">
+      <p class="menu-label">We work for:</p>
+      <span>Established Developers</span>
+      <span>Emerging Developers</span>
+    </div>
+
+    <div class="menu-column">
+      <p class="menu-label">Our expertise:</p>
+      <span>Townhouses</span>
+      <span>Apartments</span>
+      <span>Subdividing</span>
+      <span>Commercial & Retail</span>
+      <span>Industrial</span>
+    </div>
   </div>
 </div>
