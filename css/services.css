@@ -193,3 +193,9 @@
   .col-content, .col-visual { flex: 0 0 100%; border: none; }
   .col-visual { order: -1; min-height: 300px; }
 }
+
+.subject-split-triple {
+  margin-top: 0; /* Keep this at 0 to let the margin-bottom above do the work */
+  border-top: 1px solid #e0e0e0; 
+}
+
