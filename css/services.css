@@ -205,3 +205,23 @@
   width: 100%;
 }
 
+/* 1. Force the gap on the first section */
+.solutions-split {
+  margin-bottom: 100px !important; /* Forces the gap even with Grid */
+  border-bottom: 1px solid #e0e0e0; /* Optional: adds a bottom line */
+}
+
+/* 2. Ensure the second section respects the gap */
+.subject-split-triple {
+  margin-top: 0 !important;
+  border-top: 1px solid #e0e0e0; /* This creates the top line of the next block */
+}
+
+/* 3. If you are using the 'section-gap' div in HTML, use this: */
+.section-gap {
+  height: 100px;
+  width: 100%;
+  background-color: white; /* Or your page background color */
+  display: block;
+  clear: both;
+}
