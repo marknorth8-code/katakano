@@ -204,7 +204,7 @@
 
 /* Right Side: The Content */
 .solutions-content {
-    background-color: #f9f9f9;
+    background-color: #fff;
     display: flex;
     flex-direction: column;
     justify-content: center; /* Centers text vertically */
