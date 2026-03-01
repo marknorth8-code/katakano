@@ -1,304 +1,170 @@
-/* --- Solutions Split Section --- */
+/* --- 1. GLOBAL RESET --- */
+* { 
+  margin: 0; 
+  padding: 0; 
+  box-sizing: border-box; 
+}
+
+/* --- 2. SOLUTIONS SPLIT SECTION --- */
 .solutions-split {
   width: 100%;
   overflow: hidden;
+  border-top: 1px solid #e0e0e0;
 }
 
 .solutions-wrapper {
-  display: flex;
-  flex-wrap: wrap; /* Allows stacking on mobile */
+  display: grid;
+  /* Left column: 1 part | Right column: 1.5 parts */
+  grid-template-columns: 1fr 1.5fr;
   min-height: 80vh;
 }
 
+/* Left Side: Visual */
 .solutions-visual {
-  flex: 1;
-  flex-basis: 35%;
   background-size: cover;
   background-position: center;
-  min-height: 400px; /* Ensures visibility on mobile */
+  background-repeat: no-repeat;
+  background-color: #ffffff;
+  min-height: 400px;
 }
 
+/* Right Side: Content Area */
 .solutions-content {
-  flex: 1;
-  flex-basis: 65%;
-  padding: 6% 5%;
+  background-color: #ffffff;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  background-color: #fff;
+  justify-content: flex-start;
+  border-left: 1px solid #e0e0e0;
 }
 
-/* --- Typography & Elements --- */
+/* Inner Text Container */
+.solutions-inner-text {
+  padding: 80px 60px 60px 60px;
+  max-width: 800px;
+}
+
+/* --- 3. TYPOGRAPHY --- */
 .breadcrumb-label {
   display: block;
   text-transform: uppercase;
   letter-spacing: 0.15em;
   font-size: 0.75rem;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
   color: #888;
 }
 
 .display-title {
-  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
   line-height: 1.1;
   margin-bottom: 1.5rem;
-  font-weight: 400;
+  font-weight: 300;
+  color: #1a1a1a;
+}
+
+.solutions-inner-text p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #555;
+  margin-bottom: 2rem;
 }
 
 .section-divider {
   border: 0;
   border-top: 1px solid #e0e0e0;
-  margin: 2.5rem 0;
+  margin: 0;
   width: 100%;
 }
 
-/* --- The 4-Column Grid --- */
+/* --- 4. BOTTOM 4-COLUMN GRID --- */
 .column-container {
   display: grid;
-  /* Creates 2x2 grid on tablets, 4 columns on desktop */
-  grid-template-columns: repeat(2, 1fr); 
-  gap: 30px 20px;
+  grid-template-columns: repeat(4, 1fr);
+  border-top: 1px solid #e0e0e0;
+  margin-top: auto; /* Pushes grid to the bottom of the section */
+}
+
+.column-item {
+  padding: 50px 25px;
+  border-right: 1px solid #e0e0e0;
+  background-color: #ffffff;
+  transition: background-color 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.column-item:last-child {
+  border-right: none;
 }
 
 .column-item a {
   text-decoration: none;
-  display: block;
-}
-
-.column-item h3 {
-  font-size: 1.1rem;
-  line-height: 1.4;
   color: #1a1a1a;
-  margin: 0;
-  font-weight: 500;
-  transition: color 0.3s ease, transform 0.3s ease;
-}
-
-/* Hover Effect: Modern and subtle */
-.column-item a:hover h3 {
-  color: #555; 
-  transform: translateX(5px);
-}
-
-/* --- Responsive Adjustments --- */
-
-/* Desktop: Switch to 4 columns */
-@media (min-width: 1024px) {
-  .column-container {
-    grid-template-columns: repeat(4, 1fr);
-  }
-}
-
-/* Tablet/Mobile: Stack the main split */
-@media (max-width: 900px) {
-  .solutions-wrapper {
-    flex-direction: column;
-  }
-  .solutions-visual, .solutions-content {
-    flex-basis: 100%;
-  }
-  .solutions-content {
-    padding: 10% 5%;
-  }
-}
-
-/* Mobile: Stack the 4 columns */
-@media (max-width: 600px) {
-  .column-container {
-    grid-template-columns: 1fr;
-    gap: 20px;
-  }
-  .display-title {
-    font-size: 2.2rem;
-  }
-}
-
-* { margin: 0; padding: 0; box-sizing: border-box; }
-
-
-.subject-split-triple {
-    width: 100%;
-    background-color: #fff; /* Or your preferred background */
-}
-
-.triple-wrapper {
-    display: flex;
-    flex-wrap: wrap;
-    min-height: 80vh; /* Adjust height as needed */
-}
-
-/* 30% Left Spacer */
-.col-spacer {
-    flex: 0 0 20%;
-}
-
-/* 40% Middle Content */
-.col-content {
-    flex: 0 0 50%;
-    padding: 80px 40px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-/* 30% Right Image */
-.col-visual {
-    flex: 0 0 30%;
-    background-size: cover;
-    background-position: center;
-    min-height: 400px;
-}
-
-/* Typography refinement */
-.sub-heading {
-    font-size: 1.25rem;
-    line-height: 1.5;
-    margin-bottom: 1.5rem;
-    font-weight: 500;
-    color: #333;
-}
-
-/* Responsive: Stack columns on tablets and mobile */
-@media (max-width: 1024px) {
-    .col-spacer {
-        display: none; /* Hide spacer on smaller screens to give text more room */
-    }
-    .col-content {
-        flex: 0 0 60%; /* Text takes up more space */
-    }
-    .col-visual {
-        flex: 0 0 40%;
-    }
-}
-
-@media (max-width: 768px) {
-    .triple-wrapper {
-        flex-direction: column;
-    }
-    .col-content, .col-visual {
-        flex: 0 0 100%;
-    }
-    .col-visual {
-        order: -1; /* Puts image at the top on mobile */
-    }
-}
-
-/* --- SOLUTIONS SPLIT SECTION --- */
-
-/* The main parent that forces the side-by-side layout */
-.solutions-wrapper {
-    display: grid;
-    /* 1fr for image (left), 1.5fr for text (right) to match your Services layout */
-    grid-template-columns: 1fr 1.5fr;
-    min-height: 80vh; /* Adjust height as needed */
-    border-top: 1px solid #e0e0e0;
-}
-
-/* Left Side: The Image */
-.solutions-visual {
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-color: #fff;
-}
-
-/* Right Side: The Content */
-.solutions-content {
-    background-color: #fff;
-    display: flex;
-    flex-direction: column;
-    justify-content: center; /* Centers text vertically */
-    border-left: 1px solid #e0e0e0;
-}
-
-/* Top Text Padding */
-.solutions-inner-text {
-    padding: 80px 60px 40px 60px;
-    max-width: 700px;
-}
-
-.breadcrumb-label {
-    text-transform: uppercase;
-    letter-spacing: 0.12em;
-    font-size: 0.75rem;
-    color: #888;
-    display: block;
-    margin-bottom: 20px;
-}
-
-.display-title {
-    font-size: clamp(2.5rem, 5vw, 3.5rem);
-    font-weight: 300;
-    margin-bottom: 25px;
-    line-height: 1.1;
-}
-
-/* Horizontal Grid of Links at the Bottom */
-.column-container {
-    display: grid;
-    /* Creates 4 equal columns for the titles */
-    grid-template-columns: repeat(4, 1fr);
-    border-top: 1px solid #e0e0e0;
-    margin-top: auto; /* Pushes the grid to the bottom of the content area */
-}
-
-.column-item {
-    padding: 40px 20px;
-    border-right: 1px solid #e0e0e0;
-    transition: background-color 0.3s ease;
-    text-align: center; /* Optional: centers the titles */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.column-item:last-child {
-    border-right: none;
-}
-
-.column-item:hover {
-    background-color: #f9f9f9;
-}
-
-.column-item a {
-    text-decoration: none;
-    color: #333;
+  width: 100%;
 }
 
 .column-item h3 {
-    font-size: 0.9rem;
-    font-weight: 500;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    line-height: 1.4;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: 500;
+  line-height: 1.4;
+  transition: transform 0.3s ease, color 0.3s ease;
 }
 
-/* Responsive: Stacks the image on top of text for mobile */
-@media (max-width: 1024px) {
-    .solutions-wrapper {
-        grid-template-columns: 1fr;
-    }
-    
-    .solutions-visual {
-        height: 400px; /* Give the image height when stacked */
-    }
-
-    .column-container {
-        grid-template-columns: repeat(2, 1fr); /* 2x2 grid on tablets */
-    }
-
-    .column-item:nth-child(2) {
-        border-right: none;
-    }
+/* Hover States */
+.column-item:hover {
+  background-color: #fcfcfc;
 }
 
+.column-item a:hover h3 {
+  color: #777;
+  transform: translateY(-3px);
+}
+
+/* --- 5. RESPONSIVE ADJUSTMENTS --- */
+
+/* Desktop to Tablet Transition */
+@media (max-width: 1100px) {
+  .solutions-inner-text {
+    padding: 60px 40px;
+  }
+}
+
+/* Stacking for Mobile/Tablet */
+@media (max-width: 992px) {
+  .solutions-wrapper {
+    grid-template-columns: 1fr; /* Stacks image on top of text */
+  }
+
+  .solutions-content {
+    border-left: none;
+  }
+
+  .column-container {
+    grid-template-columns: repeat(2, 1fr); /* 2x2 grid */
+  }
+
+  /* Handle borders for 2x2 grid */
+  .column-item:nth-child(2) { border-right: none; }
+  .column-item:nth-child(1), .column-item:nth-child(2) { border-bottom: 1px solid #e0e0e0; }
+}
+
+/* Final Stack for Mobile */
 @media (max-width: 600px) {
-    .column-container {
-        grid-template-columns: 1fr; /* Full stack on mobile */
-    }
-    
-    .column-item {
-        border-right: none;
-        border-bottom: 1px solid #e0e0e0;
-    }
+  .column-container {
+    grid-template-columns: 1fr; /* 1 column stack */
+  }
+
+  .column-item {
+    border-right: none;
+    border-bottom: 1px solid #e0e0e0;
+    padding: 40px 20px;
+  }
+  
+  .column-item:last-child {
+    border-bottom: none;
+  }
 }
+
