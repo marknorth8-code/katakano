@@ -65,12 +65,11 @@
 }
 
 
-/* Ensure button also moves right */
 .actions {
   margin-top: 40px;
   width: 100%;
   display: flex;
-  justify-content: flex-end;
+  justify-content: flex-start;
 }
 
 
