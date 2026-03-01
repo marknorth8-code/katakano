@@ -44,4 +44,14 @@ document.addEventListener('DOMContentLoaded', () => {
     includeHTML('partials/footer.html', 'footer'); 
 });
 
+const toggleBtn = document.getElementById('menuToggle');
+const overlay = document.getElementById('fullScreenMenu');
+
+toggleBtn.addEventListener('click', () => {
+  toggleBtn.classList.toggle('is-active');
+  overlay.classList.toggle('is-active');
+  
+  // Optional: Prevent background scrolling when menu is open
+  document.body.style.overflow = overlay.classList.contains('is-active') ? 'hidden' : '';
+});
 
