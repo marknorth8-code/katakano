@@ -50,3 +50,11 @@ document.addEventListener('DOMContentLoaded', () => {
     includeHTML('partials/header.html', 'header');
     includeHTML('partials/footer.html', 'footer'); 
 });
+
+
+document.getElementById('menuToggle').addEventListener('click', function() {
+    this.classList.toggle('is-active');
+    // document.querySelector('.menu-overlay').classList.toggle('is-active');
+});
+
+
