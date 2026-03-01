@@ -168,3 +168,28 @@
   }
 }
 
+/* --- TRIPLE SPLIT SECTION (20% | 50% | 30%) --- */
+.subject-split-triple { width: 100%; background-color: #ffffff; border-top: 1px solid #e0e0e0; }
+.triple-wrapper { display: flex; flex-wrap: wrap; min-height: 80vh; }
+.col-spacer { flex: 0 0 20%; background-color: #ffffff; } /* 20% Left */
+.col-content { flex: 0 0 50%; padding: 80px 60px; display: flex; flex-direction: column; justify-content: center; border-left: 1px solid #e0e0e0; border-right: 1px solid #e0e0e0; } /* 50% Mid */
+.col-visual { flex: 0 0 30%; background-image: url('images/home/services/services-01.webp'); background-size: cover; background-position: center; min-height: 400px; } /* 30% Right */
+
+/* --- SOLUTIONS SPLIT SECTION (GRID) --- */
+.solutions-split { width: 100%; overflow: hidden; border-top: 1px solid #e0e0e0; }
+.solutions-wrapper { display: grid; grid-template-columns: 1fr 1.5fr; min-height: 80vh; }
+.solutions-visual { background-image: url('images/home/services/services-01.webp'); background-size: cover; background-position: center; }
+.solutions-content { background-color: #ffffff; display: flex; flex-direction: column; justify-content: flex-start; border-left: 1px solid #e0e0e0; }
+.solutions-inner-text { padding: 80px 60px 40px 60px; }
+
+/* --- RESPONSIVE ADJUSTMENTS --- */
+@media (max-width: 1024px) {
+  .col-spacer { display: none; }
+  .col-content { flex: 0 0 60%; }
+  .col-visual { flex: 0 0 40%; }
+}
+@media (max-width: 768px) {
+  .triple-wrapper { flex-direction: column; }
+  .col-content, .col-visual { flex: 0 0 100%; border: none; }
+  .col-visual { order: -1; min-height: 300px; }
+}
