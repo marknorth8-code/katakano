@@ -1,79 +1,68 @@
-/* --- 1. UPDATED SPLIT SECTION (Image Left, Text Right) --- */
+/* --- SECTION 2: CONTENT SPLIT --- */
+
+/* 1. Remove padding from the section so image hits the edge */
 .split-section {
-  display: flex;
   width: 100%;
+  overflow: hidden;
   background-color: #ffffff;
-  align-items: stretch; /* Ensures both sides remain the same height */
-  padding: 0;           /* Removed padding to let image reach the edge */
 }
 
-/* Updated selector to match <div class="split-visual"> */
+/* 2. This is the magic: Flex ensures they stay side-by-side */
+.split-grid {
+  display: flex;
+  flex-wrap: nowrap; /* Forces them to stay side-by-side */
+  align-items: stretch;
+  width: 100%;
+}
+
+/* 3. Image Side: Make it take exactly 50% */
 .split-visual {
   flex: 1;
-  background-size: cover;
-  background-position: center;
-  min-height: 600px; /* Adjust this to control section height */
+  min-width: 50%;
 }
 
-/* Updated selector to match <div class="split-content"> */
+.split-visual img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures image fills the space without distorting */
+  display: block;
+}
+
+/* 4. Text Side: Make it take exactly 50% */
 .split-content {
   flex: 1;
+  min-width: 50%;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 60px 8%; 
+  padding: 80px 5%; /* Generous padding for that premium feel */
 }
 
-/* Updated Typography for the new section */
-.split-content h2 {
-  font-size: 2.8rem;
-  line-height: 1.1; /* Tighter leading to match the Omni style */
-  margin-bottom: 1.5rem;
-  font-weight: 500;
-  letter-spacing: -0.02em;
-}
-
-.split-content p {
-  font-size: 1.125rem;
-  line-height: 1.6;
-  color: #4a4a4a;
-  margin-bottom: 2rem;
-}
-
-/* Updated selector for the internal Two-Column Grid */
+/* --- INTERNAL GRID (The two small columns) --- */
 .details-grid {
   display: flex;
   gap: 30px;
-  margin-top: 2rem;
-  padding-top: 2rem;
-  border-top: 1px solid #eeeeee;
+  margin-top: 30px;
+  border-top: 1px solid #eee;
+  padding-top: 30px;
 }
 
-.detail-column h3 {
-  font-size: 1.1rem;
-  font-weight: 600;
-  margin-bottom: 8px;
+.detail-column {
+  flex: 1;
 }
 
-.detail-column p {
-  font-size: 0.9rem;
-  line-height: 1.4;
-}
-
-/* Mobile Responsive Sync */
+/* --- MOBILE RESPONSIVE --- */
 @media (max-width: 992px) {
-  .split-section {
-    flex-direction: column;
+  .split-grid {
+    flex-wrap: wrap; /* Allows stacking ONLY on smaller screens */
   }
-  .split-visual {
-    min-height: 350px;
+  .split-visual, .split-content {
+    min-width: 100%;
   }
   .details-grid {
     flex-direction: column;
-    gap: 20px;
   }
 }
-
 
 
 /* THE RED ACCENT BOX (Inside hero-visual) */
