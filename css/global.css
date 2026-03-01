@@ -38,7 +38,7 @@ h2.type-accent, .section-title-small {
 }
 
 h3 {
-  font-size: 26px; /* Fixed size: no more scaling */
+  font-size: 23px; /* Fixed size: no more scaling */
   font-weight: 400;
   line-height: 1.2; 
   margin-bottom: 1.2rem;
