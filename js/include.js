@@ -12,7 +12,7 @@ async function includeHTML(file, elementId) {
         const html = await response.text();
         container.innerHTML = html;
 
-        // Re-initialize menu logic ONLY after header.html is fully injected
+        // ONLY initialize logic after the HTML is injected
         if (elementId === 'header') {
             initMenuToggle();
         }
@@ -22,52 +22,39 @@ async function includeHTML(file, elementId) {
 }
 
 /**
- * Consolidated menu toggle logic
+ * Consolidated menu toggle logic for Omni-style menu
  */
 function initMenuToggle() {
-    // Select by class to match your header.html structure
-    const menuBtn = document.querySelector('.menu-toggle-pill');
+    const menuBtn = document.getElementById('menuToggle');
+    const closeBtn = document.getElementById('menuClose');
     const overlay = document.getElementById('fullScreenMenu');
 
     if (menuBtn && overlay) {
+        // OPEN MENU
         menuBtn.addEventListener('click', () => {
-            // Toggle classes for both button (for the X morph) and the overlay
-            menuBtn.classList.toggle('is-active');
-            overlay.classList.toggle('is-active');
-            
-            // Prevent background scrolling while menu is open
-            document.body.style.overflow = overlay.classList.contains('is-active') ? 'hidden' : '';
-            
-            console.log("Menu toggled successfully.");
+            overlay.style.display = 'flex'; // Shows the menu
+            menuBtn.classList.add('is-active'); // For the pill morph animation
+            document.body.style.overflow = 'hidden'; // Prevents background scroll
+            console.log("Menu Opened");
         });
+
+        // CLOSE MENU (The "X" Button)
+        if (closeBtn) {
+            closeBtn.addEventListener('click', () => {
+                overlay.style.display = 'none'; // Hides the menu
+                menuBtn.classList.remove('is-active');
+                document.body.style.overflow = ''; // Restores background scroll
+                console.log("Menu Closed");
+            });
+        }
     } else {
-        console.warn("Menu button or overlay not found in DOM.");
+        console.warn("Menu components not found. Ensure header.html has the correct IDs.");
     }
 }
 
 // Initial load on page ready
 document.addEventListener('DOMContentLoaded', () => {
+    // Adjust paths if your files are in a different folder
     includeHTML('partials/header.html', 'header');
     includeHTML('partials/footer.html', 'footer'); 
 });
-
-
-document.getElementById('menuToggle').addEventListener('click', function() {
-    this.classList.toggle('is-active');
-    // document.querySelector('.menu-overlay').classList.toggle('is-active');
-});
-
-const menuToggle = document.getElementById('menuToggle');
-const menuClose = document.getElementById('menuClose');
-const fullScreenMenu = document.getElementById('fullScreenMenu');
-
-// Open menu
-menuToggle.addEventListener('click', () => {
-  fullScreenMenu.style.display = 'flex';
-});
-
-// Close menu
-menuClose.addEventListener('click', () => {
-  fullScreenMenu.style.display = 'none';
-});
-
