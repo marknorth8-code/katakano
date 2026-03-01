@@ -55,6 +55,17 @@
   gap: 20px;
 }
 
+/* Specific styling for the Hero text */
+.hero-heading {
+  font-size: clamp(2.5rem, 6vw, 4.5rem); /* Fluid sizing: approx 40px to 72px */
+  line-height: 1.1;                     /* Tighter for large headings */
+  font-weight: 500;
+  letter-spacing: -0.03em;             /* Slightly tighter for that high-end look */
+  margin-bottom: 2rem;
+}
+
+
+
 /* THE RED ACCENT BOX (Inside hero-visual) */
 .location-overlay {
   position: absolute;
