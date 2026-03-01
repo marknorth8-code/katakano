@@ -1,9 +1,9 @@
 <header class="site-header" role="banner">
+  <!-- This is the persistent floating header -->
   <nav class="fixed-nav-container">
     <div class="nav-inner">
-      <div class="nav-spacer"></div>
+      <div class="site-title">Katakano</div> <!-- Placeholder for your site name -->
       <div class="nav-actions">
-        <!-- The button that triggers the JS toggle -->
         <button class="menu-toggle-pill" id="menuToggle" aria-label="Toggle Menu">
           <span class="toggle-label">Menu</span>
           <div class="icon-wrapper">
@@ -13,10 +13,7 @@
           </div>
         </button>
         <a href="contact.html" class="button-get-in-touch">
-          <span>Get in touch</span>
-          <svg class="icon" width="12" height="12" viewBox="0 0 12 12" fill="none">
-            <path d="M1 11L11 11M11 1H3M11 1V9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-          </svg>
+          <span>Get in touch &nearrow;</span>
         </a>
       </div>
     </div>
@@ -25,6 +22,9 @@
 
 <!-- Full screen overlay container -->
 <div id="fullScreenMenu" class="menu-overlay">
+  <!-- Close Button (The "X") positioned top right -->
+  <button class="menu-close-btn" id="menuClose" aria-label="Close Menu">&times;</button>
+
   <div class="overlay-content">
     <!-- Column 1: Main Navigation -->
     <div class="menu-column main-nav">
