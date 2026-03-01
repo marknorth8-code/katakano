@@ -1,31 +1,33 @@
 <header class="site-header" role="banner">
   <nav class="fixed-nav-container">
     <div class="nav-inner">
-      
-      <!-- Spacer to push buttons to the right -->
       <div class="nav-spacer"></div>
-
- <div class="nav-actions">
-  <!-- Menu button now on the left -->
-  <button class="menu-toggle-pill" aria-label="Open Menu">
-    <span class="toggle-label">Menu</span>
-    <svg class="icon-menu-toggle-lg" width="24" height="16" viewBox="0 0 30 20">
-      <line x1="0" y1="2" x2="30" y2="2" stroke="currentColor" />
-      <line x1="10" y1="10" x2="30" y2="10" stroke="currentColor" />
-      <line x1="0" y1="18" x2="30" y2="18" stroke="currentColor" />
-    </svg>
-  </button>
-
-  <!-- Get in touch button now on the right -->
-  <a href="contact.html" class="button-get-in-touch">
-    <span>Get in touch</span>
-    <svg class="icon" width="12" height="12" viewBox="0 0 12 12" fill="none">
-      <path d="M1 11L11 1M11 1H3M11 1V9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-    </svg>
-  </a>
-</div>
-
-
+      <div class="nav-actions">
+        <!-- Wrap the button to manage the 'X' state -->
+        <button class="menu-toggle-pill" id="menuToggle" aria-label="Toggle Menu">
+          <span class="toggle-label">Menu</span>
+          <div class="icon-wrapper">
+             <!-- Hamburger lines -->
+             <span class="line line-1"></span>
+             <span class="line line-2"></span>
+             <span class="line line-3"></span>
+          </div>
+        </button>
+        <a href="contact.html" class="button-get-in-touch">Get in touch</a>
+      </div>
     </div>
   </nav>
 </header>
+
+<!-- Full screen overlay -->
+<div id="fullScreenMenu" class="menu-overlay">
+  <div class="overlay-content">
+    <div class="menu-column">
+      <a href="/">Home</a>
+      <a href="/services">Services</a>
+      <a href="/partners">Our Partners</a>
+      <a href="/contact">Contact</a>
+    </div>
+    <!-- Add other columns like "We work for" or "Our expertise" here -->
+  </div>
+</div>
