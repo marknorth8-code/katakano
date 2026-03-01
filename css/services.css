@@ -113,6 +113,9 @@
   }
 }
 
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+
 .subject-split-triple {
     width: 100%;
     background-color: #fff; /* Or your preferred background */
