@@ -256,31 +256,35 @@ p {
 }
 
 .main-nav-header {
-  display: flex;
-  justify-content: space-between;
-  gap: 20px;
   position: absolute;
-  top: 120px; /* Positioned below the branding */
-  left: 5%;
-  right: 5%;
+  top: 50px;           /* Aligns vertically with the branding/logo */
+  left: 50%;           /* Move to center of screen */
+  transform: translateX(-50%); /* Precisely centers the element */
+  display: flex;
+  gap: 40px;           /* Space between Home, About, Contact */
   z-index: 10;
 }
 
 .main-nav-header a {
-  flex: 1;
-  text-align: center;
-  padding: 15px; /* Slightly reduced padding for top placement */
-  border: 1px solid var(--gold);
   text-decoration: none;
   color: #fff;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  opacity: 0.8;
   transition: 0.3s;
+  /* Removed the border and flex:1 to keep them as clean text links */
 }
 
-.main-nav-footer a:hover {
-  background: var(--gold);
-  color: var(--bg-green);
+.main-nav-header a:hover {
+  opacity: 1;
+  color: var(--gold);
 }
+
+
+
+
+
 
 /* CLOSE BUTTON */
 .menu-close-btn {
