@@ -146,11 +146,10 @@ p {
 .line-2 { top: 7px; width: 70%; right: 0; }
 .line-3 { top: 14px; }
 
-/* --- 5. MENU OVERLAY (The  3-Column Layout) --- */
-/* --- 5. MENU OVERLAY (Updated Dashboard Layout) --- */
+/* --- 5. UPDATED MENU OVERLAY (Dashboard Layout) --- */
 :root {
-  --gold-accent: #d4af37; /* Metallic gold from the image */
-  --border-glow: rgba(212, 175, 55, 0.3);
+  --gold: #d4af37;
+  --bg-green: #0a2b16;
 }
 
 .menu-overlay {
@@ -159,138 +158,132 @@ p {
   left: 0;
   width: 100%;
   height: 100%;
-  background: radial-gradient(circle at center, #0a2b16 0%, #051a0d 100%); /* Deep green gradient */
+  background-color: var(--bg-green);
   color: #ffffff;
-  display: flex; /* Changed from none for preview; control with JS */
+  display: flex; /* Preview mode; toggle with JS */
   flex-direction: column;
-  padding: 80px 5%;
+  padding: 100px 5% 50px;
   z-index: 1100;
   box-sizing: border-box;
 }
 
-/* --- Branding Area (Top Left) --- */
+/* 1. BRANDING (Top Left) */
 .menu-intro-branding {
-  margin-bottom: 40px;
+  position: absolute;
+  top: 50px;
+  left: 5%;
 }
 
-.logo-placeholder {
-  width: 60px;
-  height: 60px;
-  border: 2px solid var(--gold-accent);
-  margin-bottom: 15px;
+.placeholder-logo {
+  width: 50px;
+  height: 50px;
+  border: 1px solid var(--gold);
+  margin-bottom: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
+  color: var(--gold);
   font-weight: bold;
-  color: var(--gold-accent);
 }
 
-.menu-intro-branding h2 {
-  font-size: 1.8rem;
-  letter-spacing: 2px;
-  color: var(--gold-accent);
-  margin: 0;
+.branding-text {
+  font-size: 14px;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
+  color: var(--gold);
 }
 
-/* --- Main Dashboard Grid --- */
+/* 2. GRID CONTENT */
 .overlay-content {
   display: grid;
-  grid-template-columns: 1fr 1fr; /* Two main content blocks */
-  grid-template-rows: auto 1fr;
-  gap: 30px;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
   flex-grow: 1;
+  align-items: center;
 }
 
 .menu-column {
-  border: 1px solid var(--border-glow);
   padding: 40px;
-  background: rgba(255, 255, 255, 0.03);
-  position: relative;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(212, 175, 55, 0.2);
 }
 
-/* Development Management Box (Top/Middle) */
+/* Specialized Gold Accents */
 .menu-column.dev-mgmt {
-  grid-column: 1 / 2;
-  align-self: center;
-  margin-left: 10%;
+  border-top: 4px solid var(--gold); /* Top gold line from design */
 }
 
-/* Investment Opportunities Box (Offset Right) */
 .menu-column.invest-opps {
-  grid-column: 2 / 3;
-  margin-top: 50px;
-  border-left: 3px solid var(--gold-accent); /* Accent line from image */
+  border-left: 4px solid var(--gold); /* Left gold line from design */
+  margin-top: 60px; /* Offset for dashboard feel */
 }
 
 .menu-label {
-  font-size: 2rem;
-  font-weight: 600;
-  color: #fff;
-  margin-bottom: 25px;
+  font-size: 2.2rem;
+  margin-bottom: 20px;
   display: block;
 }
 
-.menu-column ul {
+/* Services and Subtext */
+.services-link {
+  color: var(--gold);
+  text-decoration: none;
+  font-size: 1.1rem;
+  border-bottom: 1px solid var(--gold);
+  padding-bottom: 5px;
+}
+
+.country-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-top: 20px;
   list-style: none;
   padding: 0;
 }
 
-.menu-column li {
-  font-size: 1.2rem;
-  margin-bottom: 12px;
-  color: rgba(255, 255, 255, 0.8);
-  display: flex;
-  align-items: center;
+.country-list li {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.7);
 }
 
-/* Hexagonal bullet point style from image */
-.menu-column li::before {
-  content: "⬢"; 
-  color: var(--gold-accent);
-  margin-right: 15px;
-  font-size: 0.8rem;
-}
-
-/* --- Bottom Navigation (Home, About, Contact) --- */
+/* 3. MAIN NAVIGATION (Bottom Row) */
 .main-nav-footer {
   display: flex;
+  justify-content: space-between;
   gap: 20px;
-  margin-top: 40px;
+  margin-top: auto;
 }
 
 .main-nav-footer a {
   flex: 1;
   text-align: center;
-  padding: 20px;
-  border: 1px solid var(--gold-accent);
+  padding: 25px;
+  border: 1px solid var(--gold);
   text-decoration: none;
   color: #fff;
-  font-size: 1.5rem;
-  font-weight: bold;
-  background: rgba(212, 175, 55, 0.1);
-  transition: all 0.3s ease;
+  font-size: 1.4rem;
+  font-weight: 500;
+  transition: 0.3s;
 }
 
 .main-nav-footer a:hover {
-  background: var(--gold-accent);
-  color: #051a0d;
+  background: var(--gold);
+  color: var(--bg-green);
 }
 
-/* Overlay "X" Close Button */
+/* CLOSE BUTTON */
 .menu-close-btn {
   position: absolute;
-  top: 40px;
-  right: 40px;
-  width: 60px;
-  height: 60px;
-  background: rgba(255, 255, 255, 0.1);
+  top: 50px;
+  right: 5%;
+  background: none;
+  border: 1px solid #fff;
   color: #fff;
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  font-size: 32px;
+  padding: 10px 20px;
   cursor: pointer;
-  z-index: 1200;
 }
+
 
 
 /* Fix the narrow container */
