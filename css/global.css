@@ -149,8 +149,7 @@ p {
 
 /* --------------- 5. UPDATED MENU OVERLAY (Dashboard Layout) --------------- */
 :root {
-  --gold: #d4af37;
-  --bg-green: #0a2b16;
+  --bg-green: #012c08;
 }
 
 .menu-overlay {
