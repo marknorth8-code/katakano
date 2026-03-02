@@ -148,9 +148,6 @@ p {
 
 
 /* --------------- 5. UPDATED MENU OVERLAY (Dashboard Layout) --------------- */
-:root {
-  --bg-green: #012c08;
-}
 
 .menu-overlay {
   position: fixed;
