@@ -229,19 +229,20 @@ p {
 
 /* Services/Expertise text made larger and vertical */
 .services-list {
-  list-style: none;
-  padding: 0;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 15px;
+  margin-top: 10px;
 }
 
 .services-link {
-  color: #fff; /* Changed to white to match image bullet style */
+  color: #ffffff;
   text-decoration: none;
-  font-size: 2rem; /* Increased size */
-  padding-bottom: 5px;
+  font-size: 2rem;
+  font-weight: 400;
+  display: block;
 }
+
 
 /* Countries listed vertically */
 .country-list {
