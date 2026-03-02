@@ -306,15 +306,36 @@ p {
   padding: var(--section-padding) 0;
 }
 
-/* 1. Set the section to be a Flexbox column */
+
+/* 1. Updated Section Styles */
 .intro {
   display: flex;
   flex-direction: column;
-  justify-content: space-between; /* Pushes text to top, logo to bottom */
-  height: 20vh; /* Gives the section actual height (90% of screen) */
-  padding: 40px 8%; /* Adjust to match your side margins */
+  /* Change 'space-between' to 'flex-start' to move everything to the top */
+  justify-content: flex-start; 
+  /* Center children horizontally */
+  align-items: center; 
+  height: auto; /* Changed from 20vh to auto so it wraps your content */
+  padding: 60px 8%; 
   background-color: var(--bg-light);
+  text-align: center; /* Ensures text inside elements also centers */
 }
+
+/* 4. Updated Logo Wrapper */
+.intro-logo-wrapper {
+  /* Remove margin-top: auto (which was pushing it down) */
+  margin-top: 0; 
+  margin-bottom: 20px; /* Adds space between logo and text below it */
+  order: -1; /* This forces the logo to the very top regardless of HTML order */
+}
+
+.intro-logo {
+  max-width: 400px;
+  height: auto;
+  display: block;
+  margin: 0 auto; /* Redundant but safe for centering */
+}
+
 
 /* 2. Style the container to occupy the available space */
 .intro-container {
@@ -330,16 +351,6 @@ p {
   margin-bottom: 20px; /* Safety gap */
 }
 
-/* 4. Style the bottom logo */
-.intro-logo-wrapper {
-  margin-top: auto; /* Extra insurance to push it to the bottom */
-}
-
-.intro-logo {
-  max-width: 400px;
-  height: auto;
-  display: block;
-}
 
 
 /* --- 6. LOGO & FOOTER --- */
