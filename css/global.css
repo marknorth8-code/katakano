@@ -161,7 +161,7 @@ p {
   height: 100%;
   background-color: var(--bg-green);
   color: #ffffff;
-  display: flex; /* Preview mode; toggle with JS */
+  display: flex; 
   flex-direction: column;
   padding: 100px 5% 50px;
   z-index: 1100;
@@ -209,43 +209,53 @@ p {
   border: 1px solid rgba(212, 175, 55, 0.2);
 }
 
-/* Specialized Gold Accents */
 .menu-column.dev-mgmt {
-  border-top: 4px solid var(--gold); /* Top gold line from design */
+  border-top: 4px solid var(--gold); 
 }
 
 .menu-column.invest-opps {
-  border-left: 4px solid var(--gold); /* Left gold line from design */
-  margin-top: 60px; /* Offset for dashboard feel */
+  border-left: 4px solid var(--gold); 
+  margin-top: 60px; 
 }
 
+/* Title text made smaller */
 .menu-label {
-  font-size: 2.2rem;
+  font-size: 1.1rem; /* Reduced from 2.2rem */
   margin-bottom: 20px;
   display: block;
+  font-weight: bold;
+  color: var(--gold);
 }
 
-/* Services and Subtext */
+/* Services/Expertise text made larger and vertical */
+.services-list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
 .services-link {
-  color: var(--gold);
+  color: #fff; /* Changed to white to match image bullet style */
   text-decoration: none;
-  font-size: 1.1rem;
-  border-bottom: 1px solid var(--gold);
+  font-size: 2rem; /* Increased size */
   padding-bottom: 5px;
 }
 
+/* Countries listed vertically */
 .country-list {
   display: flex;
-  flex-wrap: wrap;
-  gap: 15px;
+  flex-direction: column; /* Changed from wrap to column */
+  gap: 10px;
   margin-top: 20px;
   list-style: none;
   padding: 0;
 }
 
 .country-list li {
-  font-size: 1rem;
-  color: rgba(255, 255, 255, 0.7);
+  font-size: 1.8rem; /* Increased size to match visual hierarchy */
+  color: #fff;
 }
 
 /* 3. MAIN NAVIGATION (Bottom Row) */
@@ -287,7 +297,8 @@ p {
 
 
 
-/* Fix the narrow container */
+
+/*---------------- Fix the narrow container -----------------*/
 :root { --container-width: 1200px; }
 
 .container {
@@ -301,7 +312,7 @@ p {
 }
 
 
-/* 1. Updated Section Styles */
+/*--------------- 1. Updated Section Styles------------- */
 .intro {
   display: flex;
   flex-direction: column;
