@@ -49,22 +49,3 @@
 </div>
 
 
-<!-- =========================================
-     MENU SCRIPT
-     ========================================= -->
-
-<script>
-  const menuToggle = document.querySelector('.menu-toggle');
-  const menuOverlay = document.getElementById('fullScreenMenu');
-  const menuClose = document.querySelector('.menu-close');
-
-  menuToggle.addEventListener('click', () => {
-    menuOverlay.classList.add('active');
-    document.body.classList.add('menu-open');
-  });
-
-  menuClose.addEventListener('click', () => {
-    menuOverlay.classList.remove('active');
-    document.body.classList.remove('menu-open');
-  });
-</script>
