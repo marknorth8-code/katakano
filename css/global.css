@@ -149,74 +149,54 @@ p {
 
 /* --------------- 5. UPDATED MENU OVERLAY (Clean Typographic Layout) --------------- */
 
+/* --- 5. FINAL FIXED DASHBOARD LAYOUT --- */
+
 .menu-overlay {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: var(--bg-menu);
-  color: #ffffff;
-  display: flex; /* Changed from 'none' for preview; keep 'none' if using JS toggle */
+  inset: 0;
+  background-color: #011d01; /* Your dark green */
+  padding: 80px 10%;
+  display: flex; /* Change to 'none' if toggled by JS */
   flex-direction: column;
-  padding: 80px 8%;
   z-index: 1100;
-  box-sizing: border-box;
 }
 
-/* 1. BRANDING (Top Left) */
-.menu-intro-branding {
-  position: absolute;
-  top: 40px;
-  left: 8%;
-}
-
-.branding-text {
-  font-size: 13px;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: rgba(255,255,255,0.6); /* Muted white like the image */
-}
-
-/* 2. GRID CONTENT - Three Column Layout */
+/* Three-Column Grid */
 .overlay-content-grid {
   display: grid;
-  grid-template-columns: 1.5fr 1fr 1fr; /* Main links get more space */
-  gap: 60px;
-  margin-top: 100px; /* Space from top branding */
-  align-items: flex-start;
+  grid-template-columns: 1.5fr 1fr 1fr; /* Left column is wider */
+  gap: 40px;
+  margin-top: 100px;
+  align-items: start;
 }
 
-/* Column 1: Large Main Links */
-.menu-column.main-nav .nav-links {
+/* Remove bullets and style main links */
+.nav-links {
   list-style: none;
   padding: 0;
 }
 
-.menu-column.main-nav .nav-links li a {
-  font-size: 80px; /* Large display size */
-  font-weight: 400;
-  color: #fff;
+.nav-links li a {
+  font-size: 80px; /* Big bold text from image */
+  font-weight: 700;
+  color: white;
   text-decoration: none;
   line-height: 1.1;
   display: block;
-  margin-bottom: 10px;
-  transition: opacity 0.3s;
+  margin-bottom: 20px;
 }
 
-.menu-column.main-nav .nav-links li a:hover {
-  opacity: 0.7;
-}
-
-/* Columns 2 & 3: Secondary Links */
+/* Secondary Column Labels */
 .menu-label {
-  font-size: 16px;
-  color: rgba(255,255,255,0.5); /* Muted labels */
   display: block;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: rgba(255,255,255,0.5); /* Muted label */
   margin-bottom: 30px;
-  font-weight: 300;
 }
 
+/* Vertical Sub-links */
 .sub-links {
   display: flex;
   flex-direction: column;
@@ -224,33 +204,25 @@ p {
 }
 
 .sub-links a {
-  color: #fff;
-  text-decoration: none;
   font-size: 24px;
+  color: white;
+  text-decoration: none;
   font-weight: 300;
-  transition: color 0.3s;
 }
 
-.sub-links a:hover {
-  color: rgba(255,255,255,0.7);
-}
-
-/* Close Button (Circle White) */
+/* Circular Close Button */
 .menu-close-btn {
   position: absolute;
-  top: 40px;
+  top: 50px;
   right: 5%;
-  background: #fff;
-  border: none;
-  color: #000;
-  width: 50px;
-  height: 50px;
+  width: 60px;
+  height: 60px;
   border-radius: 50%;
-  font-size: 24px;
+  border: 1px solid rgba(255,255,255,0.3);
+  background: transparent;
+  color: white;
+  font-size: 30px;
   cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 /* Bottom Logo */
