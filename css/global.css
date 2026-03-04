@@ -188,6 +188,12 @@ a:hover {
   visibility: visible;
 }
 
+.menu-overlay.active .menu-nav a {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
 /* Close button */
 .menu-close {
   position: absolute;
@@ -217,11 +223,15 @@ a:hover {
   color: #ffffff;
   margin: 24px 0;
   transition: opacity 0.3s ease;
-}
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all 0.4s ease;
+   }
 
 .menu-nav a:hover {
   opacity: 0.6;
 }
+
 
 
 /* =========================
