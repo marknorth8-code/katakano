@@ -165,22 +165,62 @@ a:hover {
    8. MENU OVERLAY
    ========================= */
 
+/* =========================
+   PREMIUM MENU OVERLAY
+   ========================= */
+
 .menu-overlay {
   position: fixed;
   inset: 0;
-  background: var(--menu-bg);
+  background: #011d01;
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
-  z-index: 999;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.4s ease, visibility 0.4s ease;
+  z-index: 1000;
 }
 
-.menu-overlay a {
-  color: var(--white);
-  font-size: 28px;
+/* Active state */
+.menu-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Close button */
+.menu-close {
+  position: absolute;
+  top: 40px;
+  right: 60px;
+  background: none;
+  border: none;
+  color: #ffffff;
+  font-size: 36px;
+  font-family: 'Inter', sans-serif;
+  cursor: pointer;
+}
+
+/* Navigation */
+.menu-nav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.menu-nav a {
+  font-family: 'Inter', sans-serif;
+  font-size: 32px;
   letter-spacing: 0.08em;
-  margin: 20px 0;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #ffffff;
+  margin: 24px 0;
+  transition: opacity 0.3s ease;
+}
+
+.menu-nav a:hover {
+  opacity: 0.6;
 }
 
 
