@@ -1,365 +1,225 @@
-/* --- 1. DESIGN TOKENS --- */
+/* =========================================================
+   GLOBAL.CSS — ULTRA PREMIUM PRIVATE OFFICE SYSTEM
+   Black / White / Grey Only
+   Playfair Display + Inter
+   ========================================================= */
+
+
+/* =========================
+   1. ROOT VARIABLES
+   ========================= */
+
 :root {
-  --primary-dark: #1a1a1a;
-  --accent-red: #E10600;
-  --bg-light: #ffffff;
-  --bg-menu: #011d01; /* Your custom dark green */
-  --font-main: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  --section-padding: 140px;
-  --container-width: 150px;
+
+  /* Core Colours */
+  --black: #000000;
+  --dark-grey: #4a4a4a;
+  --light-grey: #eaeaea;
+  --white: #ffffff;
+  --menu-bg: #011d01;
+
+  /* Spacing Scale */
+  --space-xs: 24px;
+  --space-sm: 48px;
+  --space-md: 80px;
+  --space-lg: 160px;
+  --space-xl: 220px;
+
+  /* Container Width */
+  --container-width: 1100px;
+
 }
 
-/* --- 2. BASE STYLES --- */
-* { box-sizing: border-box; margin: 0; padding: 0; }
+
+/* =========================
+   2. RESET
+   ========================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
 
 body {
-  font-family: var(--font-main);
-  color: var(--primary-dark);
-  line-height: 1.6;
-  background-color: var(--bg-light);
-  -webkit-font-smoothing: antialiased;
-}
-
-/* --- 3. TYPOGRAPHY --- */
-h1, .display-title {
-  font-size: 26px; /* Fixed size: no more scaling */
+  font-family: 'Inter', sans-serif;
   font-weight: 400;
-  line-height: 1.2; 
-  margin-bottom: 1.2rem;
-  letter-spacing: -0.01em; 
+  font-size: 18px;
+  line-height: 1.6;
+  color: var(--black);
+  background: var(--white);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
 }
 
-/* Global Variation for smaller, more technical section titles */
-h2.type-accent, .section-title-small {
-  font-size: clamp(1.5rem, 3vw, 2rem); 
-  font-weight: 500;
-  line-height: 1.3;
-  letter-spacing: -0.01em;
+
+/* =========================
+   3. CONTAINER SYSTEM
+   ========================= */
+
+.container {
+  width: var(--container-width);
+  margin: 0 auto;
+}
+
+.section {
+  padding: var(--space-lg) 0;
+}
+
+.section-large {
+  padding: var(--space-xl) 0;
+}
+
+
+/* =========================
+   4. TYPOGRAPHY
+   ========================= */
+
+h1, h2 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+}
+
+h1 {
+  font-size: 64px;
+}
+
+h2 {
+  font-size: 40px;
 }
 
 h3 {
-  font-size: 23px; /* Fixed size: no more scaling */
-  font-weight: 400;
-  line-height: 1.2; 
-  margin-bottom: 1.2rem;
-  letter-spacing: -0.01em; 
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-weight: 500;
 }
-
-/* Specific Classes (Only use these if you want to override the tags above) */
-.display-title { font-size: 26px; }
-.section-title { font-size: 26px; }
 
 p {
-  font-size: 1.125rem;
-  line-height: 1.6;
-  color: #333333;
+  font-size: 18px;
+  color: var(--dark-grey);
+  max-width: 620px;
 }
 
-/* Global Utility for Refined/Smaller Headings */
-.h2-refined {
-  font-size: 22px !important;
-  font-weight: 400 !important;        /* Fixed: moved semicolon to the end */
-  line-height: 1.2;
-  letter-spacing: -0.01em; 
-  margin-bottom: 0rem !important;     /* Fixed: moved semicolon to the end */
-}
-
-/* Global Utility for Smaller Body Text */
-.text-small {
-  font-size: 0.95rem !important;
-  line-height: 1.6;
-  color: #666;
-}
-
-
-
-/* --- 4. NAVIGATION & BUTTONS (Fixed Top-Right Stack) --- */
-.fixed-nav-container {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  padding: 30px 40px;
-  z-index: 1000;
-  pointer-events: none;
-  display: flex;
-  justify-content: flex-end; 
-}
-
-.nav-actions {
-  display: flex;
-  flex-direction: column; /* Vertical stack per image */
-  align-items: flex-end;
-  gap: 12px;
-  pointer-events: auto; 
-}
-
-/* Global Button Logic - Updated to Asymmetric Gradient Style */
-.btn-primary, .button-get-in-touch, .menu-toggle-pill {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 14px 40px;
-  /* This creates the unique "leaf" shape from your image */
-  border-radius: 60px 10px 60px 10px; 
+.small-text {
   font-size: 14px;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.15em;
-  transition: all 0.4s ease;
-  border: none;
+  color: var(--dark-grey);
+}
+
+
+/* =========================
+   5. LINKS
+   ========================= */
+
+a {
   text-decoration: none;
-  cursor: pointer;
-  /* Shadow for depth */
-  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+  color: var(--black);
+  transition: opacity 0.3s ease;
 }
 
-/* Primary Button: Dark Gradient (Matches Image) */
-.btn-primary, .menu-toggle-pill {
-  background: linear-gradient(135deg, #333333 0%, #a1a1a1 100%);
-  color: #fff;
-}
-
-.btn-primary:hover, .menu-toggle-pill:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 12px 24px rgba(0,0,0,0.15);
-  background: linear-gradient(135deg, #000000 0%, #888888 100%);
-}
-
-/* Secondary Button: Light/Inverted Version */
-.button-get-in-touch {
-  background: #fff;
-  color: #333;
-  border: 1px solid #e0e0e0;
-}
-
-.button-get-in-touch:hover {
-  background: #f5f5f5;
-  border-color: #333;
+a:hover {
+  opacity: 0.6;
 }
 
 
-/* Menu Icon Lines */
-.icon-wrapper { position: relative; width: 24px; height: 16px; margin-left: 10px; }
-.line { display: block; position: absolute; height: 2px; width: 100%; background: currentColor; transition: 0.3s ease; }
-.line-1 { top: 0; }
-.line-2 { top: 7px; width: 70%; right: 0; }
-.line-3 { top: 14px; }
+/* =========================
+   6. BUTTONS (MINIMAL)
+   ========================= */
+
+.btn {
+  display: inline-block;
+  padding: 16px 36px;
+  border: 1px solid var(--black);
+  font-size: 14px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--black);
+  background: transparent;
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  background: var(--black);
+  color: var(--white);
+}
 
 
-/* --------------- 5. UPDATED MENU OVERLAY (Clean Typographic Layout) --------------- */
+/* =========================
+   7. DIVIDERS (INSTEAD OF CARDS)
+   ========================= */
 
-/* --- 5. FINAL FIXED DASHBOARD LAYOUT --- */
+.divider {
+  border-bottom: 1px solid var(--light-grey);
+  padding: var(--space-sm) 0;
+}
+
+
+/* =========================
+   8. MENU OVERLAY
+   ========================= */
 
 .menu-overlay {
   position: fixed;
   inset: 0;
-  background-color: #011d01;
-  padding: 80px 10%;
-  flex-direction: column;
-  z-index: 1100;
-  /* 1. HIDE BY DEFAULT */
-  display: none; 
-}
-
-/* 2. SHOW ONLY WHEN THIS CLASS IS ADDED BY JS */
-.menu-overlay.is-open {
-  display: flex !important; 
-}
-
-/* Three-Column Grid */
-.overlay-content-grid {
-  display: grid;
-  grid-template-columns: 1.5fr 1fr 1fr;
-  gap: 40px;
-  margin-top: 100px;
-  align-items: start;
-}
-
-/* Remove bullets and style main links */
-.nav-links {
-  list-style: none;
-  padding: 0;
-}
-
-.nav-links li a {
-  font-size: 80px;
-  font-weight: 700;
-  color: white;
-  text-decoration: none;
-  line-height: 1.1;
-  display: block;
-  margin-bottom: 20px;
-}
-
-/* Secondary Column Labels */
-.menu-label {
-  display: block;
-  font-size: 14px;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  color: rgba(255,255,255,0.5);
-  margin-bottom: 30px;
-}
-
-.sub-links {
+  background: var(--menu-bg);
   display: flex;
-  flex-direction: column;
-  gap: 15px;
-}
-
-.sub-links a {
-  font-size: 24px;
-  color: white;
-  text-decoration: none;
-  font-weight: 300;
-}
-
-/* Circular Close Button */
-.menu-close-btn {
-  position: absolute;
-  top: 50px;
-  right: 5%;
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  border: 1px solid rgba(255,255,255,0.5);
-  background: transparent;
-  color: white;
-  font-size: 30px;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
   justify-content: center;
-}
-
-
-/* Bottom Logo */
-.menu-footer-logo {
-  position: absolute;
-  bottom: 60px;
-  left: 8%;
-}
-
-.katakano-logo-img {
-  height: 25px; /* Adjust based on your actual logo size */
-  opacity: 0.9;
-}
-
-/* Responsive Tweak */
-@media (max-width: 900px) {
-  .overlay-content-grid {
-    grid-template-columns: 1fr;
-    gap: 40px;
-    margin-top: 60px;
-  }
-  .menu-column.main-nav .nav-links li a {
-    font-size: 50px;
-  }
-}
-
-
-
-
-/* CLOSE BUTTON */
-.menu-close-btn {
-  position: absolute;
-  top: 50px;
-  right: 5%;
-  background: none;
-  border: 1px solid #fff;
-  color: #fff;
-  padding: 10px 20px;
-  cursor: pointer;
-}
-
-
-#fullScreenMenu.is-open {
-  display: flex !important;
-  opacity: 1 !important;
-  visibility: visible !important;
-}
-
-
-
-/*---------------- Fix the narrow container -----------------*/
-:root { --container-width: 1200px; }
-
-.container {
-  max-width: var(--container-width);
-  margin: 0 auto;
-  padding: 0 20px;
-}
-
-.section-padding {
-  padding: var(--section-padding) 0;
-}
-
-
-/*--------------- 1. Updated Section Styles------------- */
-.intro {
-  display: flex;
+  align-items: center;
   flex-direction: column;
-  /* Change 'space-between' to 'flex-start' to move everything to the top */
-  justify-content: flex-start; 
-  /* Center children horizontally */
-  align-items: center; 
-  height: auto; /* Changed from 20vh to auto so it wraps your content */
-  padding: 60px 8%; 
-  background-color: var(--bg-light);
-  text-align: center; /* Ensures text inside elements also centers */
+  z-index: 999;
 }
 
-/* 4. Updated Logo Wrapper */
-.intro-logo-wrapper {
-  /* Remove margin-top: auto (which was pushing it down) */
-  margin-top: 0; 
-  margin-bottom: 20px; /* Adds space between logo and text below it */
-  order: -1; /* This forces the logo to the very top regardless of HTML order */
-}
-
-.intro-logo {
-  max-width: 400px;
-  height: auto;
-  display: block;
-  margin: 0 auto; /* Redundant but safe for centering */
+.menu-overlay a {
+  color: var(--white);
+  font-size: 28px;
+  letter-spacing: 0.08em;
+  margin: 20px 0;
 }
 
 
-/* 2. Style the container to occupy the available space */
-.intro-container {
-  display: contents; /* Allows children to participate in the .intro flexbox */
-}
+/* =========================
+   9. FOOTER
+   ========================= */
 
-/* 3. Style the top text */
-.intro-text {
-  font-size: 0.9rem;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  color: var(--primary-dark);
-  margin-bottom: 20px; /* Safety gap */
+footer {
+  border-top: 1px solid var(--light-grey);
+  padding: var(--space-md) 0;
+  font-size: 14px;
+  color: var(--dark-grey);
 }
 
 
+/* =========================
+   10. RESPONSIVE
+   ========================= */
 
-/* --- 6. LOGO & FOOTER --- */
-.menu-footer-logo { margin-top: auto; padding-bottom: 20px; }
-.menu-footer-logo img { width: 400px; height: 100px; object-fit: contain; }
+@media (max-width: 1200px) {
 
-.footer-inner.container {
-  display: flex;
-  justify-content: space-between;
-  padding: 40px !important;
-  border-top: 1px solid #000;
-  margin-top: 60px;
+  .container {
+    width: 90%;
+  }
+
+  h1 {
+    font-size: 48px;
+  }
+
+  h2 {
+    font-size: 32px;
+  }
+
+  .section {
+    padding: var(--space-md) 0;
+  }
+
+  .section-large {
+    padding: var(--space-lg) 0;
+  }
+
 }
-
-/* --- 7. RESPONSIVE --- */
-@media (max-width: 992px) {
-  .overlay-content { grid-template-columns: 1fr; gap: 40px; }
-  .menu-column.main-nav a { font-size: 2.5rem; }
-  .menu-footer-logo img { width: 250px; height: auto; }
-  .fixed-nav-container { padding: 20px; }
-  .menu-close-btn { right: 20px; }
-}
-
