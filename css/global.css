@@ -154,27 +154,23 @@ p {
 .menu-overlay {
   position: fixed;
   inset: 0;
-  background-color: #011d01; /* Your dark green */
+  background-color: #011d01;
   padding: 80px 10%;
-  display: flex; /* Change to 'none' if toggled by JS */
   flex-direction: column;
   z-index: 1100;
-}
-
-  /* HIDE BY DEFAULT */
+  /* 1. HIDE BY DEFAULT */
   display: none; 
-  flex-direction: column;
 }
 
-/* This class will be added by JavaScript to show the menu */
+/* 2. SHOW ONLY WHEN THIS CLASS IS ADDED BY JS */
 .menu-overlay.is-open {
-  display: flex; 
+  display: flex !important; 
 }
 
 /* Three-Column Grid */
 .overlay-content-grid {
   display: grid;
-  grid-template-columns: 1.5fr 1fr 1fr; /* Left column is wider */
+  grid-template-columns: 1.5fr 1fr 1fr;
   gap: 40px;
   margin-top: 100px;
   align-items: start;
@@ -187,7 +183,7 @@ p {
 }
 
 .nav-links li a {
-  font-size: 80px; /* Big bold text from image */
+  font-size: 80px;
   font-weight: 700;
   color: white;
   text-decoration: none;
@@ -202,11 +198,10 @@ p {
   font-size: 14px;
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  color: rgba(255,255,255,0.5); /* Muted label */
+  color: rgba(255,255,255,0.5);
   margin-bottom: 30px;
 }
 
-/* Vertical Sub-links */
 .sub-links {
   display: flex;
   flex-direction: column;
@@ -228,12 +223,16 @@ p {
   width: 60px;
   height: 60px;
   border-radius: 50%;
-  border: 1px solid rgba(255,255,255,0.3);
+  border: 1px solid rgba(255,255,255,0.5);
   background: transparent;
   color: white;
   font-size: 30px;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
+
 
 /* Bottom Logo */
 .menu-footer-logo {
