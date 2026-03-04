@@ -8,53 +8,63 @@ async function includeHTML(file, elementId) {
     try {
         const response = await fetch(file);
         if (!response.ok) throw new Error(`Could not fetch ${file}`);
-
+        
         const html = await response.text();
         container.innerHTML = html;
 
-        // IMPORTANT: Initialize menu AFTER header loads
+        // INITIALIZE logic after the HTML is injected
         if (elementId === 'header') {
             initMenuToggle();
         }
-
     } catch (error) {
         console.error("Error loading partial:", error);
     }
 }
 
-
 /**
- * Premium Menu Toggle Logic
+ * Consolidated menu toggle logic - Matches your CSS classes
  */
 function initMenuToggle() {
+    const menuBtn = document.getElementById('menuToggle');
+    const closeBtn = document.getElementById('menuClose');
+    const overlay = document.getElementById('fullScreenMenu');
 
-    const menuToggle = document.querySelector('.menu-toggle');
-    const menuOverlay = document.getElementById('fullScreenMenu');
-    const menuClose = document.querySelector('.menu-close');
+    if (menuBtn && overlay) {
+        // OPEN MENU
+        menuBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            // Use classList to trigger your .is-open CSS
+            overlay.classList.add('is-open'); 
+            menuBtn.classList.add('is-active');
+            document.body.style.overflow = 'hidden'; 
+        });
 
-    if (!menuToggle || !menuOverlay || !menuClose) {
-        console.warn("Menu elements not found.");
-        return;
+        // CLOSE MENU
+        if (closeBtn) {
+            closeBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                overlay.classList.remove('is-open');
+                menuBtn.classList.remove('is-active');
+                document.body.style.overflow = ''; 
+            });
+        }
+
+        // Close when a link is clicked
+        const links = overlay.querySelectorAll('a');
+        links.forEach(link => {
+            link.addEventListener('click', () => {
+                overlay.classList.remove('is-open');
+                document.body.style.overflow = '';
+            });
+        });
+
+    } else {
+        console.warn("Menu components not found. Ensure header.html has IDs: menuToggle, menuClose, fullScreenMenu");
     }
-
-    // OPEN
-    menuToggle.addEventListener('click', () => {
-        menuOverlay.classList.add('active');
-        document.body.classList.add('menu-open');
-    });
-
-    // CLOSE
-    menuClose.addEventListener('click', () => {
-        menuOverlay.classList.remove('active');
-        document.body.classList.remove('menu-open');
-    });
 }
 
-
-/**
- * Initial load
- */
+// Initial load on page ready - Keeps your Header and Footer loading logic
 document.addEventListener('DOMContentLoaded', () => {
     includeHTML('partials/header.html', 'header');
-    includeHTML('partials/footer.html', 'footer');
+    includeHTML('partials/footer.html', 'footer'); 
 });
