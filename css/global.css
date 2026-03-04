@@ -193,6 +193,9 @@ a:hover {
   transform: translateY(0);
 }
 
+body.menu-open {
+  overflow: hidden;
+}
 
 /* Close button */
 .menu-close {
