@@ -1,5 +1,28 @@
 /**
- * Consolidated menu toggle logic for Omni-style menu
+ * Loads HTML partials and initializes component-specific logic
+ */
+async function includeHTML(file, elementId) {
+    const container = document.getElementById(elementId);
+    if (!container) return;
+
+    try {
+        const response = await fetch(file);
+        if (!response.ok) throw new Error(`Could not fetch ${file}`);
+        
+        const html = await response.text();
+        container.innerHTML = html;
+
+        // INITIALIZE logic after the HTML is injected
+        if (elementId === 'header') {
+            initMenuToggle();
+        }
+    } catch (error) {
+        console.error("Error loading partial:", error);
+    }
+}
+
+/**
+ * Consolidated menu toggle logic - Matches your CSS classes
  */
 function initMenuToggle() {
     const menuBtn = document.getElementById('menuToggle');
@@ -10,25 +33,23 @@ function initMenuToggle() {
         // OPEN MENU
         menuBtn.addEventListener('click', (e) => {
             e.preventDefault();
-            // Use the class defined in your CSS to show the menu
+            // Use classList to trigger your .is-open CSS
             overlay.classList.add('is-open'); 
             menuBtn.classList.add('is-active');
             document.body.style.overflow = 'hidden'; 
-            console.log("Menu Opened");
         });
 
-        // CLOSE MENU (The "X" Button)
+        // CLOSE MENU
         if (closeBtn) {
             closeBtn.addEventListener('click', (e) => {
                 e.preventDefault();
                 overlay.classList.remove('is-open');
                 menuBtn.classList.remove('is-active');
                 document.body.style.overflow = ''; 
-                console.log("Menu Closed");
             });
         }
 
-        // AUTO-CLOSE when clicking links (crucial for navigation)
+        // Close when a link is clicked
         const links = overlay.querySelectorAll('a');
         links.forEach(link => {
             link.addEventListener('click', () => {
@@ -36,9 +57,14 @@ function initMenuToggle() {
                 document.body.style.overflow = '';
             });
         });
-        
+
     } else {
-        // This will tell you exactly which ID is missing in your partial
-        console.warn("Menu components missing. Required IDs: menuToggle, menuClose, fullScreenMenu");
+        console.warn("Menu components not found. Ensure header.html has IDs: menuToggle, menuClose, fullScreenMenu");
     }
 }
+
+// Initial load on page ready - Keeps your Header and Footer loading logic
+document.addEventListener('DOMContentLoaded', () => {
+    includeHTML('partials/header.html', 'header');
+    includeHTML('partials/footer.html', 'footer'); 
+});
