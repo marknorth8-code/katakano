@@ -1,54 +1,70 @@
+<!-- =========================================
+     HEADER
+     ========================================= -->
+
 <header class="site-header" role="banner">
+
   <nav class="fixed-nav-container">
-    <div class="nav-inner">
-      <div class="nav-actions">
-        <a href="contact.html" class="button-get-in-touch">
-          <span>GET IN TOUCH &nearrow;</span>
-        </a>
-   
-          <button class="menu-toggle">Menu</button>
-<div class="menu-overlay" id="menuOverlay">
-  <button class="menu-close">×</button>
-                   
-          
-          <span class="toggle-label">MENU</span>
-          <div class="icon-wrapper">
-             <span class="line line-1"></span>
-             <span class="line line-2"></span>
-             <span class="line line-3"></span>
-          </div>
-        </button>
-      </div>
+    <div class="container header-inner">
+
+      <!-- LEFT SIDE -->
+      <a href="contact.html" class="button-get-in-touch">
+        GET IN TOUCH &nearrow;
+      </a>
+
+      <!-- RIGHT SIDE -->
+      <button type="button" class="menu-toggle" aria-label="Open menu">
+        Menu
+      </button>
+
     </div>
   </nav>
+
 </header>
 
-<!-- NEW DASHBOARD LAYOUT OVERLAY -->
-<div id="fullScreenMenu" class="menu-overlay">
-  
-  <!-- 1. BRANDING -->
+
+<!-- =========================================
+     FULL SCREEN MENU OVERLAY
+     ========================================= -->
+
+<div class="menu-overlay" id="fullScreenMenu">
+
+  <!-- Close -->
+  <button class="menu-close" aria-label="Close menu">×</button>
+
+  <!-- Branding -->
   <div class="menu-intro-branding">
     <div class="placeholder-logo">K</div>
     <div class="branding-text">Company Name and Partners</div>
   </div>
 
-  <!-- 2. CLOSE BUTTON -->
-  <button class="menu-close-btn" id="menuClose">&times;</button>
-
-  <!-- 3. THE GRID CONTAINER -->
-  <div class="overlay-content-grid">
-    
-   <div class="menu-overlay" id="menuOverlay">
-
-  <button class="menu-close" aria-label="Close menu">
-    ×
-  </button>
-
+  <!-- Navigation -->
   <nav class="menu-nav">
-    <a href="/about.html">About</a>
-    <a href="/services.html">Services</a>
-    <a href="/experience.html">Experience</a>
-    <a href="/contact.html">Contact</a>
+    <a href="about.html">About</a>
+    <a href="services.html">Services</a>
+    <a href="experience.html">Experience</a>
+    <a href="contact.html">Contact</a>
   </nav>
 
 </div>
+
+
+<!-- =========================================
+     MENU SCRIPT
+     ========================================= -->
+
+<script>
+  const menuToggle = document.querySelector('.menu-toggle');
+  const menuOverlay = document.getElementById('fullScreenMenu');
+  const menuClose = document.querySelector('.menu-close');
+
+  menuToggle.addEventListener('click', () => {
+    menuOverlay.classList.add('active');
+    document.body.classList.add('menu-open');
+  });
+
+  menuClose.addEventListener('click', () => {
+    menuOverlay.classList.remove('active');
+    document.body.classList.remove('menu-open');
+  });
+</script>
