@@ -28,7 +28,7 @@
   display: flex;
   flex-direction: column;
   /* Remove the 100px top padding to align with the image top */
-  padding: 0 5% 60px 5%; 
+  padding: 0 5% 60px 2%; 
 }
 
 /* Forces the text to fill 90% of its container */
