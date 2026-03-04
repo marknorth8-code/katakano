@@ -12,7 +12,7 @@ async function includeHTML(file, elementId) {
         const html = await response.text();
         container.innerHTML = html;
 
-        // Initialize menu AFTER header loads
+        // IMPORTANT: Initialize menu AFTER header loads
         if (elementId === 'header') {
             initMenuToggle();
         }
@@ -28,59 +28,25 @@ async function includeHTML(file, elementId) {
  */
 function initMenuToggle() {
 
-    const menuOverlay = document.getElementById("menuOverlay");
-    const menuToggle = document.querySelector(".menu-toggle");
-    const menuClose = document.querySelector(".menu-close");
+    const menuToggle = document.querySelector('.menu-toggle');
+    const menuOverlay = document.getElementById('fullScreenMenu');
+    const menuClose = document.querySelector('.menu-close');
 
-    if (!menuOverlay || !menuToggle || !menuClose) {
+    if (!menuToggle || !menuOverlay || !menuClose) {
         console.warn("Menu elements not found.");
         return;
     }
 
-    // Prevent double-binding if function runs again
-    if (menuOverlay.dataset.initialized === "true") return;
-    menuOverlay.dataset.initialized = "true";
-
-    const openMenu = () => {
-        menuOverlay.classList.add("active");
-        document.body.classList.add("menu-open");
-    };
-
-    const closeMenu = () => {
-        menuOverlay.classList.remove("active");
-        document.body.classList.remove("menu-open");
-    };
-
     // OPEN
-    menuToggle.addEventListener("click", (e) => {
-        e.preventDefault();
-        openMenu();
+    menuToggle.addEventListener('click', () => {
+        menuOverlay.classList.add('active');
+        document.body.classList.add('menu-open');
     });
 
-    // CLOSE (X button)
-    menuClose.addEventListener("click", (e) => {
-        e.preventDefault();
-        closeMenu();
-    });
-
-    // CLOSE when link clicked
-    const links = menuOverlay.querySelectorAll("a");
-    links.forEach(link => {
-        link.addEventListener("click", closeMenu);
-    });
-
-    // CLOSE on ESC key
-    document.addEventListener("keydown", (e) => {
-        if (e.key === "Escape") {
-            closeMenu();
-        }
-    });
-
-    // CLOSE if clicking outside nav content
-    menuOverlay.addEventListener("click", (e) => {
-        if (e.target === menuOverlay) {
-            closeMenu();
-        }
+    // CLOSE
+    menuClose.addEventListener('click', () => {
+        menuOverlay.classList.remove('active');
+        document.body.classList.remove('menu-open');
     });
 }
 
