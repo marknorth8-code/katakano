@@ -37,27 +37,50 @@ function initMenuToggle() {
         return;
     }
 
-    // OPEN MENU
+    // Prevent double-binding if function runs again
+    if (menuOverlay.dataset.initialized === "true") return;
+    menuOverlay.dataset.initialized = "true";
+
+    const openMenu = () => {
+        menuOverlay.classList.add("active");
+        document.body.classList.add("menu-open");
+    };
+
+    const closeMenu = () => {
+        menuOverlay.classList.remove("active");
+        document.body.classList.remove("menu-open");
+    };
+
+    // OPEN
     menuToggle.addEventListener("click", (e) => {
         e.preventDefault();
-        menuOverlay.classList.add("active");
-        document.body.style.overflow = "hidden";
+        openMenu();
     });
 
-    // CLOSE MENU (X button)
+    // CLOSE (X button)
     menuClose.addEventListener("click", (e) => {
         e.preventDefault();
-        menuOverlay.classList.remove("active");
-        document.body.style.overflow = "";
+        closeMenu();
     });
 
-    // CLOSE MENU when link clicked
+    // CLOSE when link clicked
     const links = menuOverlay.querySelectorAll("a");
     links.forEach(link => {
-        link.addEventListener("click", () => {
-            menuOverlay.classList.remove("active");
-            document.body.style.overflow = "";
-        });
+        link.addEventListener("click", closeMenu);
+    });
+
+    // CLOSE on ESC key
+    document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") {
+            closeMenu();
+        }
+    });
+
+    // CLOSE if clicking outside nav content
+    menuOverlay.addEventListener("click", (e) => {
+        if (e.target === menuOverlay) {
+            closeMenu();
+        }
     });
 }
 
