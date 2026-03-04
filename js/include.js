@@ -24,10 +24,17 @@ async function includeHTML(file, elementId) {
 /**
  * Consolidated menu toggle logic - Matches your CSS classes
  */
-function initMenuToggle() {
-    const menuBtn = document.getElementById('menuToggle');
-    const closeBtn = document.getElementById('menuClose');
-    const overlay = document.getElementById('fullScreenMenu');
+const menuOverlay = document.getElementById("menuOverlay");
+const menuToggle = document.querySelector(".menu-toggle");
+const menuClose = document.querySelector(".menu-close");
+
+menuToggle.addEventListener("click", () => {
+  menuOverlay.classList.add("active");
+});
+
+menuClose.addEventListener("click", () => {
+  menuOverlay.classList.remove("active");
+});
 
     if (menuBtn && overlay) {
         // OPEN MENU
