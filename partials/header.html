@@ -31,42 +31,46 @@
     <div class="branding-text">Company Name and Partners</div>
   </div>
 
-  
-  <!-- Close Button (Top Right) - Integrated with your ID -->
-  <button class="menu-close-btn" id="menuClose" aria-label="Close Menu">&times;</button>
 
-  <!-- 2. MAIN DASHBOARD CONTENT (Center Grid) -->
-  <div class="overlay-content">
+<div id="fullScreenMenu" class="menu-overlay">
+  <!-- Top Branding -->
+  <div class="menu-intro-branding">
+    <div class="placeholder-logo">K</div>
+    <div class="branding-text">Company Name and Partners</div>
+  </div>
 
-    <!-- Box 1: Main Menu -->
-    <div class="menu-column main">
-         <ul class="main menu">
-        <li>Home</li>
-        <li>About</li>
-        <li>Contact</li>
-        </ul>
+  <button class="menu-close-btn" id="menuClose">&times;</button>
+
+  <!-- THE GRID CONTAINER (This fixes the layout) -->
+  <div class="overlay-content-grid">
+    
+    <!-- Column 1: Main -->
+    <div class="menu-column main-nav">
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+
+    <!-- Column 2: Dev Mgmt -->
+    <div class="menu-column secondary-nav">
+      <span class="menu-label">Development Management</span>
+      <nav class="sub-links">
+        <a href="services.html">Services</a>
+        <a href="expertise.html">Our Expertise</a>
+      </nav>
+    </div>
+
+    <!-- Column 3: Investment -->
+    <div class="menu-column secondary-nav">
+      <span class="menu-label">Investment Opportunities</span>
+      <nav class="sub-links">
+        <a href="brazil.html">Brazil</a>
+        <a href="japan.html">Japan</a>
+        <a href="nz.html">New Zealand</a>
+        <a href="uk.html">United Kingdom</a>
+      </nav>
     </div>
   </div>
-    
-    <!-- Box 2: Development Management -->
- <div class="menu-column dev-mgmt">
-  <span class="menu-label">Development Management</span>
-  <div class="services-list"> <!-- Using a vertical flex container -->
-    <a href="services.html" class="services-link">Services</a>
-    <a href="expertise.html" class="services-link">Our Expertise</a>
-  </div>
-</div>
-
-    <!-- Box 3: Investment Opportunities -->
- <div class="menu-column dev-mgmt">
-  <span class="menu-label">Investment Opportunities</span>
-  <div class="services-list"> <!-- Using a vertical flex container -->
-    <a href="brazil.html" class="services-link">Brazil</a>
-    <a href="japan.html" class="services-link">Japan</a>
-<a href="nz.html" class="services-link">New Zealand</a>
-    <a href="uk.html" class="services-link">United Kingdom</a>
-  </div>
-</div>
-  
-
 </div>
