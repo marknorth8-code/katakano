@@ -232,7 +232,17 @@ a:hover {
   opacity: 0.6;
 }
 
+@media (max-width: 768px) {
 
+  .menu-nav a {
+    font-size: 24px;
+  }
+
+  .menu-close {
+    right: 30px;
+  }
+
+}
 
 /* =========================
    9. FOOTER
