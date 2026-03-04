@@ -274,6 +274,12 @@ p {
 }
 
 
+#fullScreenMenu.is-open {
+  display: flex !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
 
 
 /*---------------- Fix the narrow container -----------------*/
