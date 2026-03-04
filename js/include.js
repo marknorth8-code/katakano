@@ -10,9 +10,10 @@ function initMenuToggle() {
         // OPEN MENU
         menuBtn.addEventListener('click', (e) => {
             e.preventDefault();
-            overlay.classList.add('is-open'); // Triggers CSS .is-open { display: flex !important; }
+            // Use the class defined in your CSS to show the menu
+            overlay.classList.add('is-open'); 
             menuBtn.classList.add('is-active');
-            document.body.style.overflow = 'hidden';
+            document.body.style.overflow = 'hidden'; 
             console.log("Menu Opened");
         });
 
@@ -22,12 +23,12 @@ function initMenuToggle() {
                 e.preventDefault();
                 overlay.classList.remove('is-open');
                 menuBtn.classList.remove('is-active');
-                document.body.style.overflow = '';
+                document.body.style.overflow = ''; 
                 console.log("Menu Closed");
             });
         }
 
-        // AUTO-CLOSE on link click (important for single-page feel)
+        // AUTO-CLOSE when clicking links (crucial for navigation)
         const links = overlay.querySelectorAll('a');
         links.forEach(link => {
             link.addEventListener('click', () => {
@@ -37,6 +38,7 @@ function initMenuToggle() {
         });
         
     } else {
-        console.warn("Menu components not found. Ensure header.html has IDs: menuToggle, fullScreenMenu, menuClose");
+        // This will tell you exactly which ID is missing in your partial
+        console.warn("Menu components missing. Required IDs: menuToggle, menuClose, fullScreenMenu");
     }
 }
