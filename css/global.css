@@ -147,7 +147,7 @@ p {
 .line-3 { top: 14px; }
 
 
-/* --------------- 5. UPDATED MENU OVERLAY (Dashboard Layout) --------------- */
+/* --------------- 5. UPDATED MENU OVERLAY (Clean Typographic Layout) --------------- */
 
 .menu-overlay {
   position: fixed;
@@ -157,9 +157,9 @@ p {
   height: 100%;
   background-color: var(--bg-menu);
   color: #ffffff;
-  display: none; 
+  display: flex; /* Changed from 'none' for preview; keep 'none' if using JS toggle */
   flex-direction: column;
-  padding: 100px 5% 50px;
+  padding: 80px 8%;
   z-index: 1100;
   box-sizing: border-box;
 }
@@ -167,121 +167,115 @@ p {
 /* 1. BRANDING (Top Left) */
 .menu-intro-branding {
   position: absolute;
-  top: 50px;
-  left: 5%;
-}
-
-.placeholder-logo {
-  width: 50px;
-  height: 50px;
-  border: 1px solid var(--gold);
-  margin-bottom: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--gold);
-  font-weight: bold;
+  top: 40px;
+  left: 8%;
 }
 
 .branding-text {
-  font-size: 14px;
-  letter-spacing: 0.2em;
+  font-size: 13px;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--gold);
+  color: rgba(255,255,255,0.6); /* Muted white like the image */
 }
 
-/* 2. GRID CONTENT */
-.overlay-content {
+/* 2. GRID CONTENT - Three Column Layout */
+.overlay-content-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 40px;
-  flex-grow: 1;
-  align-items: center;
+  grid-template-columns: 1.5fr 1fr 1fr; /* Main links get more space */
+  gap: 60px;
+  margin-top: 100px; /* Space from top branding */
+  align-items: flex-start;
 }
 
-.menu-column {
-  padding: 40px;
-  background: rgba(255, 255, 255, 0.02);
-  border: 1px solid rgba(212, 175, 55, 0.2);
-}
-
-.menu-column.dev-mgmt {
-  border-top: 4px solid var(--gold); 
-}
-
-.menu-column.invest-opps {
-  border-left: 4px solid var(--gold); 
-  margin-top: 60px; 
-}
-
-/* Title text made smaller */
-.menu-label {
-  font-size: 1.1rem; /* Reduced from 2.2rem */
-  margin-bottom: 20px;
-  display: block;
-  font-weight: bold;
-  color: var(--gold);
-}
-
-/* Services/Expertise text made larger and vertical */
-.services-list {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-  margin-top: 10px;
-}
-
-.services-link {
-  color: #ffffff;
-  text-decoration: none;
-  font-size: 2rem;
-  font-weight: 400;
-  display: block;
-}
-
-
-/* Countries listed vertically */
-.country-list {
-  display: flex;
-  flex-direction: column; /* Changed from wrap to column */
-  gap: 10px;
-  margin-top: 20px;
+/* Column 1: Large Main Links */
+.menu-column.main-nav .nav-links {
   list-style: none;
   padding: 0;
 }
 
-.country-list li {
-  font-size: 1.8rem; /* Increased size to match visual hierarchy */
+.menu-column.main-nav .nav-links li a {
+  font-size: 80px; /* Large display size */
+  font-weight: 400;
   color: #fff;
-}
-
-.main-nav-header {
-  position: absolute;
-  top: 50px;           /* Aligns vertically with the branding/logo */
-  left: 50%;           /* Move to center of screen */
-  transform: translateX(-50%); /* Precisely centers the element */
-  display: flex;
-  gap: 40px;           /* Space between Home, About, Contact */
-  z-index: 10;
-}
-
-.main-nav-header a {
   text-decoration: none;
+  line-height: 1.1;
+  display: block;
+  margin-bottom: 10px;
+  transition: opacity 0.3s;
+}
+
+.menu-column.main-nav .nav-links li a:hover {
+  opacity: 0.7;
+}
+
+/* Columns 2 & 3: Secondary Links */
+.menu-label {
+  font-size: 16px;
+  color: rgba(255,255,255,0.5); /* Muted labels */
+  display: block;
+  margin-bottom: 30px;
+  font-weight: 300;
+}
+
+.sub-links {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.sub-links a {
   color: #fff;
-  font-size: 1.1rem;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  opacity: 0.8;
-  transition: 0.3s;
-  /* Removed the border and flex:1 to keep them as clean text links */
+  text-decoration: none;
+  font-size: 24px;
+  font-weight: 300;
+  transition: color 0.3s;
 }
 
-.main-nav-header a:hover {
-  opacity: 1;
-  color: var(--gold);
+.sub-links a:hover {
+  color: rgba(255,255,255,0.7);
 }
 
+/* Close Button (Circle White) */
+.menu-close-btn {
+  position: absolute;
+  top: 40px;
+  right: 5%;
+  background: #fff;
+  border: none;
+  color: #000;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  font-size: 24px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
+/* Bottom Logo */
+.menu-footer-logo {
+  position: absolute;
+  bottom: 60px;
+  left: 8%;
+}
+
+.katakano-logo-img {
+  height: 25px; /* Adjust based on your actual logo size */
+  opacity: 0.9;
+}
+
+/* Responsive Tweak */
+@media (max-width: 900px) {
+  .overlay-content-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    margin-top: 60px;
+  }
+  .menu-column.main-nav .nav-links li a {
+    font-size: 50px;
+  }
+}
 
 
 
