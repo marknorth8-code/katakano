@@ -161,6 +161,16 @@ p {
   z-index: 1100;
 }
 
+  /* HIDE BY DEFAULT */
+  display: none; 
+  flex-direction: column;
+}
+
+/* This class will be added by JavaScript to show the menu */
+.menu-overlay.is-open {
+  display: flex; 
+}
+
 /* Three-Column Grid */
 .overlay-content-grid {
   display: grid;
