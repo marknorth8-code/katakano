@@ -56,9 +56,10 @@ p.body-large {
   max-width: 600px;
 }
 
-/* --- 4. FLOATING PILL NAVIGATION (Verified) --- */
-/* --- 4. FLOATING PILL NAVIGATION (Unified) --- */
-.floating-nav {
+/* --- 4. FLOATING PILL NAVIGATION (High Specificity) --- */
+
+/* Target the wrapper first */
+.site-header .nav-actions {
   position: fixed;
   top: 40px;
   right: 40px;
@@ -68,40 +69,45 @@ p.body-large {
   align-items: center;
 }
 
-/* Target both the link and the button together */
-.nav-pill, 
-.floating-nav a, 
-.floating-nav button {
-  display: inline-flex !important;
+/* Target the specific Link and Button inside that wrapper */
+.site-header .nav-actions .button-get-in-touch,
+.site-header .nav-actions .nav-pill {
+  display: inline-flex;
   align-items: center;
   justify-content: center;
-  background: #ffffff !important;
-  border: 1px solid #EAEAEA !important;
-  padding: 10px 24px !important;
-  border-radius: 100px !important; /* Perfect Pill */
-  font-family: 'Inter', sans-serif !important;
-  font-size: 0.7rem !important;
-  font-weight: 500 !important;
-  letter-spacing: 0.1em !important;
-  text-transform: uppercase !important;
-  color: #1a1a1a !important;
-  text-decoration: none !important;
-  transition: all 0.3s ease;
+  height: 40px;
+  padding: 0 24px;
+  background-color: #ffffff;
+  border: 1px solid #EAEAEA;
+  border-radius: 100px; /* Pill shape */
+  
+  /* Typography */
+  color: #1a1a1a;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-decoration: none;
+  
   cursor: pointer;
-  height: 40px; /* Forces both to be the exact same height */
+  transition: all 0.3s ease;
   box-sizing: border-box;
 }
 
-/* Unified Hover State */
-.nav-pill:hover, 
-.floating-nav a:hover, 
-.floating-nav button:hover {
-  background: #011d01 !important; /* Your Deep Green */
-  color: #ffffff !important;
-  border-color: #011d01 !important;
+/* Hover States */
+.site-header .nav-actions .button-get-in-touch:hover,
+.site-header .nav-actions .nav-pill:hover {
+  background-color: #011d01; /* Your Deep Green */
+  border-color: #011d01;
+  color: #ffffff;
   transform: translateY(-2px);
 }
 
+/* Ensure the Menu Icon lines remain visible */
+.nav-pill .icon-wrapper {
+  margin-left: 10px;
+}
 
 /* --- 5. CLEAN FOOTER (From Image) --- */
 .footer-minimal {
@@ -115,7 +121,6 @@ p.body-large {
   font-size: 1.2rem;
   color: #111;
 }
-
 
 
 /* Menu Icon Lines */
