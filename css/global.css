@@ -22,123 +22,87 @@ body {
   text-rendering: optimizeLegibility;
 }
 
-/* --- 3. TYPOGRAPHY --- */
-h1, .display-title {
-  font-size: 26px; /* Fixed size: no more scaling */
+/* --- 3. REFINED TYPOGRAPHY (Editorial Style) --- */
+h1, .editorial-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2rem, 4vw, 3.5rem); /* Responsive scaling */
   font-weight: 400;
-  line-height: 1.2; 
-  margin-bottom: 1.2rem;
-  letter-spacing: -0.01em; 
+  line-height: 1.1;
+  color: var(--primary-dark);
+  margin-bottom: 2rem;
+  letter-spacing: -0.02em;
 }
 
-/* Global Variation for smaller, more technical section titles */
-h2.type-accent, .section-title-small {
-  font-size: clamp(1.5rem, 3vw, 2rem); 
-  font-weight: 500;
-  line-height: 1.3;
-  letter-spacing: -0.01em;
+.sub-heading-caps {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: #666;
+  display: block;
+  margin-bottom: 1.5rem;
 }
 
 h3 {
-  font-size: 23px; /* Fixed size: no more scaling */
-  font-weight: 400;
-  line-height: 1.2; 
-  margin-bottom: 1.2rem;
-  letter-spacing: -0.01em; 
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
 }
 
-/* Specific Classes (Only use these if you want to override the tags above) */
-.display-title { font-size: 26px; }
-.section-title { font-size: 26px; }
-
-p {
-  font-size: 1.125rem;
+p.body-large {
+  font-size: 1.25rem;
+  color: #444;
   line-height: 1.6;
-  color: #333333;
+  max-width: 600px;
 }
 
-/* Global Utility for Refined/Smaller Headings */
-.h2-refined {
-  font-size: 22px !important;
-  font-weight: 400 !important;        /* Fixed: moved semicolon to the end */
-  line-height: 1.2;
-  letter-spacing: -0.01em; 
-  margin-bottom: 0rem !important;     /* Fixed: moved semicolon to the end */
-}
-
-/* Global Utility for Smaller Body Text */
-.text-small {
-  font-size: 0.95rem !important;
-  line-height: 1.6;
-  color: #666;
-}
-
-
-
-/* --- 4. NAVIGATION & BUTTONS (Fixed Top-Right Stack) --- */
-.fixed-nav-container {
+/* --- 4. FLOATING PILL NAVIGATION --- */
+.floating-nav {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  padding: 30px 40px;
+  top: 40px;
+  right: 40px;
   z-index: 1000;
-  pointer-events: none;
   display: flex;
-  justify-content: flex-end; 
+  gap: 15px;
 }
 
-.nav-actions {
-  display: flex;
-  flex-direction: column; /* Vertical stack per image */
-  align-items: flex-end;
-  gap: 12px;
-  pointer-events: auto; 
-}
-
-/* Global Button Logic - Updated to Asymmetric Gradient Style */
-.btn-primary, .button-get-in-touch, .menu-toggle-pill {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 14px 40px;
-  /* This creates the unique "leaf" shape from your image */
-  border-radius: 60px 10px 60px 10px; 
-  font-size: 14px;
-  font-weight: 600;
+.nav-pill {
+  background: #ffffff;
+  border: 1px solid #EAEAEA;
+  padding: 12px 24px;
+  border-radius: 100px; /* Perfect pill shape */
+  font-family: 'Inter', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
-  letter-spacing: 0.15em;
-  transition: all 0.4s ease;
-  border: none;
+  color: var(--primary-dark);
   text-decoration: none;
+  transition: all 0.3s ease;
   cursor: pointer;
-  /* Shadow for depth */
-  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
 }
 
-/* Primary Button: Dark Gradient (Matches Image) */
-.btn-primary, .menu-toggle-pill {
-  background: linear-gradient(135deg, #333333 0%, #a1a1a1 100%);
+.nav-pill:hover {
+  background: var(--bg-menu); /* Deep Green hover */
   color: #fff;
-}
-
-.btn-primary:hover, .menu-toggle-pill:hover {
+  border-color: var(--bg-menu);
   transform: translateY(-2px);
-  box-shadow: 0 12px 24px rgba(0,0,0,0.15);
-  background: linear-gradient(135deg, #000000 0%, #888888 100%);
 }
 
-/* Secondary Button: Light/Inverted Version */
-.button-get-in-touch {
-  background: #fff;
-  color: #333;
-  border: 1px solid #e0e0e0;
+/* --- 5. CLEAN FOOTER (From Image) --- */
+.footer-minimal {
+  padding: 60px 5%;
+  background: #f9f9f9;
+  border-top: 1px solid #eee;
 }
 
-.button-get-in-touch:hover {
-  background: #f5f5f5;
-  border-color: #333;
+.footer-brand {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.2rem;
+  color: #111;
 }
+
 
 
 /* Menu Icon Lines */
