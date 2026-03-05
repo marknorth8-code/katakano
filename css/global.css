@@ -232,8 +232,20 @@ p.body-large {
 
 /* Ensure header stays ABOVE the menu overlay */
 .site-header {
-  position: relative;
-  z-index: 3000; /* Higher than .menu-overlay (1100) */
+  position: fixed; /* Changed from relative */
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 3000; /* Stays above .menu-overlay (1100) */
+  pointer-events: none; /* Allows clicks to pass through to content below */
+}
+
+.site-header .nav-actions {
+  /* Keep your existing styles, but ensure pointer-events are back on */
+  pointer-events: auto; 
+  position: fixed; /* Keep fixed to top right */
+  top: 40px;
+  right: 40px;
 }
 
 /* When the menu is open, change the button colors */
