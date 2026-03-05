@@ -56,39 +56,41 @@ p.body-large {
   max-width: 600px;
 }
 
-/* --- 4. FLOATING PILL NAVIGATION --- */
+/* --- 4. FLOATING PILL NAVIGATION (Verified) --- */
 .floating-nav {
   position: fixed;
   top: 40px;
   right: 40px;
-  z-index: 1000;
+  z-index: 2000; /* Increased to stay above everything */
   display: flex;
   gap: 15px;
 }
 
 .nav-pill {
-  background: #ffffff;
-  border: 1px solid #EAEAEA;
-  padding: 12px 24px;
-  border-radius: 100px; /* Perfect pill shape */
+  display: inline-block !important;
+  background: #ffffff !important;
+  border: 1px solid #111 !important;
+  padding: 12px 28px !important;
+  border-radius: 50px !important; /* Forces the pill shape */
   font-family: 'Inter', sans-serif;
-  font-size: 0.7rem;
+  font-size: 0.75rem;
   font-weight: 500;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--primary-dark);
+  color: #111 !important;
   text-decoration: none;
   transition: all 0.3s ease;
   cursor: pointer;
   box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  line-height: 1; /* Prevents text from being off-center */
 }
 
 .nav-pill:hover {
-  background: var(--bg-menu); /* Deep Green hover */
-  color: #fff;
-  border-color: var(--bg-menu);
-  transform: translateY(-2px);
+  background: #011d01 !important; /* Deep Green hover */
+  color: #fff !important;
+  border-color: #011d01 !important;
 }
+
 
 /* --- 5. CLEAN FOOTER (From Image) --- */
 .footer-minimal {
