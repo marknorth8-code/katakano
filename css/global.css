@@ -1,23 +1,26 @@
-/* --- 1. DESIGN TOKENS --- */
+/* =========================
+   1. ROOT VARIABLES
+   ========================= */
+
 :root {
-  --primary-dark: #1a1a1a;
-  --accent-red: #E10600;
-  --bg-light: #ffffff;
-  --bg-menu: #011d01; /* Your custom dark green */
-  --font-main: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  --section-padding: 140px;
-  --container-width: 150px;
-}
 
-/* --- 2. BASE STYLES --- */
-* { box-sizing: border-box; margin: 0; padding: 0; }
+  /* Core Colours */
+  --black: #000000;
+  --dark-grey: #4a4a4a;
+  --light-grey: #eaeaea;
+  --white: #ffffff;
+  --menu-bg: #011d01;
 
-body {
-  font-family: var(--font-main);
-  color: var(--primary-dark);
-  line-height: 1.6;
-  background-color: var(--bg-light);
-  -webkit-font-smoothing: antialiased;
+  /* Spacing Scale */
+  --space-xs: 24px;
+  --space-sm: 48px;
+  --space-md: 80px;
+  --space-lg: 160px;
+  --space-xl: 220px;
+
+  /* Container Width */
+  --container-width: 1100px;
+
 }
 
 /* --- 3. TYPOGRAPHY --- */
