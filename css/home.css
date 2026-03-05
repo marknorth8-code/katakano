@@ -77,7 +77,63 @@
   letter-spacing: 0;
 }
 
-/* --- 3. EXPERIENCE SECTION (Staggered) --- */
+/* --- SECTION 4: GEOGRAPHIC PRESENCE (Editorial Alignment) --- */
+.geographic-presence {
+  padding: 140px 5%; /* Increased whitespace for premium feel */
+  background-color: #ffffff;
+  border-top: 1px solid #EAEAEA;
+}
+
+.geographic-presence .container {
+  max-width: 1200px;
+  margin: 0; /* Left align the container content */
+  text-align: left;
+}
+
+.geographic-presence .section-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.25em; /* Extreme tracking for architectural look */
+  color: #666666;
+  margin-bottom: 60px;
+  font-weight: 500;
+}
+
+.location-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column; /* Stacked vertically like the reference */
+  gap: 20px;
+  padding: 0;
+}
+
+.location-list li {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 300;
+  color: #111111;
+  position: relative;
+  padding-left: 0;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+/* Subtle hover effect to maintain "Calm Professionalism" */
+.location-list li:hover {
+  color: #011D01; /* Your Deep Green accent */
+  transform: translateX(10px);
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  .geographic-presence {
+    padding: 80px 8%;
+  }
+}
+
+
+
+/* --- 4. EXPERIENCE SECTION (Staggered) --- */
 .experience-section {
   padding: 100px 5%;
   background-color: #fff;
@@ -103,7 +159,7 @@
   /* This creates the 'portrait' anchor look from the reference */
 }
 
-/* --- 4. GLOBAL PRESENCE (Typographic List) --- */
+/* --- 5. GLOBAL PRESENCE (Typographic List) --- */
 .geographic-presence {
   padding: 120px 5%;
   text-align: center;
