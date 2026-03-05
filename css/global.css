@@ -57,38 +57,49 @@ p.body-large {
 }
 
 /* --- 4. FLOATING PILL NAVIGATION (Verified) --- */
+/* --- 4. FLOATING PILL NAVIGATION (Unified) --- */
 .floating-nav {
   position: fixed;
   top: 40px;
   right: 40px;
-  z-index: 2000; /* Increased to stay above everything */
+  z-index: 2000;
   display: flex;
-  gap: 15px;
+  gap: 12px;
+  align-items: center;
 }
 
-.nav-pill {
-  display: inline-block !important;
+/* Target both the link and the button together */
+.nav-pill, 
+.floating-nav a, 
+.floating-nav button {
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
   background: #ffffff !important;
-  border: 1px solid #111 !important;
-  padding: 12px 28px !important;
-  border-radius: 50px !important; /* Forces the pill shape */
-  font-family: 'Inter', sans-serif;
-  font-size: 0.75rem;
-  font-weight: 500;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: #111 !important;
-  text-decoration: none;
+  border: 1px solid #EAEAEA !important;
+  padding: 10px 24px !important;
+  border-radius: 100px !important; /* Perfect Pill */
+  font-family: 'Inter', sans-serif !important;
+  font-size: 0.7rem !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.1em !important;
+  text-transform: uppercase !important;
+  color: #1a1a1a !important;
+  text-decoration: none !important;
   transition: all 0.3s ease;
   cursor: pointer;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-  line-height: 1; /* Prevents text from being off-center */
+  height: 40px; /* Forces both to be the exact same height */
+  box-sizing: border-box;
 }
 
-.nav-pill:hover {
-  background: #011d01 !important; /* Deep Green hover */
-  color: #fff !important;
+/* Unified Hover State */
+.nav-pill:hover, 
+.floating-nav a:hover, 
+.floating-nav button:hover {
+  background: #011d01 !important; /* Your Deep Green */
+  color: #ffffff !important;
   border-color: #011d01 !important;
+  transform: translateY(-2px);
 }
 
 
