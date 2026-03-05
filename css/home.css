@@ -52,30 +52,105 @@
 }
 
 /* --- 2. MINIMALIST SERVICE LIST (Right Side) --- */
-.service-list-minimal {
-  margin-top: 60px;
+/* --- SECTION 4: MINIMALIST SERVICES (Split Grid) --- */
+
+/* The outer container uses the 1fr / 1.5fr split you want */
+.services-container {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr; 
   border-top: 1px solid #eee;
-  padding-top: 40px;
+  align-items: stretch;
 }
 
-.service-item {
-  margin-bottom: 40px;
+/* Left Column Styling */
+.services-header {
+  padding: 100px 5%;
+  background-color: #f9f9f9; 
+  display: flex;
+  flex-direction: column;
 }
 
-.service-item h3 {
+.services-header h2 {
   font-family: 'Playfair Display', serif;
-  font-size: 1.6rem;
-  margin-bottom: 8px;
-  color: #111;
+  font-size: clamp(2rem, 4vw, 3rem);
+  margin-bottom: 20px;
+  font-weight: 400;
 }
 
-.service-item p {
+.services-header p {
   font-family: 'Inter', sans-serif;
-  font-size: 0.95rem;
   color: #666;
-  text-transform: none;
-  letter-spacing: 0;
+  max-width: 300px;
+  line-height: 1.6;
 }
+
+/* Right Column (Stacked List) */
+.services-grid {
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+}
+
+.service-box {
+  display: grid;
+  grid-template-columns: 1fr 2fr; /* Splits Title from Text/Link */
+  padding: 60px 40px;
+  border-bottom: 1px solid #eee;
+  border-left: 1px solid #eee;
+  transition: background-color 0.3s ease;
+}
+
+.service-box:hover {
+  background-color: #fcfcfc;
+}
+
+.service-box h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.2rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding-right: 20px;
+}
+
+.service-content p {
+  font-family: 'Inter', sans-serif;
+  color: #555;
+  line-height: 1.7;
+  margin-bottom: 15px;
+}
+
+/* Style for your "Learn More" links */
+.learn-more {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #111;
+  text-decoration: none;
+  border-bottom: 1px solid #111;
+  padding-bottom: 2px;
+  transition: opacity 0.3s;
+}
+
+.learn-more:hover {
+  opacity: 0.6;
+}
+
+/* --- MOBILE ADAPTATION FOR SECTION 4 --- */
+@media (max-width: 992px) {
+  .services-container {
+    grid-template-columns: 1fr; /* Stacks the header on top of the list */
+  }
+  
+  .service-box {
+    grid-template-columns: 1fr; /* Header and text stack within each box */
+    gap: 15px;
+    border-left: none;
+    padding: 40px 5%;
+  }
+}
+
 
 /* --- SECTION 4: GEOGRAPHIC PRESENCE (Editorial Alignment) --- */
 .geographic-presence {
