@@ -1,295 +1,137 @@
-/* --- SECTION 2: REFINED CONTENT SPLIT --- */
-.split-section {
-  width: 100%;
-  background-color: #ffffff;
-  overflow: hidden;
-  border-bottom: 1px solid #eee;
-}
-
-.split-grid {
-  display: flex;
-  width: 100%;
-  align-items: flex-start; /* CRITICAL: Aligns children to the top */
-}
-
-.split-visual {
-  flex: 1;
-  min-width: 50%;
-}
-
-.split-visual img {
-  width: 100%;
-  height: auto; /* Changed from 100% to auto to avoid stretching */
-  display: block;
-}
-
-.split-content {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  /* Remove the 100px top padding to align with the image top */
-  padding: 0 5% 60px 2%; 
-}
-
-/* Forces the text to fill 90% of its container */
-.h2-refined {
-  width: 90%; 
-  font-size: 22px !important;
-  line-height: 1.4;
-  text-align: left;
-  /* Overriding the global.css !important conflict */
-  margin-top: 0 !important; 
-  margin-bottom: 2rem !important;
-}
-
-/* Ensure the sub-grid also respects the 90% width */
-.details-grid {
-  width: 90%;
-  display: flex;
+/* --- 1. HERO EDITORIAL GRID --- */
+.hero-editorial {
+  padding: 100px 5% 60px 5%;
+  background-color: #fff;
+  display: grid;
+  grid-template-columns: 1fr;
   gap: 40px;
-  margin-top: 20px;
+}
+
+/* The 'K' Logo at the top center */
+.hero-logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 60px;
+  color: #111;
+}
+
+.hero-header {
+  text-align: center;
+  max-width: 900px;
+  margin: 0 auto 80px auto;
+}
+
+.editorial-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2rem, 5vw, 3.8rem);
+  line-height: 1.1;
+  font-weight: 400;
+  color: #111;
+  letter-spacing: -0.02em;
+}
+
+/* The asymmetrical 2-column layout for the hero images/content */
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr; /* Asymmetrical split */
+  gap: 80px;
+  align-items: start;
+}
+
+.hero-image-main img {
+  width: 100%;
+  height: auto;
+  display: block;
+  /* Optional: adds a subtle shadow like high-end print */
+  box-shadow: 20px 20px 60px rgba(0,0,0,0.03);
+}
+
+.hero-side-content {
+  padding-top: 40px;
+}
+
+/* --- 2. MINIMALIST SERVICE LIST (Right Side) --- */
+.service-list-minimal {
+  margin-top: 60px;
   border-top: 1px solid #eee;
   padding-top: 40px;
 }
 
-
-/* OVERRIDE: Smaller font for Section 2 Title */
-.split-content h2 {
-  font-size: clamp(1.8rem, 3vw, 2.5rem); 
-  font-weight: 500;
-  line-height: 1.2;
-  margin-bottom: 1.5rem;
-}
-
-/* OVERRIDE: Refined font for Section 2 Sub-headline */
-.split-content h3 {
-  font-size: 1.1rem; /* Smaller, more sophisticated size */
-  font-weight: 400;
-  line-height: 1.6;
-  color: #555;
-  margin-bottom: 30px;
-  max-width: 90%;
-}
-
-/* OVERRIDE: Specific small font for the Investment/Development text */
-.detail-column p {
-  font-size: 0.9rem !important; /* Forces override of global 1.125rem */
-  line-height: 1.6;
-  color: #666;
-}
-
-.detail-column p strong {
-  font-size: 1rem;
-  color: var(--primary-dark);
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  display: block;
-  margin-bottom: 10px;
-}
-
-.detail-column hr {
-  border: none;
-  border-top: 2px solid var(--accent-red); /* Uses your brand red */
-  width: 30px;
-  margin: 0 0 15px 0;
-}
-
-
-/* --- 2. ASYMMETRICAL STRATEGY GRID --- */
-
-.grid-layout {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 80px;
-  align-items: center;
-}
-
-.sub-heading {
-  display: block;
-  text-transform: uppercase;
-  letter-spacing: 0.2em;
-  font-size: 0.75rem;
-  color: var(--accent-red);
-  margin-bottom: 1rem;
-}
-
-.featured-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 30px;
-}
-
-.card-item {
-  background-size: cover;
-  background-position: center;
-  position: relative;
-  height: 150px;
-  transition: transform 0.5s ease;
-}
-
-.card-tall { transform: translateY(-40px); } /* Staggered effect */
-.card-short { transform: translateY(40px); }
-
-.card-item:hover { transform: translateY(0) scale(1.02); }
-
-.card-content {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  padding: 30px;
-  background: linear-gradient(transparent, rgba(0,0,0,0.7));
-  color: white;
-}
-
-.card-content h3 { font-size: 1.1rem; letter-spacing: 0.05em; }
-
-/* --- 3. MINIMALIST SERVICES --- */
-
-/* Container Layout */
-.services-container {
-  display: grid;
-  /* Fixed: This forces the 1fr (left) and 1.5fr (right) side-by-side layout */
-  grid-template-columns: 1fr 1.5fr; 
-  border-top: 1px solid #e0e0e0;
-  align-items: stretch;
-}
-
-/* Left Column Styling */
-.services-header {
-  padding: 80px 60px;
-  background-color: #f9f9f9; 
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-}
-
-.services-header h2 {
-  font-size: clamp(2rem, 4vw, 3rem);
-  margin-bottom: 20px;
-  line-height: 1.1;
-  font-weight: 300;
-}
-
-.services-header p {
-  color: #666;
+.service-item {
   margin-bottom: 40px;
-  max-width: 300px;
 }
 
-/* Specific Service Button Logic */
-.services-header .hero-actions {
-  margin-top: auto; /* Pushes button to bottom if header is tall */
-  padding-top: 30px;
+.service-item h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.6rem;
+  margin-bottom: 8px;
+  color: #111;
 }
 
-/* Right Column (Grid) Styling */
-.services-grid {
-  display: flex;
-  flex-direction: column;
+.service-item p {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.95rem;
+  color: #666;
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+/* --- 3. EXPERIENCE SECTION (Staggered) --- */
+.experience-section {
+  padding: 100px 5%;
   background-color: #fff;
 }
 
-.service-box {
+.experience-grid {
   display: grid;
-  /* Splits the service title from the description */
-  grid-template-columns: 1fr 2fr; 
-  padding: 60px 40px;
-  border-bottom: 1px solid #e0e0e0;
-  border-left: 1px solid #e0e0e0;
-  transition: background-color 0.3s ease;
+  grid-template-columns: 0.8fr 1.2fr;
+  gap: 60px;
+  align-items: center;
 }
 
-.service-box:hover {
-  background-color: #fcfcfc;
+.experience-text h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.5rem;
+  margin-bottom: 20px;
 }
 
-.service-box h3 {
-  font-size: 1.1rem;
-  font-weight: 500;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
+.experience-visual img {
+  width: 100%;
+  height: 600px;
+  object-fit: cover;
+  /* This creates the 'portrait' anchor look from the reference */
 }
 
-.service-content p {
-  color: #555;
-  line-height: 1.7;
-  font-size: 1.05rem;
-}
-
-/* Responsive for Mobile */
-@media (max-width: 992px) {
-  .services-container {
-    grid-template-columns: 1fr; /* Stacks columns on tablet/mobile */
-  }
-  
-  .service-box {
-    grid-template-columns: 1fr;
-    gap: 20px;
-    border-left: none;
-  }
-  
-  .services-header {
-    padding: 60px 40px;
-  }
-}
-
-/* --- 4. QUOTE SECTION --- */
-.quote-section {
-  padding: 150px 0;
-  background-color: #f8f8f8;
-  color: black;
+/* --- 4. GLOBAL PRESENCE (Typographic List) --- */
+.geographic-presence {
+  padding: 120px 5%;
   text-align: center;
+  border-top: 1px solid #eee;
 }
 
-.display-quote {
-  font-size: clamp(2rem, 5vw, 4rem);
-  font-weight: 300;
-  line-height: 1.2;
-  margin-bottom: 2rem;
-}
-
-.quote-meta {
+.location-list {
+  list-style: none;
   display: flex;
-  flex-direction: column;
-  gap: 5px;
-  font-size: 0.9rem;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: rgba(0, 0, 0, 0.6); /* Changed from white to black */
+  justify-content: center;
+  gap: 40px;
+  margin-top: 40px;
 }
 
-/* --- 5. COMPACT CONTACT --- */
-.contact-section {
-  padding: 80px 0;
-  text-align: center; /* Centers text and the button button */
+.location-list li {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+  color: #111;
 }
 
-.contact-text-area h3 {
-  font-weight: bold;
-  margin-top: 20px;
-  line-height: 1.5;
-  max-width: 800px; /* Keeps the long text from stretching too wide */
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.contact-action {
-  margin-top: 40px; /* Space between text and button */
-}
-
-/* --- MOBILE RESPONSIVENESS --- */
-@media (max-width: 992px) {
-  .hero-wrapper, .grid-layout, .split-footer {
-    flex-direction: column;
-    text-align: center;
+/* --- MOBILE ADAPTATION --- */
+@media (max-width: 1024px) {
+  .hero-grid, .experience-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
   }
   
-  .hero-content { padding: 60px 20px; order: 2; }
-  .hero-visual { order: 1; height: 400px; }
-  
-  .grid-layout { grid-template-columns: 1fr; }
-  .card-tall, .card-short { transform: none; }
-  
-  .split-footer { align-items: center; gap: 40px; }
+  .hero-side-content {
+    padding-top: 0;
+  }
 }
