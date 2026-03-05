@@ -71,6 +71,49 @@ p {
   color: #666;
 }
 
+/*--------------- 1. Updated Section Styles------------- */
+.intro {
+  display: flex;
+  flex-direction: column;
+  /* Change 'space-between' to 'flex-start' to move everything to the top */
+  justify-content: flex-start; 
+  /* Center children horizontally */
+  align-items: center; 
+  height: auto; /* Changed from 20vh to auto so it wraps your content */
+  padding: 60px 8%; 
+  background-color: var(--bg-light);
+  text-align: center; /* Ensures text inside elements also centers */
+}
+
+/* 4. Updated Logo Wrapper */
+.intro-logo-wrapper {
+  /* Remove margin-top: auto (which was pushing it down) */
+  margin-top: 0; 
+  margin-bottom: 20px; /* Adds space between logo and text below it */
+  order: -1; /* This forces the logo to the very top regardless of HTML order */
+}
+
+.intro-logo {
+  max-width: 400px;
+  height: auto;
+  display: block;
+  margin: 0 auto; /* Redundant but safe for centering */
+}
+
+
+/* 2. Style the container to occupy the available space */
+.intro-container {
+  display: contents; /* Allows children to participate in the .intro flexbox */
+}
+
+/* 3. Style the top text */
+.intro-text {
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--primary-dark);
+  margin-bottom: 20px; /* Safety gap */
+}
 
 
 /* --- 4. NAVIGATION & BUTTONS (Fixed Top-Right Stack) --- */
@@ -138,18 +181,40 @@ p {
   border-color: #333;
 }
 
+/* --- FIX FOR MENU/CLOSE OVERLAP & GAP --- */
+
+/* 1. Hide the word 'MENU' entirely when overlay is open */
+.menu-open .toggle-label {
+  display: none !important; 
+}
+
+/* 2. Inject 'CLOSE' with the 10px gap before the X icon */
+.menu-open .nav-pill::before {
+  content: "CLOSE";
+  font-family: 'Inter', sans-serif;
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  color: #ffffff;
+  margin-right: 10px; /* This creates the gap you need */
+}
+
+/* 3. Ensure the pill expands slightly for the new text */
+.menu-open .nav-pill {
+  padding: 0 20px;
+  background-color: transparent !important;
+  border-color: rgba(255,255,255,0.3) !important;
+}
+
 
 /* Menu Icon Lines */
 .icon-wrapper { position: relative; width: 24px; height: 16px; margin-left: 10px; }
-.line { display: block; position: absolute; height: 2px; width: 100%; background: currentColor; transition: 0.3s ease; }
+.line { display: block; position: absolute; height: 2px; width: 100%; background: currentColor; transition: transform 0.3s ease, opacity 0.3s ease; }
 .line-1 { top: 0; }
 .line-2 { top: 7px; width: 70%; right: 0; }
 .line-3 { top: 14px; }
 
 
 /* --------------- 5. UPDATED MENU OVERLAY (Clean Typographic Layout) --------------- */
-
-/* --- 5. FINAL FIXED DASHBOARD LAYOUT --- */
 
 .menu-overlay {
   position: fixed;
@@ -259,8 +324,6 @@ p {
 }
 
 
-
-
 /* CLOSE BUTTON */
 .menu-close-btn {
   position: absolute;
@@ -293,51 +356,6 @@ p {
 
 .section-padding {
   padding: var(--section-padding) 0;
-}
-
-
-/*--------------- 1. Updated Section Styles------------- */
-.intro {
-  display: flex;
-  flex-direction: column;
-  /* Change 'space-between' to 'flex-start' to move everything to the top */
-  justify-content: flex-start; 
-  /* Center children horizontally */
-  align-items: center; 
-  height: auto; /* Changed from 20vh to auto so it wraps your content */
-  padding: 60px 8%; 
-  background-color: var(--bg-light);
-  text-align: center; /* Ensures text inside elements also centers */
-}
-
-/* 4. Updated Logo Wrapper */
-.intro-logo-wrapper {
-  /* Remove margin-top: auto (which was pushing it down) */
-  margin-top: 0; 
-  margin-bottom: 20px; /* Adds space between logo and text below it */
-  order: -1; /* This forces the logo to the very top regardless of HTML order */
-}
-
-.intro-logo {
-  max-width: 400px;
-  height: auto;
-  display: block;
-  margin: 0 auto; /* Redundant but safe for centering */
-}
-
-
-/* 2. Style the container to occupy the available space */
-.intro-container {
-  display: contents; /* Allows children to participate in the .intro flexbox */
-}
-
-/* 3. Style the top text */
-.intro-text {
-  font-size: 0.9rem;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  color: var(--primary-dark);
-  margin-bottom: 20px; /* Safety gap */
 }
 
 
