@@ -1,13 +1,32 @@
+/* --- GLOBAL UTILITIES (Required for your HTML) --- */
+.section-padding {
+  padding: 100px 0;
+}
+
+.btn-primary {
+  display: inline-block;
+  padding: 15px 35px;
+  background-color: #111;
+  color: #fff;
+  text-decoration: none;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.85rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  transition: opacity 0.3s ease;
+  margin-top: 30px;
+}
+
+.btn-primary:hover {
+  opacity: 0.8;
+}
+
 /* --- 1. HERO EDITORIAL GRID --- */
 .hero-editorial {
   padding: 100px 5% 60px 5%;
   background-color: #fff;
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 40px;
 }
 
-/* The 'K' Logo at the top center */
 .hero-logo {
   font-family: 'Playfair Display', serif;
   font-size: 2.5rem;
@@ -22,19 +41,27 @@
   margin: 0 auto 80px auto;
 }
 
+.sub-heading-caps {
+  font-family: 'Inter', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-size: 0.75rem;
+  color: #666;
+  display: block;
+  margin-bottom: 20px;
+}
+
 .editorial-title {
   font-family: 'Playfair Display', serif;
   font-size: clamp(2rem, 5vw, 3.8rem);
   line-height: 1.1;
   font-weight: 400;
   color: #111;
-  letter-spacing: -0.02em;
 }
 
-/* The asymmetrical 2-column layout for the hero images/content */
 .hero-grid {
   display: grid;
-  grid-template-columns: 1.2fr 0.8fr; /* Asymmetrical split */
+  grid-template-columns: 1.2fr 0.8fr;
   gap: 80px;
   align-items: start;
 }
@@ -43,7 +70,6 @@
   width: 100%;
   height: auto;
   display: block;
-  /* Optional: adds a subtle shadow like high-end print */
   box-shadow: 20px 20px 60px rgba(0,0,0,0.03);
 }
 
@@ -51,164 +77,30 @@
   padding-top: 40px;
 }
 
-/* --- 2. MINIMALIST SERVICE LIST (Right Side) --- */
-/* --- SECTION 4: MINIMALIST SERVICES (Split Grid) --- */
-
-/* The outer container uses the 1fr / 1.5fr split you want */
-.services-container {
-  display: grid;
-  grid-template-columns: 1fr 1.5fr; 
+/* Internal Hero Service List */
+.service-list-minimal {
+  margin-top: 60px;
   border-top: 1px solid #eee;
-  align-items: stretch;
+  padding-top: 40px;
 }
 
-/* Left Column Styling */
-.services-header {
-  padding: 100px 5%;
-  background-color: #f9f9f9; 
-  display: flex;
-  flex-direction: column;
+.service-item {
+  margin-bottom: 40px;
 }
 
-.services-header h2 {
+.service-item h3 {
   font-family: 'Playfair Display', serif;
-  font-size: clamp(2rem, 4vw, 3rem);
-  margin-bottom: 20px;
-  font-weight: 400;
+  font-size: 1.6rem;
+  margin-bottom: 8px;
 }
 
-.services-header p {
+.service-item p {
   font-family: 'Inter', sans-serif;
+  font-size: 0.95rem;
   color: #666;
-  max-width: 300px;
-  line-height: 1.6;
 }
 
-/* Right Column (Stacked List) */
-.services-grid {
-  display: flex;
-  flex-direction: column;
-  background-color: #fff;
-}
-
-.service-box {
-  display: grid;
-  grid-template-columns: 1fr 2fr; /* Splits Title from Text/Link */
-  padding: 60px 40px;
-  border-bottom: 1px solid #eee;
-  border-left: 1px solid #eee;
-  transition: background-color 0.3s ease;
-}
-
-.service-box:hover {
-  background-color: #fcfcfc;
-}
-
-.service-box h3 {
-  font-family: 'Playfair Display', serif;
-  font-size: 1.2rem;
-  font-weight: 500;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  padding-right: 20px;
-}
-
-.service-content p {
-  font-family: 'Inter', sans-serif;
-  color: #555;
-  line-height: 1.7;
-  margin-bottom: 15px;
-}
-
-/* Style for your "Learn More" links */
-.learn-more {
-  font-family: 'Inter', sans-serif;
-  font-size: 0.85rem;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  color: #111;
-  text-decoration: none;
-  border-bottom: 1px solid #111;
-  padding-bottom: 2px;
-  transition: opacity 0.3s;
-}
-
-.learn-more:hover {
-  opacity: 0.6;
-}
-
-/* --- MOBILE ADAPTATION FOR SECTION 4 --- */
-@media (max-width: 992px) {
-  .services-container {
-    grid-template-columns: 1fr; /* Stacks the header on top of the list */
-  }
-  
-  .service-box {
-    grid-template-columns: 1fr; /* Header and text stack within each box */
-    gap: 15px;
-    border-left: none;
-    padding: 40px 5%;
-  }
-}
-
-
-/* --- SECTION 4: GEOGRAPHIC PRESENCE (Editorial Alignment) --- */
-.geographic-presence {
-  padding: 140px 5%; /* Increased whitespace for premium feel */
-  background-color: #ffffff;
-  border-top: 1px solid #EAEAEA;
-}
-
-.geographic-presence .container {
-  max-width: 1200px;
-  margin: 0; /* Left align the container content */
-  text-align: left;
-}
-
-.geographic-presence .section-title {
-  font-family: 'Playfair Display', serif;
-  font-size: 0.75rem;
-  text-transform: uppercase;
-  letter-spacing: 0.25em; /* Extreme tracking for architectural look */
-  color: #666666;
-  margin-bottom: 60px;
-  font-weight: 500;
-}
-
-.location-list {
-  list-style: none;
-  display: flex;
-  flex-direction: column; /* Stacked vertically like the reference */
-  gap: 20px;
-  padding: 0;
-}
-
-.location-list li {
-  font-family: 'Inter', sans-serif;
-  font-size: 1.1rem;
-  font-weight: 300;
-  color: #111111;
-  position: relative;
-  padding-left: 0;
-  transition: transform 0.3s ease, color 0.3s ease;
-}
-
-/* Subtle hover effect to maintain "Calm Professionalism" */
-.location-list li:hover {
-  color: #011D01; /* Your Deep Green accent */
-  transform: translateX(10px);
-}
-
-/* Mobile adjustments */
-@media (max-width: 768px) {
-  .geographic-presence {
-    padding: 80px 8%;
-  }
-}
-
-
-
-/* --- 4. EXPERIENCE SECTION (Staggered) --- */
+/* --- 2. EXPERIENCE SECTION (Staggered) --- */
 .experience-section {
   padding: 100px 5%;
   background-color: #fff;
@@ -231,38 +123,116 @@
   width: 100%;
   height: 600px;
   object-fit: cover;
-  /* This creates the 'portrait' anchor look from the reference */
 }
 
-/* --- 5. GLOBAL PRESENCE (Typographic List) --- */
-.geographic-presence {
-  padding: 120px 5%;
-  text-align: center;
+/* --- 3. SECTION 4: MINIMALIST SERVICES (Split Grid) --- */
+.services-container {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr; 
   border-top: 1px solid #eee;
+  align-items: stretch;
+}
+
+.services-header {
+  padding: 100px 5%;
+  background-color: #f9f9f9; 
+  display: flex;
+  flex-direction: column;
+}
+
+.services-header h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2rem, 4vw, 2.5rem);
+  margin-bottom: 20px;
+}
+
+.services-grid {
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+}
+
+.service-box {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  padding: 60px 40px;
+  border-bottom: 1px solid #eee;
+  border-left: 1px solid #eee;
+  transition: background-color 0.3s ease;
+}
+
+.service-box:hover {
+  background-color: #fcfcfc;
+}
+
+.service-box h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.learn-more {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #111;
+  text-decoration: none;
+  border-bottom: 1px solid #111;
+  padding-bottom: 2px;
+}
+
+/* --- 4. GEOGRAPHIC PRESENCE --- */
+.geographic-presence {
+  padding: 140px 5%;
+  background-color: #ffffff;
+  border-top: 1px solid #EAEAEA;
+}
+
+.geographic-presence .section-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.25em;
+  color: #666;
+  margin-bottom: 60px;
 }
 
 .location-list {
   list-style: none;
   display: flex;
-  justify-content: center;
-  gap: 40px;
-  margin-top: 40px;
+  flex-direction: column;
+  gap: 20px;
+  padding: 0;
 }
 
 .location-list li {
-  font-family: 'Playfair Display', serif;
-  font-size: 1.5rem;
-  color: #111;
+  font-family: 'Inter', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 300;
+  transition: transform 0.3s ease, color 0.3s ease;
 }
 
-/* --- MOBILE ADAPTATION --- */
+.location-list li:hover {
+  color: #011D01;
+  transform: translateX(10px);
+}
+
+/* --- 5. RESPONSIVE ADAPTATIONS --- */
 @media (max-width: 1024px) {
   .hero-grid, .experience-grid {
     grid-template-columns: 1fr;
-    gap: 40px;
-  }
-  
-  .hero-side-content {
-    padding-top: 0;
   }
 }
+
+@media (max-width: 992px) {
+  .services-container {
+    grid-template-columns: 1fr;
+  }
+  .service-box {
+    grid-template-columns: 1fr;
+    border-left: none;
+  }
+}
+
