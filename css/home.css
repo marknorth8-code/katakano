@@ -74,7 +74,7 @@
 }
 
 .hero-side-content {
-  padding-top: 40px;
+  padding-top: 0px;
 }
 
 /* Internal Hero Service List */
@@ -110,7 +110,7 @@
   display: grid;
   grid-template-columns: 0.8fr 1.2fr;
   gap: 60px;
-  align-items: center;
+  align-items: start; /* Changed from 'center' to 'start' */
 }
 
 .experience-text h2 {
@@ -134,11 +134,14 @@
 }
 
 .services-header {
-  padding: 100px 5%;
+  padding: 60px 5% 100px 5%; /* Reduced top padding from 100px to 60px */
   background-color: #f9f9f9; 
   display: flex;
   flex-direction: column;
+  justify-content: flex-start; /* Ensures content starts at the very top */
+  align-self: start; /* Prevents the box from stretching content vertically */
 }
+
 
 .services-header h2 {
   font-family: 'Playfair Display', serif;
