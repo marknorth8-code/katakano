@@ -139,7 +139,7 @@ p.body-large {
   position: fixed;
   inset: 0;
   background-color: #011d01;
-  padding: 140px 10% 80px; /* Increased top padding to 140px */
+  padding: 1o0px 10% 80px; /* Increased top padding to 140px */
   flex-direction: column;
   z-index: 1100;
   overflow-y: auto; /* Ensure you can scroll if links overflow */
@@ -167,7 +167,7 @@ p.body-large {
 }
 
 .nav-links li a {
-  font-size: 80px;
+  font-size: 60px;
   font-weight: 700;
   color: white;
   text-decoration: none;
