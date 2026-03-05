@@ -125,7 +125,6 @@ p.body-large {
 
 /* Menu Icon Lines */
 .icon-wrapper { position: relative; width: 24px; height: 16px; margin-left: 10px; }
-.line { display: block; position: absolute; height: 2px; width: 100%; background: currentColor; transition: 0.3s ease; }
 .line-1 { top: 0; }
 .line-2 { top: 7px; width: 70%; right: 0; }
 .line-3 { top: 14px; }
@@ -136,15 +135,16 @@ p.body-large {
 /* --- 5. FINAL FIXED DASHBOARD LAYOUT --- */
 
 .menu-overlay {
+  display: none;
   position: fixed;
   inset: 0;
   background-color: #011d01;
-  padding: 80px 10%;
+  padding: 140px 10% 80px; /* Increased top padding to 140px */
   flex-direction: column;
   z-index: 1100;
-  /* 1. HIDE BY DEFAULT */
-  display: none; 
+  overflow-y: auto; /* Ensure you can scroll if links overflow */
 }
+
 
 /* 2. SHOW ONLY WHEN THIS CLASS IS ADDED BY JS */
 .menu-overlay.is-open {
@@ -274,14 +274,28 @@ p.body-large {
   transform: translateY(-7px) rotate(-45deg);
 }
 
-/* Change "MENU" text to "CLOSE" */
-.menu-open .toggle-label::before {
-  content: "CLOSE";
-  position: absolute;
+.line { 
+  display: block; 
+  position: absolute; 
+  height: 2px; 
+  width: 100%; 
+  background: currentColor; 
+  transition: transform 0.3s ease, opacity 0.3s ease; /* Ensure transform is here */
 }
-.menu-open .toggle-label {
-  color: transparent;
-  position: relative;
+
+
+
+/* Update your existing .toggle-label block */
+.toggle-label {
+  transition: font-size 0.3s ease, opacity 0.3s ease;
+}
+
+
+.menu-open .toggle-label::after {
+  content: "CLOSE";
+  font-size: 0.7rem; /* Brings 'CLOSE' back at correct size */
+  color: #ffffff;
+  letter-spacing: 0.1em;
 }
 
 
