@@ -230,6 +230,49 @@ p.body-large {
   opacity: 0.9;
 }
 
+/* Ensure header stays ABOVE the menu overlay */
+.site-header {
+  position: relative;
+  z-index: 3000; /* Higher than .menu-overlay (1100) */
+}
+
+/* When the menu is open, change the button colors */
+.menu-open .nav-pill {
+  background-color: transparent !important;
+  border-color: rgba(255,255,255,0.3) !important;
+  color: #ffffff !important;
+}
+
+/* Hide "GET IN TOUCH" when menu is open */
+.menu-open .button-get-in-touch {
+  opacity: 0;
+  pointer-events: none;
+  transform: translateX(20px);
+}
+
+/* ANIMATING THE LINES INTO AN X */
+.menu-open .line-1 {
+  transform: translateY(7px) rotate(45deg);
+}
+.menu-open .line-2 {
+  opacity: 0;
+  transform: translateX(-10px);
+}
+.menu-open .line-3 {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* Change "MENU" text to "CLOSE" */
+.menu-open .toggle-label::before {
+  content: "CLOSE";
+  position: absolute;
+}
+.menu-open .toggle-label {
+  color: transparent;
+  position: relative;
+}
+
+
 /* Responsive Tweak */
 @media (max-width: 900px) {
   .overlay-content-grid {
