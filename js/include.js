@@ -1,5 +1,5 @@
 /**
- * Loads HTML partials and initializes component-specific logic
+ * Loads HTML partials (Header/Footer) and initializes logic
  */
 async function includeHTML(file, elementId) {
     const container = document.getElementById(elementId);
@@ -12,7 +12,7 @@ async function includeHTML(file, elementId) {
         const html = await response.text();
         container.innerHTML = html;
 
-        // INITIALIZE logic after the HTML is injected
+        // Start menu logic ONLY after the header is injected
         if (elementId === 'header') {
             initMenuToggle();
         }
@@ -22,49 +22,43 @@ async function includeHTML(file, elementId) {
 }
 
 /**
- * Consolidated menu toggle logic - Matches your CSS classes
+ * Master Controller for the Morphing Menu
  */
 function initMenuToggle() {
     const menuBtn = document.getElementById('menuToggle');
-    const closeBtn = document.getElementById('menuClose');
     const overlay = document.getElementById('fullScreenMenu');
+    const body = document.body;
 
     if (menuBtn && overlay) {
-        // OPEN MENU
+        // Toggle everything based on the single header button
         menuBtn.addEventListener('click', (e) => {
             e.preventDefault();
-            // Use classList to trigger your .is-open CSS
-            overlay.classList.add('is-open'); 
-            menuBtn.classList.add('is-active');
-            document.body.style.overflow = 'hidden'; 
+            
+            const isOpen = overlay.classList.toggle('is-open');
+            body.classList.toggle('menu-open'); // Triggers CSS X-morph & Button colors
+            
+            // Handle scrolling
+            body.style.overflow = isOpen ? 'hidden' : ''; 
         });
 
-        // CLOSE MENU
-        if (closeBtn) {
-            closeBtn.addEventListener('click', (e) => {
-                e.preventDefault();
-                overlay.classList.remove('is-open');
-                menuBtn.classList.remove('is-active');
-                document.body.style.overflow = ''; 
-            });
-        }
-
-        // Close when a link is clicked
+        // Close when any link inside the overlay is clicked
         const links = overlay.querySelectorAll('a');
         links.forEach(link => {
             link.addEventListener('click', () => {
                 overlay.classList.remove('is-open');
-                document.body.style.overflow = '';
+                body.classList.remove('menu-open');
+                body.style.overflow = '';
             });
         });
 
     } else {
-        console.warn("Menu components not found. Ensure header.html has IDs: menuToggle, menuClose, fullScreenMenu");
+        console.warn("Menu components not found. Ensure header.html contains: #menuToggle and #fullScreenMenu");
     }
 }
 
-// Initial load on page ready - Keeps your Header and Footer loading logic
+// Kick off the loading process
 document.addEventListener('DOMContentLoaded', () => {
     includeHTML('partials/header.html', 'header');
     includeHTML('partials/footer.html', 'footer'); 
 });
+
