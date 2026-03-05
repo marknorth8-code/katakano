@@ -42,180 +42,94 @@
   }
   </script>
 </head>
+
 <body class="home">
 
-<div id="header"></div>
+  <!-- 1. Floating Navigation (Pill Style) -->
+  <nav class="floating-nav">
+    <a href="contact.html" class="nav-pill">GET IN TOUCH ↗</a>
+    <button class="nav-pill menu-trigger">MENU</button>
+  </nav>
 
-<main id="main-content">
+  <main id="main-content">
+
+    <!-- 2. Hero Section (Matches Reference Image Top) -->
+    <section class="hero-editorial">
+      <div class="hero-logo">K</div> <!-- The minimal 'K' from your image -->
+      
+      <div class="hero-header">
+        <span class="sub-heading-caps">Strategic Property Development & Investment Advisory</span>
+        <h1 class="editorial-title">Bespoke advisory and development expertise across New Zealand and international property markets.</h1>
+      </div>
+
+      <div class="hero-grid">
+        <!-- Left: Large Portrait Image -->
+        <div class="hero-image-main">
+          <img src="images/home/hero-01.webp" alt="Modern Architecture Pool" class="parallax-img">
+        </div>
+
+        <!-- Right: Text Content & Smaller Image -->
+        <div class="hero-side-content">
+          <div class="content-block">
+            <p class="body-large">We provide tailored solutions for developers and sophisticated investors seeking unique opportunities in prime locations.</p>
+            
+            <div class="service-list-minimal">
+              <div class="service-item">
+                <h3>Development</h3>
+                <p>End-to-end property development strategies</p>
+              </div>
+              <div class="service-item">
+                <h3>Project Management</h3>
+                <p>Expert management of complex construction projects</p>
+              </div>
+              <div class="service-item">
+                <h3>Investment Sourcing</h3>
+                <p>Identifying and securing high-potential investment opportunities</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. Experience Section (Asymmetrical) -->
+    <section class="experience-section">
+      <div class="experience-grid">
+        <div class="experience-text">
+          <h2 class="h2-refined">Experience</h2>
+          <p>Exceptional projects across New Zealand, Australia and beyond.</p>
+        </div>
+        <div class="experience-visual">
+          <img src="images/home/services/services-00.webp" alt="Architectural Detail">
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. Global Presence (Minimalist List) -->
+    <section class="geographic-presence">
+      <div class="container">
+        <h2 class="section-title">Global Experience</h2>
+        <ul class="location-list">
+          <li>UK</li>
+          <li>Brazil</li>
+          <li>Japan</li>
+          <li>New Zealand</li>
+        </ul>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- 5. Minimal Footer -->
+  <footer class="footer-minimal">
+    <div class="footer-top-line"></div>
+    <div class="footer-content">
+      <div class="footer-brand">K Company Name and Partners</div>
+      <div class="footer-contact">info@katakano.com</div>
+    </div>
+  </footer>
+
+</body>
 
   
-  <!-----------------------------  INTRO SECTION 1: Logo--------------------->
-  <section class="intro">
-  <div class="intro-container">
-    
-    <!-- Top Left Text -->
-    <div class="intro-text">
-      <a href="index.html" class="text-link">Company Name and Partners<span class="arrow">→</span></a>
-    </div>
-
-    <!-- Bottom Left Logo -->
-    <div class="intro-logo-wrapper">
-      <img src="images/katakano-logo.webp" alt="Logo" class="intro-logo">
-    </div>
-  </div>
-</section>
-
-  <!-------------------- SECTION 2: CONTENT SPLIT -------------------------->
-  <section class="split-section">
-  <div class="split-grid">
-    
-    <!-- 1. Image Side -->
-    <div class="split-visual">
-      <img src="images/home/services/services-00.webp" alt="Property Professional">
-    </div>
-
-    <!-- 2. Text Side -->
-    <div class="split-content">
- <h2 class="h2-refined">Delivering Cross-Border Property Value through strategic development, disciplined project management, and curated investment sourcing. we bring together a team of investment agents to identify opportunities with experienced project managers to make the vision a reality.</h2>
-
-      <br>
-      
-      <!-- Two Column Grid -->
-      <div class="details-grid">
-        <div class="detail-column">
-          <p><strong>Investment</strong></p>
-          <hr>
-          <p>We've done the leg work across niche markets in Brazil, Japan, NZ and the UK to identify high-yield opportunity locations or we can search for tailored options for suit your portfolio.</p>
-        </div>
-        <div class="detail-column">
-          <p><strong>Development Management</strong></p>
-          <hr>
-          <p>We provide end-to-end support through collaborative partnership. From overseeing refurbishments to full project delivery, we ensure seamless execution.</p>
-        </div>
-      </div>
-      <div class="actions">
-        <a href="about.html" class="btn-primary">About Us</a>
-      </div>
-    </div>
-      </div>
-</section>
-
-  <!--  STYLE SECTION 3: ASYMMETRICAL STRATEGY -->
- <section id="strategy" class="strategy-section section-padding">
-    <div class="container grid-layout">
-      <div class="intro-block">
-        <span class="sub-heading">Our Strategy</span>
-        <h1 class="section-title">Project and Development Managers Delivering Investments in International Markets</h1>
-        <p class="body-large">We operate independently in four very carefully chosen regions, combining expertise with trusted local networks to deliver high-potential investment opportunities.</p>
-        <a href="about.html" class="text-link">Explore our approach <span class="arrow">→</span></a>
-      </div>
-      
-      <!-- Staggered Card Layout -->
-      <div class="featured-grid">
-        <div class="card-item card-tall" style="background-image: url('images/locations/nz/hero.webp');">
-          <div class="card-content"><h3>Auckland, NZ</h3></div>
-        </div>
-        <div class="card-item card-short" style="background-image: url('images/locations/jp/hero.webp');">
-          <div class="card-content"><h3>Hakuba, Japan</h3></div>
-        </div>
-                <div class="card-item card-short" style="background-image: url('images/locations/uk/hero.webp');">
-          <div class="card-content"><h3>North of London, UK</h3></div>
-        </div>
-                <div class="card-item card-short" style="background-image: url('images/locations/br/hero.webp');">
-          <div class="card-content"><h3>Bahia, Brazil</h3></div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-<!-- OMNI STYLE SECTION 4: MINIMALIST SERVICES -->
-<section id="services" class="services-minimal section-padding">
-  <div class="container services-container">
-    
-    <!-- Left Column -->
-    <div class="services-header">
-      <h2 class="section-title">Our Services</h2>
-      <p>Expertise across the full property lifecycle.</p>
-            <div class="hero-actions">
-        <a href="services.html" class="btn-primary">Our Services</a>
-      </div>
-    </div> 
-
-    <!-- Right Column (Consolidated) -->
-    <div class="services-grid">
-      <div class="service-box">
-        <h3>Site Finding and Feasibilities</h3>
-        <div class="service-content">
-          <p>Analyzing market data to identify high-growth potential.</p>
-          <a href="#" class="learn-more">Learn more</a>
-        </div>
-      </div>
-            <div class="service-box">
-        <h3>Design and Planning</h3>
-        <div class="service-content">
-          <p>Strategic sourcing and cross-border deal structuring.</p>
-          <a href="#" class="learn-more">Learn more</a>
-        </div>
-      </div>
-            <div class="service-box">
-        <h3>Consenting and Procurement</h3>
-        <div class="service-content">
-          <p>End-to-end management of design and construction.</p>
-          <a href="#" class="learn-more">Learn more</a>
-        </div>
-      </div>
-            <div class="service-box">
-        <h3>The Build</h3>
-        <div class="service-content">
-          <p>Protecting capital through structured divestment.</p>
-          <a href="#" class="learn-more">Learn more</a>
-        </div>
-      </div>
-    </div> <!-- Closes services-grid -->
-  </div> <!-- Closes services-container (Important!) -->
-</section>
-
-  <!-- OMNI STYLE SECTION 5: PARTNERSHIP STATEMENT -->
-  <section class="quote-section section-padding">
-    <div class="container">
-      <div class="quote-wrapper">
-        <blockquote class="display-quote">
-          "Stronger relationships. <br>Stronger results."
-        </blockquote>
-        <div class="quote-meta">
-          <span class="author">S. B.</span>
-          <span class="title">Katakano Mentor</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-<!-- OMNI STYLE SECTION 6: MINIMAL CONTACT -->
-<section class="contact-section">
-  <div class="container" style="text-align: center; padding: 60px 0;">
-    
-    <div class="contact-text-area">
-      <h3 style="font-weight: bold; margin-bottom: 10px;">Starting a Project?</h3>
-      <h3 style="font-weight: bold; max-width: 900px; margin: 0 auto 30px auto; line-height: 1.4;">
-        Investing in property should be rewarding, not overwhelming. While the market has its complexities, the process shouldn’t feel like a mystery. We’re here to hear your goals, navigate the hurdles with you, and provide the expert clarity you need to move forward with confidence.
-      </h3>
-    </div>
-    <div class="contact-action">
-      <a href="contact.html" class="button-get-in-touch">
-        Get in Touch
-        <svg class="icon" width="12" height="12" viewBox="0 0 12 12" fill="none" style="margin-left: 8px;">
-          <path d="M1 11L11 1M11 1H3M11 1V9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-        </svg>
-      </a>
-    </div>
-
-  </div> 
-</section>
- 
-</main>
-
-<div id="footer"></div>
-
-<script src="js/include.js"></script>
-</body>
 </html>
