@@ -1,184 +1,237 @@
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <title>Katakano | Global Property Consultancy</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Global property investment and development consultancy. Chartered surveyors, architects and project managers delivering value across overseas markets.">
+/* --- GLOBAL UTILITIES (Required for your HTML) --- */
+.section-padding {
+  padding: 100px 0;
+}
 
-  <!-- Performance & SEO -->
-  <link rel="preload" as="image" href="images/home/hero-01.webp" fetchpriority="high">
-  <link rel="canonical" href="https://marknorth8-code.github.io">
+.btn-primary {
+  display: inline-block;
+  padding: 15px 35px;
+  background-color: #111;
+  color: #fff;
+  text-decoration: none;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.85rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  transition: opacity 0.3s ease;
+  margin-top: 30px;
+}
 
-  <!-- Stylesheets -->
-  <link rel="stylesheet" href="css/global.css">
-  <link rel="stylesheet" href="css/home.css"> <!-- This should contain the layout CSS below -->
+.btn-primary:hover {
+  opacity: 0.8;
+}
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Playfair+Display:wght@400;500&display=swap" rel="stylesheet">
-  
-  <!-- Favicons -->
-  <link rel="icon" href="/favicon.ico" sizes="any">
-  <link rel="icon" href="/icon.svg" type="image/svg+xml">
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="manifest" href="/site.webmanifest">
+/* --- 1. HERO EDITORIAL GRID --- */
+.hero-editorial {
+  padding: 100px 5% 60px 5%;
+  background-color: #fff;
+}
 
-  <!-- Structured Data -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "RealEstateAgent",
-    "name": "Katakano and Partners",
-    "url": "https://marknorth8-code.github.io",
-    "logo": "https://marknorth8-code.github.io",
-    "description": "Global property investment and development consultancy. Chartered surveyors, architects and project managers delivering value across overseas markets.",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "YOUR_STREET_ADDRESS",
-      "addressLocality": "London",
-      "addressCountry": "UK"
-    },
-    "telephone": "+447470292634",
-    "areaServed": ["International", "UK", "New Zealand", "Japan", "Brazil"]
+.hero-logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 60px;
+  color: #111;
+}
+
+.hero-header {
+  text-align: center;
+  max-width: 900px;
+  margin: 0 auto 80px auto;
+}
+
+.sub-heading-caps {
+  font-family: 'Inter', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-size: 0.75rem;
+  color: #666;
+  display: block;
+  margin-bottom: 20px;
+}
+
+.editorial-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2rem, 5vw, 3.8rem);
+  line-height: 1.1;
+  font-weight: 400;
+  color: #111;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 80px;
+  align-items: start;
+}
+
+.hero-image-main img {
+  width: 100%;
+  height: auto;
+  display: block;
+  box-shadow: 20px 20px 60px rgba(0,0,0,0.03);
+}
+
+.hero-side-content {
+  padding-top: 40px;
+}
+
+/* Internal Hero Service List */
+.service-list-minimal {
+  margin-top: 60px;
+  border-top: 1px solid #eee;
+  padding-top: 40px;
+}
+
+.service-item {
+  margin-bottom: 40px;
+}
+
+.service-item h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.6rem;
+  margin-bottom: 8px;
+}
+
+.service-item p {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.95rem;
+  color: #666;
+}
+
+/* --- 2. EXPERIENCE SECTION (Staggered) --- */
+.experience-section {
+  padding: 100px 5%;
+  background-color: #fff;
+}
+
+.experience-grid {
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.experience-text h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.experience-visual img {
+  width: 100%;
+  height: 600px;
+  object-fit: cover;
+}
+
+/* --- 3. SECTION 4: MINIMALIST SERVICES (Split Grid) --- */
+.services-container {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr; 
+  border-top: 1px solid #eee;
+  align-items: stretch;
+}
+
+.services-header {
+  padding: 100px 5%;
+  background-color: #f9f9f9; 
+  display: flex;
+  flex-direction: column;
+}
+
+.services-header h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2rem, 4vw, 2.5rem);
+  margin-bottom: 20px;
+}
+
+.services-grid {
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+}
+
+.service-box {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  padding: 60px 40px;
+  border-bottom: 1px solid #eee;
+  border-left: 1px solid #eee;
+  transition: background-color 0.3s ease;
+}
+
+.service-box:hover {
+  background-color: #fcfcfc;
+}
+
+.service-box h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.learn-more {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #111;
+  text-decoration: none;
+  border-bottom: 1px solid #111;
+  padding-bottom: 2px;
+}
+
+/* --- 4. GEOGRAPHIC PRESENCE --- */
+.geographic-presence {
+  padding: 140px 5%;
+  background-color: #ffffff;
+  border-top: 1px solid #EAEAEA;
+}
+
+.geographic-presence .section-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.25em;
+  color: #666;
+  margin-bottom: 60px;
+}
+
+.location-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 0;
+}
+
+.location-list li {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 300;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.location-list li:hover {
+  color: #011D01;
+  transform: translateX(10px);
+}
+
+/* --- 5. RESPONSIVE ADAPTATIONS --- */
+@media (max-width: 1024px) {
+  .hero-grid, .experience-grid {
+    grid-template-columns: 1fr;
   }
-  </script>
-</head>
+}
 
-<body class="home">
-
-  <!-- 1. Floating Navigation (Pill Style) -->
-  <nav class="floating-nav">
-    <a href="contact.html" class="nav-pill">GET IN TOUCH ↗</a>
-    <button class="nav-pill menu-trigger">MENU</button>
-  </nav>
-
-  <main id="main-content">
-
-    <!-- 2. Hero Section (Matches Reference Image Top) -->
-    <section class="hero-editorial">
-      <div class="hero-logo">K</div> <!-- The minimal 'K' from your image -->
-      
-      <div class="hero-header">
-        <span class="sub-heading-caps">Strategic Property Development & Investment Advisory</span>
-        <h1 class="editorial-title">Advisory and development expertise across international property markets.</h1>
-      </div>
-
-      <div class="hero-grid">
-        <!-- Left: Large Portrait Image -->
-        <div class="hero-image-main">
-          <img src="images/home/hero-01.webp" alt="Modern Architecture Pool" class="parallax-img">
-        </div>
-
-        <!-- Right: Text Content & Smaller Image -->
-        <div class="hero-side-content">
-          <div class="content-block">
-            <p class="body-large">We provide tailored solutions for developers and sophisticated investors seeking unique opportunities in prime locations.</p>
-            
-            <div class="service-list-minimal">
-              <div class="service-item">
-                <h3>Development</h3>
-                <p>End-to-end property development strategies</p>
-              </div>
-              <div class="service-item">
-                <h3>Project Management</h3>
-                <p>Expert management of complex construction projects</p>
-              </div>
-              <div class="service-item">
-                <h3>Investment Sourcing</h3>
-                <p>Identifying and securing high-potential investment opportunities</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    
-    <!-- 3. Experience Section (Asymmetrical) -->
-    <section class="experience-section">
-      <div class="experience-grid">
-        <div class="experience-text">
-          <h2 class="h2-refined">Experience</h2>
-          <p>Exceptional projects across New Zealand, Australia and beyond.</p>
-        </div>
-        <div class="experience-visual">
-          <img src="images/home/services/services-00.webp" alt="Architectural Detail">
-        </div>
-      </div>
-    </section>
-
-    <!-- SECTION 4: MINIMALIST SERVICES -->
-<section id="services" class="services-minimal section-padding">
-  <div class="container services-container">
-    
-    <!-- Left Column -->
-    <div class="services-header">
-      <h2 class="section-title">Our Services</h2>
-      <p>Expertise across the full property lifecycle.</p>
-            <div class="hero-actions">
-        <a href="services.html" class="btn-primary">Our Services</a>
-      </div>
-    </div> 
-
-    <!-- Right Column (Consolidated) -->
-    <div class="services-grid">
-      <div class="service-box">
-        <h3>Site Finding and Feasibilities</h3>
-        <div class="service-content">
-          <p>Analyzing market data to identify high-growth potential.</p>
-          <a href="#" class="learn-more">Learn more</a>
-        </div>
-      </div>
-            <div class="service-box">
-        <h3>Design and Planning</h3>
-        <div class="service-content">
-          <p>Strategic sourcing and cross-border deal structuring.</p>
-          <a href="#" class="learn-more">Learn more</a>
-        </div>
-      </div>
-            <div class="service-box">
-        <h3>Consenting and Procurement</h3>
-        <div class="service-content">
-          <p>End-to-end management of design and construction.</p>
-          <a href="#" class="learn-more">Learn more</a>
-        </div>
-      </div>
-            <div class="service-box">
-        <h3>The Build</h3>
-        <div class="service-content">
-          <p>Protecting capital through structured divestment.</p>
-          <a href="#" class="learn-more">Learn more</a>
-        </div>
-      </div>
-    </div> <!-- Closes services-grid -->
-  </div> <!-- Closes services-container (Important!) -->
-</section>
-
-    
-    <!-- 5. Global Presence (Minimalist List) -->
-    <section class="geographic-presence">
-      <div class="container">
-        <h2 class="section-title">Global Experience</h2>
-        <ul class="location-list">
-          <li>UK</li>
-          <li>Brazil</li>
-          <li>Japan</li>
-          <li>New Zealand</li>
-        </ul>
-      </div>
-    </section>
-
-  </main>
-
-  <!-- 6. Minimal Footer -->
-  <footer class="footer-minimal">
-    <div class="footer-top-line"></div>
-    <div class="footer-content">
-      <div class="footer-brand">K Company Name and Partners</div>
-      <div class="footer-contact">info@katakano.com</div>
-    </div>
-  </footer>
-
-</body>
-
-  
-</html>
+@media (max-width: 992px) {
+  .services-container {
+    grid-template-columns: 1fr;
+  }
+  .service-box {
+    grid-template-columns: 1fr;
+    border-left: none;
+  }
+}
