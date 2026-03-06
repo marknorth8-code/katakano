@@ -142,13 +142,9 @@
 }
 
 .services-header {
-  padding: 80px 5% 80px 5%;
-  background-color: #f9f9f9; 
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start; /* Ensures content starts at the very top */
-  align-self: start; /* Prevents the box from stretching content vertically */
-   border-right: 1px solid #eee;
+  padding: 70px;
+  background-color: #f9f9f9;
+  border-right: 1px solid #ececec;
 }
 
 
