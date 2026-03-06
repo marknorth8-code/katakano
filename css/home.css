@@ -152,37 +152,38 @@
 }
 
 .services-grid {
-  display: flex;
-  flex-direction: column;
-  background-color: #fff;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
 }
 
 .service-box {
-  display: grid;
-  grid-template-columns: 1fr 2fr;
-  padding: 80px 60px;
-border-bottom: 1px solid #ececec;
-border-left: 1px solid #ececec;
-  transition: background-color 0.3s ease, transform 0.3s ease;
+  padding: 60px 60px;
+  border-bottom: 1px solid #ececec;
+  border-left: 1px solid #ececec;
 }
 
 
 .service-box h3 {
-  font-size: 22px;
   font-weight: 500;
   letter-spacing: 0.02em;
+  font-family: 'Playfair Display', serif;
+  font-size: 26px;
+  margin-bottom: 14px;
 }
+
 
 .service-box:hover {
   background: #fcfcfc;
-  transform: translateX(6px);
+  transform: translateX(8px);
 }
 
+
 .service-number {
-  font-size: 14px;
-  letter-spacing: .2em;
+  font-size: 12px;
+  letter-spacing: .25em;
   color: #999;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
+  font-weight: 500;
 }
 
 .service-content {
