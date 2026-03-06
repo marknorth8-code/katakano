@@ -212,38 +212,53 @@
   padding-bottom: 4px;
 }
 
-/* --- 3. GEOGRAPHIC PRESENCE --- */
-.geographic-presence {
-  padding: 140px 5%;
-  background-color: #ffffff;
-  border-top: 1px solid #EAEAEA;
+.presence-intro{
+  max-width:520px;
+  margin-bottom:60px;
+  color:#555;
+  font-size:16px;
 }
 
-.geographic-presence .section-title {
-  font-family: 'Playfair Display', serif;
-  font-size: 0.75rem;
-  text-transform: uppercase;
-  letter-spacing: 0.25em;
-  color: #666;
-  margin-bottom: 60px;
+.presence-grid{
+  display:grid;
+  grid-template-columns:1.4fr 1fr;
+  gap:80px;
 }
 
-.location-list {
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  padding: 0;
+.location-list{
+  list-style:none;
+  padding:0;
+  margin:0;
 }
 
-.location-list li {
-  font-size: 1.1rem;
-  font-weight: 300;
-  transition: transform 0.3s ease;
+.location-list li{
+  font-size:20px;
+  font-family:'Playfair Display',serif;
+  margin-bottom:18px;
 }
 
-.location-list li:hover {
-  transform: translateX(10px);
+.location-list span{
+  font-family:'Inter',sans-serif;
+  font-size:14px;
+  color:#666;
+  margin-left:6px;
+}
+
+.presence-disciplines h3{
+  font-family:'Playfair Display',serif;
+  font-size:20px;
+  margin-bottom:20px;
+}
+
+.discipline-list{
+  list-style:none;
+  padding:0;
+}
+
+.discipline-list li{
+  font-size:15px;
+  margin-bottom:12px;
+  color:#666;
 }
 
 /* --- 4. EXPERIENCE SECTION --- */
