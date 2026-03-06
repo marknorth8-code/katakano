@@ -135,7 +135,7 @@
 /* --- 3. SECTION 4: MINIMALIST SERVICES (Split Grid) --- */
 .services-container {
   display: grid;
-  grid-template-columns: 1fr 1.5fr; 
+  grid-template-columns: 0.9fr 1.1fr;
   border-top: 1px solid #eee;
   align-items: stretch;
   background: #fafafa;
