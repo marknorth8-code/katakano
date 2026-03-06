@@ -135,7 +135,7 @@
 }
 
 .services-header {
-  padding: 60px 5% 100px 5%; /* Reduced top padding from 100px to 60px */
+  padding: 80px 5% 80px 5%;
   background-color: #f9f9f9; 
   display: flex;
   flex-direction: column;
@@ -154,6 +154,7 @@
 .services-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  grid-auto-rows: 1fr;
 }
 
 .service-box {
