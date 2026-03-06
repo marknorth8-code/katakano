@@ -137,14 +137,15 @@
   display: grid;
   grid-template-columns: 1fr 2fr;
   border-top: 1px solid #eee;
-  align-items: stretch;
   background: #fafafa;
+  align-items: stretch;
 }
 
 .services-header {
   padding: 70px;
   background-color: #f9f9f9;
   border-right: 1px solid #ececec;
+  height: 100%;
 }
 
 
@@ -157,6 +158,7 @@
 .services-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  height: 100%;
 }
 
 .services-grid .service-box:nth-last-child(-n+2) {
