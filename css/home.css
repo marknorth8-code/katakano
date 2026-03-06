@@ -158,7 +158,7 @@
 .service-box {
   display: grid;
   grid-template-columns: 1fr 2fr;
-  padding: 60px 40px;
+  padding: 80px 60px;
   border-bottom: 1px solid #eee;
   border-left: 1px solid #eee;
   transition: background-color 0.3s ease;
