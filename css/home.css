@@ -131,7 +131,6 @@
   grid-template-columns: 1fr 1.5fr; 
   border-top: 1px solid #eee;
   align-items: stretch;
-    border-top: 1px solid #eee;
   background: #fafafa;
 }
 
@@ -148,7 +147,7 @@
 
 .services-header h2 {
   font-family: 'Playfair Display', serif;
-  font-size: clamp(32px,3vw,40px)
+  font-size: clamp(32px,3vw,40px);
   margin-bottom: 20px;
 }
 
@@ -164,17 +163,15 @@
   padding: 80px 60px;
 border-bottom: 1px solid #ececec;
 border-left: 1px solid #ececec;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
-.service-box:hover {
-  background-color: #fcfcfc;
-}
 
-.service-box h3
-font-size: 22px
-font-weight: 500
-letter-spacing: 0.02em
+.service-box h3 {
+  font-size: 22px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
 
 .service-box:hover {
   background: #fcfcfc;
@@ -189,10 +186,10 @@ letter-spacing: 0.02em
 }
 
 .service-content {
-font-size: 16px
-color: #666
-max-width: 380px
-  }
+  font-size: 16px;
+  color: #666;
+  max-width: 380px;
+}
 
 .learn-more {
   font-family: 'Inter', sans-serif;
