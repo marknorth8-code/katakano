@@ -69,6 +69,62 @@
   margin-bottom: 40px;
 }
 
+/* -------- 2. PARTNERSHIP STATEMENT -------- */
+.quote-section {
+  background-color: #fff; /* Matches your white-space aesthetic */
+  text-align: center;
+  border-top: 1px solid #ececec;
+}
+
+.quote-wrapper {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.display-quote {
+  font-family: 'Playfair Display', serif;
+  /* clamp makes it huge on desktop, readable on mobile */
+  font-size: clamp(2.5rem, 6vw, 4.5rem); 
+  line-height: 1.1;
+  color: #111;
+  margin: 0 0 40px 0;
+  border: none; /* Removes default blockquote border */
+  padding: 0;
+  font-weight: 400;
+}
+
+.quote-meta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.quote-meta .author {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #111;
+}
+
+.quote-meta .title {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.75rem;
+  color: #999; /* Grey color as requested */
+  letter-spacing: 0.05em;
+}
+
+/* Responsive tweak for smaller screens */
+@media (max-width: 768px) {
+  .display-quote {
+    font-size: 2.2rem;
+  }
+}
+
+/* --- 2. SERVICES SECTION (Fixed 2x2 Grid) --- */
+
 .service-item {
   margin-bottom: 25px;
 }
@@ -84,7 +140,7 @@
   color: #666;
 }
 
-/* --- 2. SERVICES SECTION (Fixed 2x2 Grid) --- */
+
 .services-minimal {
   background-color: #fff;
   border-bottom: 1px solid #ececec;
