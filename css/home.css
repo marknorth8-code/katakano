@@ -1,6 +1,12 @@
-/* --- GLOBAL UTILITIES (Required for your HTML) --- */
+/* --- GLOBAL UTILITIES --- */
 .section-padding {
   padding: 120px 0;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 5%;
 }
 
 /* --- 1. HERO EDITORIAL GRID --- */
@@ -44,7 +50,7 @@
 .hero-grid {
   display: grid;
   grid-template-columns: 1.2fr 0.8fr;
-  gap: clamp(40px,6vw,80px);
+  gap: clamp(40px, 6vw, 80px);
   align-items: start;
 }
 
@@ -55,29 +61,45 @@
   box-shadow: 20px 20px 60px rgba(0,0,0,0.03);
 }
 
-.hero-side-content {
-  padding-top: 0px;
+/* Hero Right Side Content */
+.body-large {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  color: #333;
+  margin-bottom: 40px;
 }
 
-/* --- 3. SECTION 4: MINIMALIST SERVICES (Corrected 2x2 Grid) --- */
+.service-item {
+  margin-bottom: 25px;
+}
+
+.service-item h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.1rem;
+  margin-bottom: 5px;
+}
+
+.service-item p {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+/* --- 2. SERVICES SECTION (Fixed 2x2 Grid) --- */
 .services-minimal {
-  padding: 0; /* Let the container handle spacing */
   background-color: #fff;
   border-bottom: 1px solid #ececec;
 }
 
 .services-container {
   display: grid;
-  /* 1fr for Header, 1.2fr for Box Col 1, 1.2fr for Box Col 2 */
   grid-template-columns: 1fr 1.2fr 1.2fr; 
   border-top: 1px solid #eee;
-  background: #ffffff;
   width: 100%;
 }
 
 .services-header {
   grid-column: 1;
-  grid-row: 1 / span 2; /* Spans both rows to stay on the left */
+  grid-row: 1 / span 2; 
   padding: 80px 60px;
   background-color: #f9f9f9;
   border-right: 1px solid #ececec;
@@ -87,16 +109,8 @@
   font-family: 'Playfair Display', serif;
   font-size: clamp(32px, 4vw, 48px);
   margin-bottom: 20px;
-  line-height: 1.2;
 }
 
-.services-header p {
-  font-size: 16px;
-  color: #666;
-  line-height: 1.6;
-}
-
-/* Service Box Styling */
 .service-box {
   display: flex;
   flex-direction: column;
@@ -107,16 +121,9 @@
   transition: background 0.3s ease;
 }
 
-/* Remove right border on the last column (Boxes 02 and 04) */
-.service-box:nth-of-type(even) {
-  border-right: none;
-}
-
-/* Remove bottom border on the bottom row (Boxes 03 and 04) */
-.service-box:nth-of-type(3),
-.service-box:nth-of-type(4) {
-  border-bottom: none;
-}
+/* Removal of borders to keep the 2x2 clean next to the header */
+.service-box:nth-child(3), .service-box:nth-child(5) { border-right: none; }
+.service-box:nth-child(4), .service-box:nth-child(5) { border-bottom: none; }
 
 .service-number {
   font-size: 11px;
@@ -130,7 +137,6 @@
   font-family: 'Playfair Display', serif;
   font-size: 24px;
   margin-bottom: 15px;
-  font-weight: 400;
 }
 
 .service-content p {
@@ -141,47 +147,16 @@
 }
 
 .learn-more {
-  font-family: 'Inter', sans-serif;
   font-size: 12px;
   text-transform: uppercase;
   letter-spacing: 0.1em;
   color: #111;
   text-decoration: none;
   border-bottom: 1px solid #111;
-  width: fit-content;
   padding-bottom: 4px;
 }
 
-.service-box:hover {
-  background: #fafafa;
-}
-
-/* --- RESPONSIVE FIX --- */
-@media (max-width: 1100px) {
-  .services-container {
-    grid-template-columns: 1fr 1fr; /* Header on left, boxes stack 2-wide */
-  }
-  .services-header {
-    grid-row: 1 / span 4;
-  }
-}
-
-@media (max-width: 768px) {
-  .services-container {
-    grid-template-columns: 1fr; /* Full stack on mobile */
-  }
-  .services-header {
-    grid-row: auto;
-    border-right: none;
-    border-bottom: 1px solid #ececec;
-  }
-  .service-box {
-    border-right: none !important;
-  }
-}
-
-
-/* --- 4. GEOGRAPHIC PRESENCE --- */
+/* --- 3. GEOGRAPHIC PRESENCE --- */
 .geographic-presence {
   padding: 140px 5%;
   background-color: #ffffff;
@@ -206,30 +181,24 @@
 }
 
 .location-list li {
-  font-family: 'Inter', sans-serif;
   font-size: 1.1rem;
   font-weight: 300;
-  transition: transform 0.3s ease, color 0.3s ease;
+  transition: transform 0.3s ease;
 }
 
 .location-list li:hover {
-  color: #011D01;
   transform: translateX(10px);
 }
 
-
-/* --- 2. EXPERIENCE SECTION (Staggered) --- */
+/* --- 4. EXPERIENCE SECTION --- */
 .experience-section {
   padding: 100px 5%;
-  background-color: #fff;
 }
-
 
 .experience-grid {
   display: grid;
   grid-template-columns: 0.8fr 1.2fr;
   gap: 60px;
-  align-items: start; /* Changed from 'center' to 'start' */
 }
 
 .experience-text h2 {
@@ -242,34 +211,53 @@
   width: 100%;
   height: 600px;
   object-fit: cover;
-  display: block;
 }
 
+/* --- 5. QUOTE SECTION (NEW) --- */
+.quote-section {
+  background-color: #fcfcfc;
+  text-align: center;
+}
 
-/* --- 5. RESPONSIVE ADAPTATIONS --- */
-@media (max-width: 1024px) {
-  .hero-grid, .experience-grid {
+.display-quote {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.8rem, 4vw, 3rem);
+  line-height: 1.3;
+  font-style: italic;
+  color: #111;
+  margin-bottom: 30px;
+  border: none;
+}
+
+.quote-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.quote-meta .author {
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+}
+
+.quote-meta .title {
+  font-size: 0.8rem;
+  color: #888;
+}
+
+/* --- 6. RESPONSIVE ADAPTATIONS --- */
+@media (max-width: 1100px) {
+  .services-container { grid-template-columns: 1fr 1fr; }
+  .services-header { grid-row: 1; grid-column: 1 / span 2; border-right: none; }
+}
+
+@media (max-width: 768px) {
+  .hero-grid, .experience-grid, .services-container {
     grid-template-columns: 1fr;
   }
+  .services-header { grid-row: auto; }
+  .service-box { border-right: none !important; }
 }
 
-@media (max-width: 992px) {
-  .services-container {
-    grid-template-columns: 1fr;
-  }
-
-  .service-box {
-    border-left: none;
-  }
-}
-@media (max-width: 900px) {
-
-  .services-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .service-box {
-    border-left: none;
-  }
-
-}
