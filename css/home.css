@@ -3,23 +3,6 @@
   padding: 120px 0;
 }
 
-.btn-primary {
-  display: inline-block;
-  padding: 15px 35px;
-  background-color: #111;
-  color: #fff;
-  text-decoration: none;
-  font-family: 'Inter', sans-serif;
-  font-size: 0.85rem;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-  transition: opacity 0.3s ease;
-  margin-top: 30px;
-}
-
-.btn-primary:hover {
-  opacity: 0.8;
-}
 
 /* --- 1. HERO EDITORIAL GRID --- */
 .hero-editorial {
