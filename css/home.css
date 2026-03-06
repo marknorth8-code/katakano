@@ -157,6 +157,8 @@
 }
 
 .service-box {
+  display: grid;
+  grid-template-rows: auto auto 1fr auto;
   padding: 60px 60px;
   border-bottom: 1px solid #ececec;
   border-left: 1px solid #ececec;
@@ -174,7 +176,7 @@
 
 .service-box:hover {
   background: #fcfcfc;
-  transform: translateX(8px);
+  transform: translateX(4px);
 }
 
 
@@ -190,6 +192,7 @@
   font-size: 16px;
   color: #666;
   max-width: 380px;
+  margin-bottom: 20px;
 }
 
 .learn-more {
