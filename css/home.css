@@ -158,11 +158,13 @@
 }
 
 .service-box {
-  display: grid;
-  grid-template-rows: auto auto 1fr auto;
-  padding: 60px 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 70px 70px;
   border-bottom: 1px solid #ececec;
   border-left: 1px solid #ececec;
+  min-height: 280px;
 }
 
 
@@ -185,7 +187,7 @@
   font-size: 12px;
   letter-spacing: .25em;
   color: #999;
-  margin-bottom: 30px;
+  margin-bottom: 40px;
   font-weight: 500;
 }
 
