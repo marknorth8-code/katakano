@@ -342,6 +342,95 @@
 
 }
 
+/* --- CONTACT SECTION --- */
+
+.contact-section{
+  padding:160px 5%;
+  background:#fafafa;
+  border-top:1px solid #eee;
+}
+
+.contact-container{
+  max-width:900px;
+  margin:auto;
+  text-align:center;
+}
+
+/* small editorial label */
+
+.contact-label{
+  font-family:'Inter',sans-serif;
+  text-transform:uppercase;
+  letter-spacing:.22em;
+  font-size:12px;
+  color:#777;
+  display:block;
+  margin-bottom:20px;
+}
+
+/* headline */
+
+.contact-heading{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(36px,4vw,48px);
+  font-weight:400;
+  margin-bottom:30px;
+}
+
+/* paragraph */
+
+.contact-description{
+  font-family:'Inter',sans-serif;
+  font-size:16px;
+  line-height:1.7;
+  color:#666;
+  max-width:680px;
+  margin:0 auto 50px auto;
+}
+
+/* button container */
+
+.contact-action{
+  margin-top:20px;
+}
+
+/* button (matching header button style) */
+
+.button-get-in-touch{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+
+  padding:16px 34px;
+
+  font-family:'Inter',sans-serif;
+  font-size:13px;
+  text-transform:uppercase;
+  letter-spacing:.12em;
+
+  color:#111;
+  text-decoration:none;
+
+  border:1px solid #111;
+  border-radius:40px;
+
+  transition:all .25s ease;
+}
+
+.button-get-in-touch:hover{
+  background:#111;
+  color:#fff;
+}
+
+.button-get-in-touch svg{
+  transition:transform .25s ease;
+}
+
+.button-get-in-touch:hover svg{
+  transform:translate(3px,-3px);
+}
+
+
 /* --- 6. RESPONSIVE ADAPTATIONS --- */
 @media (max-width: 1100px) {
   .services-container { grid-template-columns: 1fr 1fr; }
