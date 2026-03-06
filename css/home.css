@@ -1,6 +1,6 @@
 /* --- GLOBAL UTILITIES (Required for your HTML) --- */
 .section-padding {
-  padding: 100px 0;
+  padding: 120px 0;
 }
 
 .btn-primary {
@@ -62,7 +62,7 @@
 .hero-grid {
   display: grid;
   grid-template-columns: 1.2fr 0.8fr;
-  gap: 80px;
+  gap: clamp(40px,6vw,80px);
   align-items: start;
 }
 
@@ -75,6 +75,13 @@
 
 .hero-side-content {
   padding-top: 0px;
+}
+
+.experience-visual img {
+  width: 100%;
+  height: 600px;
+  object-fit: cover;
+  display: block;
 }
 
 /* Internal Hero Service List */
@@ -157,6 +164,10 @@
   grid-auto-rows: 1fr;
 }
 
+.services-grid .service-box:nth-last-child(-n+2) {
+  border-bottom: none;
+}
+
 .service-box {
   display: flex;
   flex-direction: column;
@@ -179,7 +190,7 @@
 
 .service-box:hover {
   background: #fcfcfc;
-  transform: translateX(4px);
+  transform: translateY(-4px);
 }
 
 
@@ -257,9 +268,19 @@
   .services-container {
     grid-template-columns: 1fr;
   }
+
   .service-box {
-    grid-template-columns: 1fr;
     border-left: none;
   }
 }
+@media (max-width: 900px) {
 
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .service-box {
+    border-left: none;
+  }
+
+}
