@@ -261,6 +261,11 @@
   color:#666;
 }
 
+.presence-disciplines{
+  border-left:1px solid #eee;
+  padding-left:60px;
+}
+
 /* --- 4. EXPERIENCE SECTION --- */
 .experience-section {
   padding: 100px 5%;
