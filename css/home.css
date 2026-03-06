@@ -394,41 +394,7 @@
   margin-top:20px;
 }
 
-/* button (matching header button style) */
 
-.button-get-in-touch{
-  display:inline-flex;
-  align-items:center;
-  gap:10px;
-
-  padding:16px 34px;
-
-  font-family:'Inter',sans-serif;
-  font-size:13px;
-  text-transform:uppercase;
-  letter-spacing:.12em;
-
-  color:#111;
-  text-decoration:none;
-
-  border:1px solid #111;
-  border-radius:40px;
-
-  transition:all .25s ease;
-}
-
-.button-get-in-touch:hover{
-  background:#111;
-  color:#fff;
-}
-
-.button-get-in-touch svg{
-  transition:transform .25s ease;
-}
-
-.button-get-in-touch:hover svg{
-  transform:translate(3px,-3px);
-}
 
 
 /* --- 6. RESPONSIVE ADAPTATIONS --- */
