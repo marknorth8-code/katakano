@@ -3,7 +3,6 @@
   padding: 120px 0;
 }
 
-
 /* --- 1. HERO EDITORIAL GRID --- */
 .hero-editorial {
   padding: 100px 5% 60px 5%;
@@ -60,119 +59,16 @@
   padding-top: 0px;
 }
 
-.experience-visual img {
-  width: 100%;
-  height: 600px;
-  object-fit: cover;
-  display: block;
-}
-
-
-/* Fixed Section 3: No more .services-grid inconsistency */
+/* --- 3. SECTION 4: MINIMALIST SERVICES (Corrected 2x2 Grid) --- */
 .services-minimal {
-  padding: 100px 5%;
+  padding: 0; /* Let the container handle spacing */
   background-color: #fff;
-}
-
-.services-container {
-  display: grid;
-  /* Column 1: Header | Column 2: Service 1 & 3 | Column 3: Service 2 & 4 */
-  grid-template-columns: 1fr 1.2fr 1.2fr; 
-  border-top: 1px solid #eee;
-  align-items: stretch;
-}
-
-.services-header {
-  grid-column: 1;
-  grid-row: 1 / span 2; /* This keeps "Our Services" on the left of BOTH rows */
-  padding: 60px;
-  background-color: #f9f9f9;
-  border-right: 1px solid #ececec;
-}
-
-.service-box {
-  display: flex;
-  flex-direction: column;
-  padding: 60px;
   border-bottom: 1px solid #ececec;
-  border-right: 1px solid #ececec;
 }
 
-/* Remove the right border on every second service box to clean up the edge */
-.service-box:nth-of-type(even) {
-  border-right: none;
-}
-
-/* Remove bottom border on the last two boxes */
-.service-box:nth-of-type(3),
-.service-box:nth-of-type(4) {
-  border-bottom: none;
-}
-
-
-
-
-
-
-
-/* Internal Hero Service List */
-.service-list-minimal {
-  margin-top: 60px;
-  border-top: 1px solid #eee;
-  padding-top: 40px;
-}
-
-.service-item {
-  margin-bottom: 40px;
-}
-
-.service-item h3 {
-  font-family: 'Playfair Display', serif;
-  font-size: 1.6rem;
-  margin-bottom: 8px;
-}
-
-.service-item p {
-  font-family: 'Inter', sans-serif;
-  font-size: 0.95rem;
-  color: #666;
-}
-
-/* --- 2. EXPERIENCE SECTION (Staggered) --- */
-.experience-section {
-  padding: 100px 5%;
-  background-color: #fff;
-}
-
-.experience-grid {
-  display: grid;
-  grid-template-columns: 0.8fr 1.2fr;
-  gap: 60px;
-  align-items: start; /* Changed from 'center' to 'start' */
-}
-
-.experience-text h2 {
-  font-family: 'Playfair Display', serif;
-  font-size: 2.5rem;
-  margin-bottom: 20px;
-}
-
-.experience-visual img {
-  width: 100%;
-  height: 600px;
-  object-fit: cover;
-}
-
-
-
-
-
-
-
-/* --- 3. SECTION 4: MINIMALIST SERVICES (Aligned 2x2) --- */
 .services-container {
   display: grid;
-  /* Column 1: Header (30%), Column 2 & 3: Service Boxes (35% each) */
+  /* 1fr for Header, 1.2fr for Box Col 1, 1.2fr for Box Col 2 */
   grid-template-columns: 1fr 1.2fr 1.2fr; 
   border-top: 1px solid #eee;
   background: #ffffff;
@@ -181,7 +77,7 @@
 
 .services-header {
   grid-column: 1;
-  grid-row: 1 / span 2; /* Span both rows of the grid */
+  grid-row: 1 / span 2; /* Spans both rows to stay on the left */
   padding: 80px 60px;
   background-color: #f9f9f9;
   border-right: 1px solid #ececec;
@@ -208,15 +104,15 @@
   border-bottom: 1px solid #ececec;
   border-right: 1px solid #ececec;
   min-height: 320px;
-  transition: all 0.3s ease;
+  transition: background 0.3s ease;
 }
 
-/* Remove right border on the last column */
-.service-box:nth-child(odd) {
+/* Remove right border on the last column (Boxes 02 and 04) */
+.service-box:nth-of-type(even) {
   border-right: none;
 }
 
-/* Remove bottom border on the bottom row (Services 03 and 04) */
+/* Remove bottom border on the bottom row (Boxes 03 and 04) */
 .service-box:nth-of-type(3),
 .service-box:nth-of-type(4) {
   border-bottom: none;
@@ -254,7 +150,6 @@
   border-bottom: 1px solid #111;
   width: fit-content;
   padding-bottom: 4px;
-  transition: opacity 0.3s;
 }
 
 .service-box:hover {
@@ -264,7 +159,7 @@
 /* --- RESPONSIVE FIX --- */
 @media (max-width: 1100px) {
   .services-container {
-    grid-template-columns: 1fr 1fr; /* Header stays left, boxes stack 1 per row */
+    grid-template-columns: 1fr 1fr; /* Header on left, boxes stack 2-wide */
   }
   .services-header {
     grid-row: 1 / span 4;
@@ -273,7 +168,7 @@
 
 @media (max-width: 768px) {
   .services-container {
-    grid-template-columns: 1fr; /* Everything stacks on mobile */
+    grid-template-columns: 1fr; /* Full stack on mobile */
   }
   .services-header {
     grid-row: auto;
@@ -321,6 +216,35 @@
   color: #011D01;
   transform: translateX(10px);
 }
+
+
+/* --- 2. EXPERIENCE SECTION (Staggered) --- */
+.experience-section {
+  padding: 100px 5%;
+  background-color: #fff;
+}
+
+
+.experience-grid {
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  gap: 60px;
+  align-items: start; /* Changed from 'center' to 'start' */
+}
+
+.experience-text h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.experience-visual img {
+  width: 100%;
+  height: 600px;
+  object-fit: cover;
+  display: block;
+}
+
 
 /* --- 5. RESPONSIVE ADAPTATIONS --- */
 @media (max-width: 1024px) {
