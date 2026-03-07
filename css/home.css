@@ -318,6 +318,7 @@
   font-family: 'Playfair Display', serif;
   font-size: clamp(32px, 4vw, 48px);
   margin-bottom: 20px;
+   margin-top: 0;
 }
 
 .service-box {
@@ -342,6 +343,7 @@
   color: #aaa;
   margin-bottom: 30px;
   font-weight: 600;
+   margin-top: 0;
 }
 
 .service-box h3 {
