@@ -132,50 +132,74 @@
   display:block;
 }
 
-/* --- STRATEGIC OVERVIEW SECTION --- */
+/* --- FLUSH STRATEGIC OVERVIEW --- */
 
-.info-split-section {
-  padding: 140px 5%;
+.flush-info-section {
+  padding: 120px 0; /* 120px gap top and bottom */
   background: #fff;
   border-top: 1px solid #eee;
+  overflow: hidden; /* Prevents horizontal scroll from image */
 }
 
-.info-split-grid {
+.flush-grid {
   display: grid;
-  grid-template-columns: 1fr 1.2fr;
+  grid-template-columns: 45vw 1fr; /* Image is exactly 45% of page width */
   gap: 80px;
-  align-items: center;
-  max-width: 1400px;
-  margin: auto;
+  align-items: start; /* Text stays at the top */
 }
 
-.info-split-image img {
+.flush-image img {
   width: 100%;
-  aspect-ratio: 1 / 1; /* Keeps the square format from your original draft */
+  height: 600px; /* Adjust height to match your visual preference */
   object-fit: cover;
   display: block;
 }
 
-.info-split-text h2 {
+.flush-text {
+  padding-right: 5%; /* Matches your global container padding */
+  padding-top: 0;    /* Ensures text is at the absolute top */
+  max-width: 600px;  /* Keeps line length readable */
+}
+
+.flush-text h2 {
   font-family: 'Playfair Display', serif;
   font-size: clamp(32px, 3vw, 42px);
   line-height: 1.2;
   margin-bottom: 28px;
   font-weight: 400;
+  margin-top: 0; /* Removes default heading margin */
 }
 
-.info-split-text p {
+.flush-text p {
   font-size: 15.5px;
   line-height: 1.7;
   color: #666;
   margin-bottom: 18px;
-  max-width: 520px;
 }
 
-.info-split-text .experience-lead {
+.flush-text .experience-lead {
   font-size: 18px;
   color: #333;
 }
+
+/* --- RESPONSIVE --- */
+
+@media (max-width: 1024px) {
+  .flush-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  
+  .flush-image img {
+    width: 100vw;
+    height: 400px;
+  }
+
+  .flush-text {
+    padding: 0 5%;
+  }
+}
+
 
 /* --- RESPONSIVE --- */
 
