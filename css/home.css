@@ -302,7 +302,7 @@
 .services-container {
   display: grid;
   grid-template-columns: 1fr 1.2fr 1.2fr;
-  border-top: 0px solid #eee;
+  border-top: 0px solid #eee !important;
   width: 100%;
 }
 
