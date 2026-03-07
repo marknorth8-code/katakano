@@ -324,7 +324,7 @@
 .service-box {
   display: flex;
   flex-direction: column;
-  padding: 0px;
+  padding: 60px;
   border-bottom: 1px solid #ececec;
   border-right: 1px solid #ececec;
   min-height: 320px;
