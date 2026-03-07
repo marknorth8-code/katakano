@@ -391,57 +391,64 @@
 /* =========================================================
    INTERNATIONAL MARKETS (Refined 2-Column Layout)
    ========================================================= */
-/* --- GEOGRAPHIC ALIGNMENT --- */
-
-.geographic-presence.services-minimal {
-  border-top: 1px solid #ececec;
-  border-bottom: 1px solid #ececec;
-  padding: 0; /* Remove section padding to let the grid lines hit the edges */
-}
-
 .geographic-presence .services-container {
-  /* Exactly the same as your Services grid */
   display: grid;
-  grid-template-columns: 1fr 1.2fr 1.2fr;
+  /* Matches "Our Services" exactly */
+  grid-template-columns: 1fr 1.2fr 1.2fr; 
   width: 100%;
+  border-top: 1px solid #ececec;
 }
 
+/* COLUMN 1: THE IMAGE */
+.presence-image-col {
+  grid-column: 1; /* FORCES POSITION 1 */
+  border-right: 1px solid #ececec;
+  height: 100%;
+  overflow: hidden;
+}
+
+.presence-image-col img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* COLUMN 2: THE HEADER (Remains untouched as requested) */
 .geographic-presence .services-header {
-  /* Resetting to match the middle column appearance */
-  grid-column: 2;
-  grid-row: 1;
+  grid-column: 2; /* FORCES POSITION 2 */
   padding: 60px;
   border-right: 1px solid #ececec;
 }
 
+/* COLUMN 3: THE LOCATIONS */
 .geographic-presence .service-box {
-  /* The third column */
-  grid-column: 3;
+  grid-column: 3; /* FORCES POSITION 3 */
   padding: 60px;
-  min-height: 450px; /* Matches the visual weight of the services above */
+  border-bottom: none; /* Removes bottom line to match Services logic */
   border-right: none;
+  display: flex;
+  flex-direction: column;
 }
 
-/* Ensure the image column stays flush */
-.image-box {
-  grid-column: 1;
-  overflow: hidden;
+/* Styling the list to match your service-content font sizes */
+.location-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 30px 0;
 }
 
-/* Typography Sync */
 .location-list li {
-  font-family: var(--font-main);
   font-size: 15px;
   color: #777;
+  margin-bottom: 12px;
+  line-height: 1.6;
 }
 
 .location-list li strong {
-  color: var(--primary-dark);
-  font-family: 'Playfair Display', serif;
-  font-weight: 400;
-  font-size: 17px;
+  color: #111;
+  font-weight: 600;
 }
-
 
 
 /* =========================================================
