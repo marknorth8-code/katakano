@@ -52,7 +52,7 @@
    ========================================================= */
 
 .hero-editorial {
-  padding: 100px 5% 30px 5%;
+  padding: 100px 0% 30px 0%;
   background-color: #fff;
 }
 
@@ -101,7 +101,6 @@
   width: 100%;
   height: auto;
   display: block;
-  box-shadow: 20px 20px 60px rgba(0,0,0,0.03);
 }
 
 /* Hero Right Side Content */
