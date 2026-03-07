@@ -273,7 +273,23 @@
   }
 }
 
+/* --- ZERO GAP FIX --- */
 
+/* 1. Remove bottom padding from the quote section */
+.quote-section.section-padding {
+    padding-bottom: 0 !important;
+}
+
+/* 2. Remove top padding and top border from the services section */
+.services-minimal.section-padding {
+    padding-top: 0 !important;
+    border-top: none !important;
+}
+
+/* 3. Ensure the internal grid doesn't have a top border */
+.services-container {
+    border-top: none !important;
+}
 
 /* =========================================================
    SERVICES
@@ -614,3 +630,6 @@
   }
 
 }
+
+
+
