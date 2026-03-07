@@ -144,16 +144,21 @@
 
 .flush-grid {
   display: grid;
-  grid-template-columns: 45vw 1fr; /* Image is exactly 45% of page width */
-  gap: 80px;
-  align-items: start; /* Text stays at the top */
+  grid-template-columns: 50vw 1fr; /* Image takes exactly half the screen */
+  align-items: center;
+  gap: 0; /* Remove gap so image and text area touch */
 }
 
 .flush-image img {
   width: 100%;
-  height: 600px; /* Adjust height to match your visual preference */
+  height: 700px; /* Or whatever height you prefer */
   object-fit: cover;
   display: block;
+}
+
+.flush-text-container {
+  padding-left: 80px;  /* Space between image and text */
+  padding-right: 10%;  /* Keeps text from hitting the right edge */
 }
 
 .flush-text {
