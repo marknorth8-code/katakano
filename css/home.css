@@ -132,6 +132,65 @@
   display:block;
 }
 
+/* --- STRATEGIC OVERVIEW SECTION --- */
+
+.info-split-section {
+  padding: 140px 5%;
+  background: #fff;
+  border-top: 1px solid #eee;
+}
+
+.info-split-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 80px;
+  align-items: center;
+  max-width: 1400px;
+  margin: auto;
+}
+
+.info-split-image img {
+  width: 100%;
+  aspect-ratio: 1 / 1; /* Keeps the square format from your original draft */
+  object-fit: cover;
+  display: block;
+}
+
+.info-split-text h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(32px, 3vw, 42px);
+  line-height: 1.2;
+  margin-bottom: 28px;
+  font-weight: 400;
+}
+
+.info-split-text p {
+  font-size: 15.5px;
+  line-height: 1.7;
+  color: #666;
+  margin-bottom: 18px;
+  max-width: 520px;
+}
+
+.info-split-text .experience-lead {
+  font-size: 18px;
+  color: #333;
+}
+
+/* --- RESPONSIVE --- */
+
+@media (max-width: 1024px) {
+  .info-split-grid {
+    grid-template-columns: 1fr;
+    gap: 60px;
+  }
+  
+  /* Swaps text to the top on mobile for better flow */
+  .info-split-text {
+    order: -1;
+  }
+}
+
 
 
 /* =========================================================
