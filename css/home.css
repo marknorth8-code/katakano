@@ -258,6 +258,8 @@
   letter-spacing: 0.2em;
   text-transform: uppercase;
   color: #111;
+       text-align: right;
+    padding-right: 60px;
 }
 
 .quote-meta .title {
@@ -265,6 +267,8 @@
   font-size: 0.75rem;
   color: #999;
   letter-spacing: 0.05em;
+       text-align: right;
+    padding-right: 60px;
 }
 
 @media (max-width: 768px) {
