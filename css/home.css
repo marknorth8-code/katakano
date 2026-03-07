@@ -585,8 +585,10 @@
   margin:0 auto 50px auto;
 }
 
-.contact-action{
-  margin-top:20px;
+.contact-action {
+  margin-top: 35px;
+  display: flex;
+  justify-content: center;
 }
 
 
