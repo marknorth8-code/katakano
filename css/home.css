@@ -467,7 +467,26 @@
   padding-left:60px;
 }
 
+.geographic-presence .service-box {
+  min-height: auto;
+}
 
+.location-list,
+.discipline-list{
+  list-style:none;
+  padding:0;
+  margin:0;
+}
+
+.location-list li{
+  margin-bottom:14px;
+  font-size:15px;
+}
+
+.discipline-list li{
+  margin-bottom:12px;
+  font-size:15px;
+}
 
 /* =========================================================
    EXPERIENCE
