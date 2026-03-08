@@ -481,37 +481,78 @@ p.body-large {
 
 }
 
-
-/* =====================================================
-   16. FOOTER
-===================================================== */
-
-.footer-minimal {
-
-  padding: 60px 5%;
-  background: #f9f9f9;
-  border-top: 1px solid #eee;
-
+.site-footer {
+  background-color: #f5f5f5; /* Light grey background */
+  border-top: 1px solid #e0e0e0;
+  font-family: 'Inter', sans-serif; /* Clean sans-serif for links */
+  color: #666;
 }
 
-.footer-brand {
-
-  font-family: 'Playfair Display', serif;
-  font-size: 1.2rem;
-  color: #111;
-
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1fr 320px; /* Main content and Sidebar width */
+  grid-template-rows: auto auto;
 }
 
-.footer-inner.container {
+/* Vertical and Horizontal Grid Lines */
+.footer-main-content {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  padding: 60px 80px;
+  border-right: 1px solid #e0e0e0;
+}
 
+.footer-sidebar {
+  padding: 60px 40px;
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
+}
 
-  padding: 40px !important;
+.footer-logo-area {
+  padding: 80px;
+  border-top: 1px solid #e0e0e0;
+  border-right: 1px solid #e0e0e0;
+}
 
-  border-top: 1px solid #000;
-  margin-top: 60px;
+.footer-legal-area {
+  padding: 40px;
+  border-top: 1px solid #e0e0e0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  font-size: 11px;
+  line-height: 1.6;
+}
 
+/* Typography & Links */
+.footer-col a, .sidebar-top a, .sidebar-bottom a {
+  display: block;
+  text-decoration: none;
+  color: #777;
+  font-size: 14px;
+  margin-bottom: 8px;
+  transition: color 0.2s;
+}
+
+.footer-col a:hover { color: #000; }
+
+.footer-logo {
+  font-family: Georgia, serif;
+  font-size: 32px;
+  color: #000;
+  margin: 0;
+}
+
+.external-link {
+  font-size: 15px !important;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .footer-grid { grid-template-columns: 1fr; }
+  .footer-main-content { grid-template-columns: 1fr; border-right: none; }
+  .footer-sidebar { border-top: 1px solid #e0e0e0; }
 }
 
 
