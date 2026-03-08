@@ -394,7 +394,7 @@
 
 /* Use the same grid structure as services */
 .geographic-presence .services-container {
-  grid-template-columns: 1fr 1.2fr 1.2fr;
+  grid-template-columns: 1fr 1.15fr 1.25fr;
 }
 
 .presence-image-col img {
@@ -420,9 +420,10 @@
 
 /* COLUMN 3: Image (The Fix) */
 .presence-image-col {
-  grid-column: 3; /* Forces image to the right */
+   grid-column: 3;
   border-right: none;
   height: 100%;
+  width: 100%; /* Added to ensure it fills the newly expanded column */
 }
 
 .location-list {
