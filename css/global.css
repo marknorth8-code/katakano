@@ -98,20 +98,33 @@ p.body-large {
 /* =====================================================
    5. FLOATING PILL NAVIGATION
 ===================================================== */
-/* Brand Positioning */
+
+/* 1. The Wrapper (Invisible bar across the top) */
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 0; 
+  z-index: 9999;
+  pointer-events: none; /* Allows clicking content "under" the header */
+}
+
+/* 2. Brand Link (LEFT) */
 .site-header .nav-brand {
   position: fixed;
-  top: 40px;  /* Matches your .nav-actions top value */
-  left: 60px; /* Your requested 60px gap from left */
-  z-index: 3001;
+  top: 40px;
+  left: 60px;
   display: flex;
   align-items: center;
-  height: 40px; /* Matches the height of your buttons for perfect alignment */
+  height: 40px;
+  pointer-events: auto; /* Makes name clickable */
+  z-index: 10000;
 }
 
 .brand-link {
   font-family: var(--font-main);
-  font-size: 0.75rem; /* Slightly larger than button text for prominence */
+  font-size: 0.75rem;
   font-weight: 500;
   text-transform: uppercase;
   letter-spacing: 0.15em;
@@ -120,26 +133,59 @@ p.body-large {
   transition: opacity 0.3s ease;
 }
 
-.brand-link:hover {
-  opacity: 0.6;
+/* 3. Actions & Buttons (RIGHT) */
+.site-header .nav-actions {
+  position: fixed;
+  top: 40px;
+  right: 60px;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  pointer-events: auto; /* Makes buttons clickable */
+  z-index: 10000;
 }
 
-/* Ensure brand text turns white when the dark menu overlay is open */
+.site-header .nav-actions .button-get-in-touch,
+.site-header .nav-actions .nav-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  padding: 0 24px;
+  background-color: #ffffff;
+  border: 1px solid #EAEAEA;
+  border-radius: 100px;
+  color: #1a1a1a;
+  font-family: var(--font-main);
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* 4. Hover & State Effects */
+.site-header .nav-actions .button-get-in-touch:hover,
+.site-header .nav-actions .nav-pill:hover {
+  background-color: #011d01;
+  border-color: #011d01;
+  color: #ffffff;
+  transform: translateY(-2px);
+}
+
 .menu-open .brand-link {
   color: #ffffff !important;
 }
 
-/* Mobile Tweak */
+/* 5. Mobile Adjustments */
 @media (max-width: 768px) {
-  .site-header .nav-brand {
-    left: 20px; /* Tighter gap for mobile screens */
-  }
-  .brand-link {
-    font-size: 0.65rem;
-    max-width: 120px; /* Prevents overlap with buttons on very small screens */
-    line-height: 1.2;
-  }
+  .site-header .nav-brand { left: 20px; }
+  .site-header .nav-actions { right: 20px; }
+  .brand-link { font-size: 0.65rem; max-width: 140px; line-height: 1.2; }
 }
+
 
 
 .site-header {
@@ -197,6 +243,34 @@ p.body-large {
   color: #ffffff;
   transform: translateY(-2px);
 
+}
+
+/* Container sits at the very top */
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 9999;
+  pointer-events: none; /* Let clicks pass through empty space */
+}
+
+/* Company Name on the LEFT */
+.site-header .nav-brand {
+  position: fixed;
+  top: 40px;
+  left: 60px;
+  pointer-events: auto; /* Make link clickable */
+}
+
+/* Buttons on the RIGHT */
+.site-header .nav-actions {
+  position: fixed;
+  top: 40px;
+  right: 60px;
+  display: flex;
+  gap: 12px;
+  pointer-events: auto; /* Make buttons clickable */
 }
 
 
