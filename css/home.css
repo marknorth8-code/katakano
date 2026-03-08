@@ -518,7 +518,6 @@
   /* This padding creates the "virtual" container for the text on the right */
   padding-left: 80px; 
   padding-right: 10%; 
-   padding: 40px 5%; /* Resets the 80px left padding for mobile */
 }
 
 .experience-text p{
@@ -536,17 +535,21 @@
   display:block;
 }
 
-@media (max-width:1024px){
 
-  .experience-grid{
-    grid-template-columns:1fr;
-    gap:60px;
+@media (max-width: 1024px) {
+  .experience-grid {
+    grid-template-columns: 1fr;
+    gap: 0; /* Remove gap so image/text flow nicely */
   }
 
-  .experience-visual img{
-    height:520px;
+  .experience-visual img {
+    height: 520px;
+    width: 100vw; /* Ensures image stays flush edge-to-edge on mobile */
   }
 
+  .experience-text {
+    padding: 60px 5%; /* This now safely resets the desktop padding only on mobile */
+  }
 }
 
 
