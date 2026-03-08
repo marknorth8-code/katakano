@@ -146,8 +146,9 @@ p.body-large {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%; /* Forces it to stay full width */
-  z-index: 9999; /* Keeps it above the new footer grid lines */
+  width: 100% !important; /* Force it to stay full width */
+  z-index: 9999 !important; /* Move it to the very front layer */
+  pointer-events: auto; /* Ensure buttons remain clickable */
 }
 
 
