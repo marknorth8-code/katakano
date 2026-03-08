@@ -142,14 +142,14 @@ p.body-large {
 }
 
 
-
 .site-header {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
-  z-index: 3000;
+  width: 100%; /* Forces it to stay full width */
+  z-index: 9999; /* Keeps it above the new footer grid lines */
 }
+
 
 .site-header .nav-actions {
   position: fixed;
