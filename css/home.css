@@ -397,13 +397,6 @@
   grid-template-columns: 1fr 1.2fr 1.2fr;
 }
 
-/* COLUMN 1: Image Styling */
-.presence-image-col {
-  grid-column: 1;
-  border-right: 1px solid #ececec;
-  height: 100%;
-}
-
 .presence-image-col img {
   width: 100%;
   height: 100%;
@@ -411,18 +404,25 @@
   display: block;
 }
 
-/* COLUMN 2: Header (inherits from .services-header) */
+/* COLUMN 1: Header (inherits from .services-header) */
 .geographic-presence .services-header {
-  grid-column: 2;
+  grid-column: 1;
   border-right: 1px solid #ececec;
   padding: 60px; /* Matching the .service-box padding */
 }
 
-/* COLUMN 3: Location List Styling */
+/* COLUMN 2: Location List Styling */
 .geographic-presence .service-box {
-  grid-column: 3;
+  grid-column: 2;
   border-right: none; /* End of row */
   padding: 60px;
+}
+
+/* COLUMN 3: Image (The Fix) */
+.presence-image-col {
+  grid-column: 3; /* Forces image to the right */
+  border-right: none;
+  height: 100%;
 }
 
 .location-list {
