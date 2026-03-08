@@ -149,16 +149,18 @@ p.body-large {
   width: 100% !important; /* Force it to stay full width */
   z-index: 9999 !important; /* Move it to the very front layer */
   pointer-events: auto; /* Ensure buttons remain clickable */
+  height: 0; /* Prevents an invisible box from blocking the page content */
 }
 
 
 .site-header .nav-actions {
   position: fixed;
   top: 40px;
-  right: 40px;
+  right: 60px; /* Anchors buttons to the right */
   display: flex;
   gap: 12px;
-  align-items: center;
+  z-index: 10000;
+  pointer-events: auto; /* Re-enables clicking for the buttons */
 }
 
 .site-header .nav-actions .button-get-in-touch,
