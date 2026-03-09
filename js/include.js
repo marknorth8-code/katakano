@@ -12,8 +12,8 @@ async function includeHTML(file, elementId) {
         const html = await response.text();
         container.innerHTML = html;
 
-        // Start menu logic ONLY after the header is injected
-        if (elementId === 'header') {
+        // FIXED: Check for 'header-holder' instead of 'header'
+        if (elementId === 'header-holder') {
             initMenuToggle();
         }
     } catch (error) {
@@ -21,27 +21,19 @@ async function includeHTML(file, elementId) {
     }
 }
 
-/**
- * Master Controller for the Morphing Menu
- */
 function initMenuToggle() {
     const menuBtn = document.getElementById('menuToggle');
     const overlay = document.getElementById('fullScreenMenu');
     const body = document.body;
 
     if (menuBtn && overlay) {
-        // Toggle everything based on the single header button
         menuBtn.addEventListener('click', (e) => {
             e.preventDefault();
-            
             const isOpen = overlay.classList.toggle('is-open');
-            body.classList.toggle('menu-open'); // Triggers CSS X-morph & Button colors
-            
-            // Handle scrolling
+            body.classList.toggle('menu-open');
             body.style.overflow = isOpen ? 'hidden' : ''; 
         });
 
-        // Close when any link inside the overlay is clicked
         const links = overlay.querySelectorAll('a');
         links.forEach(link => {
             link.addEventListener('click', () => {
@@ -50,15 +42,13 @@ function initMenuToggle() {
                 body.style.overflow = '';
             });
         });
-
     } else {
-        console.warn("Menu components not found. Ensure header.html contains: #menuToggle and #fullScreenMenu");
+        console.warn("Menu components not found.");
     }
 }
 
-// Kick off the loading process
+// Kick off the loading process once
 document.addEventListener('DOMContentLoaded', () => {
-    includeHTML('partials/header.html', 'header');
-    includeHTML('partials/footer.html', 'footer'); 
+    includeHTML('partials/header.html', 'header-holder');
+    includeHTML('partials/footer.html', 'footer-holder'); 
 });
-
