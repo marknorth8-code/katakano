@@ -114,10 +114,8 @@ p.body-large {
   pointer-events: auto;
 }
 
-.nav-brand {
-  left: 60px;
-  height: 42px;
-}
+.nav-brand { left: 60px; height: 42px; }
+.nav-actions { right: 60px; gap: 12px; }
 
 .brand-link {
   font-family: var(--font-main);
@@ -128,11 +126,6 @@ p.body-large {
   color: var(--primary-dark);
   text-decoration: none;
   transition: color 0.4s ease;
-}
-
-.nav-actions {
-  right: 60px;
-  gap: 12px;
 }
 
 .button-get-in-touch,
@@ -153,7 +146,6 @@ p.body-large {
   text-transform: uppercase;
   text-decoration: none;
   cursor: pointer;
-  white-space: nowrap;
   transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
@@ -166,7 +158,7 @@ p.body-large {
 }
 
 /* =====================================================
-   MENU ICON & ANIMATION
+   MENU ICON & ANIMATIONS
 ===================================================== */
 .icon-wrapper {
   position: relative;
@@ -191,6 +183,11 @@ p.body-large {
 .line-2 { top: 7px; width: 70%; right: 0; }
 .line-3 { top: 14px; }
 
+/* Hamburger Open States */
+.menu-open .line-1 { transform: translateY(7px) rotate(45deg); }
+.menu-open .line-2 { opacity: 0; transform: translateX(-10px); }
+.menu-open .line-3 { transform: translateY(-7px) rotate(-45deg); }
+
 /* =====================================================
    FULL-SCREEN MENU OVERLAY
 ===================================================== */
@@ -205,25 +202,17 @@ p.body-large {
   overflow-y: auto;
 }
 
-.menu-overlay.is-open {
-  display: flex;
-}
+.menu-overlay.is-open { display: flex; }
 
 .overlay-content-grid {
   display: grid;
   grid-template-columns: 2.2fr 1fr 1fr;
   gap: 40px;
   margin-top: 40px;
-  position: relative;
-  z-index: 10003;
   width: 100%;
 }
 
-.nav-links {
-  list-style: none;
-  padding: 0;
-}
-
+.nav-links { list-style: none; padding: 0; }
 .nav-links li a {
   font-size: clamp(32px, 5vw, 60px);
   font-weight: 700;
@@ -245,12 +234,7 @@ p.body-large {
   font-weight: 600;
 }
 
-.sub-links {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-}
-
+.sub-links { display: flex; flex-direction: column; gap: 15px; }
 .sub-links a {
   font-size: 24px;
   color: #ffffff;
@@ -259,37 +243,26 @@ p.body-large {
   transition: opacity 0.3s ease;
 }
 
-.nav-links li a:hover,
-.sub-links a:hover {
-  opacity: 0.7;
-}
+.nav-links li a:hover, .sub-links a:hover { opacity: 0.7; }
 
 /* =====================================================
-   MENU OPEN STATE (Global Sync)
+   MENU OPEN STATE SYNC
 ===================================================== */
+/* 1. Brand & Icon to White */
 .menu-open .brand-link,
-.menu-open .line {
-  color: #ffffff !important;
-  background-color: #ffffff; 
-}
+.menu-open .line { color: #ffffff !important; background-color: #ffffff; }
 
-.menu-open .button-get-in-touch {
-  opacity: 0;
-  pointer-events: none;
-}
+/* 2. Hide "Get in Touch" */
+.menu-open .button-get-in-touch { opacity: 0; pointer-events: none; }
 
+/* 3. Transform Menu Pill to Close Pill */
 .menu-open .nav-pill {
   background-color: rgba(255, 255, 255, 0.1) !important;
-  border-color: rgba(255, 255, 255, 0.4) !important;
+  border: 1px solid rgba(255, 255, 255, 0.4) !important;
   color: #ffffff !important;
-  z-index: 10005;
 }
 
-.menu-open .toggle-label {
-  visibility: hidden;
-  position: relative;
-}
-
+.menu-open .toggle-label { visibility: hidden; position: relative; }
 .menu-open .toggle-label::after {
   content: "CLOSE";
   visibility: visible;
@@ -298,46 +271,21 @@ p.body-large {
   top: 0;
 }
 
-/* Hamburger Transformations */
-.menu-open .line-1 { transform: translateY(7px) rotate(45deg); }
-.menu-open .line-2 { opacity: 0; transform: translateX(-10px); }
-.menu-open .line-3 { transform: translateY(-7px) rotate(-45deg); }
-
 /* =====================================================
    OVERLAY BRANDING & FOOTER
 ===================================================== */
-.menu-intro-branding {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-  margin-bottom: 40px;
-  color: #ffffff;
-}
+.menu-intro-branding { display: flex; align-items: center; gap: 20px; margin-bottom: 40px; color: #ffffff; }
 
 .placeholder-logo {
-  width: 40px;
-  height: 40px;
-  background: #ffffff;
-  color: var(--bg-menu);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: 800;
-  border-radius: 4px;
+  width: 40px; height: 40px;
+  background: #ffffff; color: var(--bg-menu);
+  display: flex; align-items: center; justify-content: center;
+  font-weight: 800; border-radius: 4px;
 }
 
-.branding-text {
-  font-size: 0.75rem;
-  text-transform: uppercase;
-  letter-spacing: 0.15em;
-  font-weight: 600;
-}
+.branding-text { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.15em; font-weight: 600; }
 
-.menu-footer-logo {
-  margin-top: auto;
-  padding-top: 60px;
-}
-
+.menu-footer-logo { margin-top: auto; padding-top: 60px; }
 .katakano-logo-img {
   font-family: var(--font-main);
   font-weight: 800;
@@ -350,10 +298,7 @@ p.body-large {
 @media (max-width: 768px) {
   .nav-brand { left: 20px; }
   .nav-actions { right: 20px; }
-  .overlay-content-grid {
-    grid-template-columns: 1fr;
-    gap: 30px;
-  }
+  .overlay-content-grid { grid-template-columns: 1fr; gap: 30px; }
   .nav-links li a { font-size: 32px; }
 }
 
