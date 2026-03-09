@@ -1,60 +1,52 @@
 /**
  * js/include-header.js
- * Loads HTML partials (Header/Footer) and initializes logic
+ * Loads HTML partials and initializes interactive elements
  */
 
 async function loadPartials() {
-    // 1. Define the elements and their source files
-    const partials = [
-        { file: 'partials/header.html', elementId: 'header-holder' },
-        { file: 'partials/footer.html', elementId: 'footer-holder' }
-    ];
+    // 1. Identify where the header and footer go
+    const headerContainer = document.getElementById('header-holder');
+    const footerContainer = document.getElementById('footer-holder');
 
-    // 2. Loop through and fetch each partial
-    for (const partial of partials) {
-        const container = document.getElementById(partial.elementId);
-        
-        if (container) {
-            try {
-                const response = await fetch(partial.file);
-                if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
-                
-                const html = await response.text();
-                container.innerHTML = html;
-
-                // 3. If we just loaded the header, initialize the menu buttons
-                if (partial.elementId === 'header-holder') {
-                    initMenuToggle();
-                }
-            } catch (error) {
-                console.error(`Error loading ${partial.file}:`, error);
-            }
+    try {
+        // 2. Load the Header first
+        if (headerContainer) {
+            const hResponse = await fetch('partials/header.html');
+            if (!hResponse.ok) throw new Error(`Header status: ${hResponse.status}`);
+            headerContainer.innerHTML = await hResponse.text();
+            
+            // 3. IMPORTANT: Re-initialize the menu toggle after the header exists in the DOM
+            initMenuToggle(); 
         }
+
+        // 4. Load the Footer
+        if (footerContainer) {
+            const fResponse = await fetch('partials/footer.html');
+            if (!fResponse.ok) throw new Error(`Footer status: ${fResponse.status}`);
+            footerContainer.innerHTML = await fResponse.text();
+        }
+    } catch (error) {
+        console.error("Error loading partials:", error);
     }
 }
 
 /**
- * Logic for the "Floating Pills" Menu and Overlay
+ * Re-binds the Menu Toggle logic to the new HTML elements
  */
 function initMenuToggle() {
     const menuBtn = document.getElementById('menuToggle');
     const overlay = document.getElementById('fullScreenMenu');
     const body = document.body;
 
-    // Check if the elements exist in the injected HTML
     if (menuBtn && overlay) {
         menuBtn.addEventListener('click', (e) => {
             e.preventDefault();
-            
-            // Toggle the visibility classes defined in your CSS
             const isOpen = overlay.classList.toggle('is-open');
             body.classList.toggle('menu-open');
-            
-            // Prevent scrolling when menu is open
             body.style.overflow = isOpen ? 'hidden' : ''; 
         });
 
-        // Close menu when a link inside the overlay is clicked
+        // Ensure links inside the menu close it when clicked
         const links = overlay.querySelectorAll('a');
         links.forEach(link => {
             link.addEventListener('click', () => {
@@ -63,13 +55,12 @@ function initMenuToggle() {
                 body.style.overflow = '';
             });
         });
-        
-        console.log("Navigation initialized successfully.");
+        console.log("Menu initialized.");
     } else {
-        console.warn("Menu components (menuToggle or fullScreenMenu) not found in header.html");
+        console.warn("Could not find #menuToggle or #fullScreenMenu in header.html");
     }
 }
 
-// Kick off the process as soon as the DOM is ready
+// Start the loading process
 document.addEventListener('DOMContentLoaded', loadPartials);
 
