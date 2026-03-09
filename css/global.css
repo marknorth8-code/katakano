@@ -227,18 +227,18 @@ p.body-large {
    FULL-SCREEN MENU OVERLAY
 ===================================================== */
 .menu-overlay {
-  display: none;
+  display: none; /* Hidden by default */
   position: fixed;
   inset: 0;
   background-color: var(--bg-menu);
-  padding: 100px 10% 80px;
+  padding: 140px 10% 80px; /* Increased top padding to clear the brand/header */
   flex-direction: column;
   z-index: 10002;
   overflow-y: auto;
 }
 
 .menu-overlay.is-open {
-  display: flex;
+  display: flex; /* Shown when menu is toggled */
 }
 
 /* Grid layout inside overlay */
@@ -246,11 +246,13 @@ p.body-large {
   display: grid;
   grid-template-columns: 2.2fr 1fr 1fr;
   gap: 40px;
-  margin-top: 100px;
-  align-items: start;
+  margin-top: 40px;
+  position: relative;
+  z-index: 10003;
+  width: 100%;
 }
 
-/* Main nav links */
+/* Main nav links (Left Column) */
 .nav-links {
   list-style: none;
   padding: 0;
@@ -259,28 +261,28 @@ p.body-large {
 .nav-links li a {
   font-size: clamp(32px, 5vw, 60px);
   font-weight: 700;
-  color: white;
+  color: #ffffff !important;
   text-decoration: none;
   line-height: 1.1;
   display: block;
   margin-bottom: 20px;
+  opacity: 1 !important;
+  visibility: visible !important;
   transition: opacity 0.3s ease;
 }
 
-.nav-links li a:hover {
-  opacity: 0.7;
-}
-
-/* Secondary nav */
+/* Secondary nav labels (Column 2 & 3) */
 .menu-label {
   display: block;
   font-size: 14px;
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  color: rgba(255,255,255,0.5);
+  color: rgba(255, 255, 255, 0.5) !important;
   margin-bottom: 30px;
+  font-weight: 600;
 }
 
+/* Secondary nav links */
 .sub-links {
   display: flex;
   flex-direction: column;
@@ -289,42 +291,76 @@ p.body-large {
 
 .sub-links a {
   font-size: 24px;
-  color: white;
+  color: #ffffff !important;
   text-decoration: none;
   font-weight: 300;
+  opacity: 1 !important;
+  visibility: visible !important;
+  transition: opacity 0.3s ease;
+}
+
+.nav-links li a:hover,
+.sub-links a:hover {
+  opacity: 0.7 !important;
 }
 
 /* =====================================================
-   MENU CLOSE BUTTON
+   MENU OPEN STATE (Close Button visibility)
 ===================================================== */
-.menu-close-btn {
-  position: absolute;
-  top: 50px;
-  right: 5%;
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  border: 1px solid rgba(255,255,255,0.5);
-  background: transparent;
-  color: white;
-  font-size: 30px;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+
+/* Ensure the pill (which acts as close button) is visible over dark menu */
+.menu-open .nav-pill {
+  background-color: rgba(255, 255, 255, 0.1) !important;
+  border: 1px solid rgba(255, 255, 255, 0.4) !important;
+  color: #ffffff !important;
+  z-index: 10005; /* Keeps it above the overlay */
 }
 
-/* Footer logo inside menu */
+/* Switch 'MENU' text to 'CLOSE' */
+.menu-open .toggle-label {
+  display: none !important;
+}
+
+.menu-open .nav-pill::before {
+  content: "CLOSE" !important;
+  font-family: var(--font-main);
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  margin-right: 10px;
+}
+
+/* Ensure hamburger icon lines turn white */
+.menu-open .line {
+  background: #ffffff !important;
+}
+
+/* =====================================================
+   MENU FOOTER & LOGO
+===================================================== */
 .menu-footer-logo {
   position: absolute;
   bottom: 60px;
-  left: 8%;
+  left: 10%;
 }
 
 .katakano-logo-img {
-  height: 25px;
+  font-family: var(--font-main);
+  font-weight: 800;
+  letter-spacing: 0.3em;
+  color: #ffffff;
+  font-size: 1.2rem;
   opacity: 0.9;
 }
+
+/* Mobile Adjustments */
+@media (max-width: 768px) {
+  .overlay-content-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  .nav-links li a { font-size: 32px; }
+}
+
 
 /* =====================================================
    MENU OPEN STATE
