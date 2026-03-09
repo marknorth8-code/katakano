@@ -98,14 +98,12 @@ p.body-large {
    5. FLOATING PILL NAVIGATION (CONSOLIDATED)
 ===================================================== */
 
-/* 1. The Container - Holds everything fixed at the top */
 #header-holder {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   z-index: 9999;
-  pointer-events: none; /* Allows clicking hero content behind it */
 }
 
 /* 2. Brand Positioning (Left) */
@@ -273,13 +271,6 @@ p.body-large {
 /* =====================================================
    6. MENU ICON
 ===================================================== */
-
-.icon-wrapper {
-  position: relative;
-  width: 24px;
-  height: 16px;
-  margin-left: 10px;
-}
 
 .line {
   display: block;
