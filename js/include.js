@@ -4,63 +4,114 @@
  */
 
 async function loadPartials() {
-    // 1. Identify where the header and footer go
+
     const headerContainer = document.getElementById('header-holder');
     const footerContainer = document.getElementById('footer-holder');
 
     try {
-        // 2. Load the Header first
+
+        /* ===============================
+           Load Header
+        =============================== */
+
         if (headerContainer) {
-            const hResponse = await fetch('partials/header.html');
-            if (!hResponse.ok) throw new Error(`Header status: ${hResponse.status}`);
-            headerContainer.innerHTML = await hResponse.text();
-            
-            // 3. IMPORTANT: Re-initialize the menu toggle after the header exists in the DOM
-            initMenuToggle(); 
+
+            const response = await fetch('./partials/header.html');
+
+            if (!response.ok) {
+                throw new Error(`Header status: ${response.status}`);
+            }
+
+            const headerHTML = await response.text();
+            headerContainer.innerHTML = headerHTML;
+
+            // Wait for DOM to update before initializing menu
+            requestAnimationFrame(initMenuToggle);
+
         }
 
-        // 4. Load the Footer
+        /* ===============================
+           Load Footer
+        =============================== */
+
         if (footerContainer) {
-            const fResponse = await fetch('partials/footer.html');
-            if (!fResponse.ok) throw new Error(`Footer status: ${fResponse.status}`);
-            footerContainer.innerHTML = await fResponse.text();
+
+            const response = await fetch('./partials/footer.html');
+
+            if (!response.ok) {
+                throw new Error(`Footer status: ${response.status}`);
+            }
+
+            footerContainer.innerHTML = await response.text();
+
         }
+
     } catch (error) {
+
         console.error("Error loading partials:", error);
+
     }
+
 }
+
 
 /**
- * Re-binds the Menu Toggle logic to the new HTML elements
+ * Initialize Menu Toggle
  */
+
 function initMenuToggle() {
+
     const menuBtn = document.getElementById('menuToggle');
-    const overlay = document.getElementById('fullScreenMenu');
+
+    /* CSS uses .menu-overlay instead of #fullScreenMenu */
+    const overlay = document.querySelector('.menu-overlay');
+
     const body = document.body;
 
-    if (menuBtn && overlay) {
-        menuBtn.addEventListener('click', (e) => {
-            e.preventDefault();
-            const isOpen = overlay.classList.toggle('is-open');
-            body.classList.toggle('menu-open');
-            body.style.overflow = isOpen ? 'hidden' : ''; 
+    if (!menuBtn || !overlay) {
+
+        console.warn("Menu elements not found.");
+        return;
+
+    }
+
+    menuBtn.addEventListener('click', function (e) {
+
+        e.preventDefault();
+
+        const isOpen = overlay.classList.toggle('is-open');
+
+        body.classList.toggle('menu-open');
+
+        /* lock page scroll */
+        body.style.overflow = isOpen ? 'hidden' : '';
+
+    });
+
+
+    /* Close menu when clicking a link */
+
+    const links = overlay.querySelectorAll('a');
+
+    links.forEach(link => {
+
+        link.addEventListener('click', () => {
+
+            overlay.classList.remove('is-open');
+
+            body.classList.remove('menu-open');
+
+            body.style.overflow = '';
+
         });
 
-        // Ensure links inside the menu close it when clicked
-        const links = overlay.querySelectorAll('a');
-        links.forEach(link => {
-            link.addEventListener('click', () => {
-                overlay.classList.remove('is-open');
-                body.classList.remove('menu-open');
-                body.style.overflow = '';
-            });
-        });
-        console.log("Menu initialized.");
-    } else {
-        console.warn("Could not find #menuToggle or #fullScreenMenu in header.html");
-    }
+    });
+
+    console.log("Menu initialized.");
+
 }
 
-// Start the loading process
-document.addEventListener('DOMContentLoaded', loadPartials);
 
+/* Start after DOM ready */
+
+document.addEventListener('DOMContentLoaded', loadPartials);
