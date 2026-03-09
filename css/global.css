@@ -1,9 +1,7 @@
 /* =====================================================
    1. DESIGN TOKENS
 ===================================================== */
-
 :root {
-
   --primary-dark: #1a1a1a;
   --bg-light: #ffffff;
   --bg-menu: #011d01;
@@ -15,14 +13,11 @@
 
   --section-padding: 140px;
   --container-width: 1200px;
-
 }
-
 
 /* =====================================================
    2. BASE STYLES
 ===================================================== */
-
 * {
   box-sizing: border-box;
   margin: 0;
@@ -40,11 +35,9 @@ body {
   text-rendering: optimizeLegibility;
 }
 
-
 /* =====================================================
    3. TYPOGRAPHY (Editorial Style)
 ===================================================== */
-
 h1,
 .editorial-title {
   font-family: 'Playfair Display', serif;
@@ -79,11 +72,9 @@ p.body-large {
   max-width: 600px;
 }
 
-
 /* =====================================================
    4. LAYOUT UTILITIES
 ===================================================== */
-
 .container {
   max-width: var(--container-width);
   margin: 0 auto;
@@ -95,27 +86,26 @@ p.body-large {
 }
 
 /* =====================================================
-   5. FLOATING PILL NAVIGATION (CONSOLIDATED)
+   HEADER & FLOATING PILL NAV
 ===================================================== */
-
 #header-holder {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 9999;
+  z-index: 10000;
 }
 
-/* 2. Brand Positioning (Left) */
+/* Brand on the left */
 .nav-brand {
   position: fixed;
   top: 40px;
   left: 60px;
-  z-index: 10001; /* Above the overlay */
-  pointer-events: auto;
   display: flex;
   align-items: center;
-  height: 42px; /* Matches pill height for perfect horizontal alignment */
+  height: 42px;
+  z-index: 10001;
+  pointer-events: auto;
 }
 
 .brand-link {
@@ -129,7 +119,7 @@ p.body-large {
   transition: color 0.4s ease;
 }
 
-/* 3. Button Positioning (Right) */
+/* Actions / buttons on the right */
 .nav-actions {
   position: fixed;
   top: 40px;
@@ -141,13 +131,13 @@ p.body-large {
   pointer-events: auto;
 }
 
-/* 4. Global Pill Styles (Headers & Buttons) */
+/* Pills & buttons */
 .button-get-in-touch,
 .nav-pill {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  height: 42px; 
+  height: 42px;
   padding: 0 28px;
   background-color: #ffffff;
   border: 1px solid #EAEAEA;
@@ -173,104 +163,17 @@ p.body-large {
 }
 
 /* =====================================================
-   6. MENU ICON & ANIMATION
+   MENU ICON & ANIMATION
 ===================================================== */
-
 .icon-wrapper {
   position: relative;
-  width: 20px;
-  height: 12px;
-  margin-left: 12px;
+  width: 24px;
+  height: 16px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  margin-left: 10px;
 }
-
-.line {
-  display: block;
-  height: 2px;
-  width: 100%;
-  background: currentColor;
-  transition: transform 0.3s ease, opacity 0.3s ease;
-}
-
-.line-2 {
-  width: 70%;
-  align-self: flex-end; /* Small dash on the bottom-right */
-}
-
-/* Animation when Menu is Open */
-.menu-open .line-1 {
-  transform: translateY(5px) rotate(45deg);
-}
-
-.menu-open .line-2 {
-  opacity: 0;
-  transform: translateX(-10px);
-}
-
-.menu-open .line-3 {
-  transform: translateY(-5px) rotate(-45deg);
-}
-
-/* =====================================================
-   7. MENU OPEN STATES (COLOR FLIPS)
-===================================================== */
-
-/* Turns brand text white against the dark menu */
-.menu-open .brand-link {
-  color: #ffffff !important;
-}
-
-/* Ghost pill style for the Close button */
-.menu-open .nav-pill {
-  background-color: rgba(255, 255, 255, 0.1) !important;
-  border-color: rgba(255, 255, 255, 0.2) !important;
-  color: #ffffff !important;
-}
-
-/* Hides the 'Get in Touch' button while menu is open for a cleaner look */
-.menu-open .button-get-in-touch {
-  opacity: 0;
-  pointer-events: none;
-  transform: translateX(20px);
-}
-
-/* Changes 'MENU' text to 'CLOSE' using the pseudo-element trick */
-.menu-open .toggle-label {
-  display: none !important;
-}
-
-.menu-open .nav-pill::before {
-  content: "CLOSE";
-  font-family: var(--font-main);
-  font-size: 0.7rem;
-  letter-spacing: 0.1em;
-}
-
-/* =====================================================
-   8. MOBILE RESPONSIVENESS
-===================================================== */
-
-@media (max-width: 768px) {
-  .nav-brand { left: 24px; top: 24px; }
-  .nav-actions { right: 24px; top: 24px; }
-  
-  .brand-link { 
-    font-size: 0.65rem; 
-    max-width: 140px; 
-    line-height: 1.2; 
-  }
-  
-  /* Hide 'Get in Touch' on very small mobile to save space */
-  .nav-actions .button-get-in-touch {
-    display: none;
-  }
-}
-
-/* =====================================================
-   6. MENU ICON
-===================================================== */
 
 .line {
   display: block;
@@ -285,154 +188,114 @@ p.body-large {
 .line-2 { top: 7px; width: 70%; right: 0; }
 .line-3 { top: 14px; }
 
+/* Menu open animations */
+.menu-open .line-1 {
+  transform: translateY(7px) rotate(45deg);
+}
+.menu-open .line-2 {
+  opacity: 0;
+  transform: translateX(-10px);
+}
+.menu-open .line-3 {
+  transform: translateY(-7px) rotate(-45deg);
+}
 
 /* =====================================================
-   7. MENU OVERLAY
+   FULL-SCREEN MENU OVERLAY
 ===================================================== */
-
 .menu-overlay {
-
   display: none;
   position: fixed;
   inset: 0;
-
   background-color: var(--bg-menu);
-
   padding: 100px 10% 80px;
-
   flex-direction: column;
-  z-index: 1100;
+  z-index: 10002;
   overflow-y: auto;
-
 }
 
 .menu-overlay.is-open {
   display: flex;
 }
 
-
-/* =====================================================
-   8. MENU GRID
-===================================================== */
-
+/* Grid layout inside overlay */
 .overlay-content-grid {
-
   display: grid;
   grid-template-columns: 2.2fr 1fr 1fr;
   gap: 40px;
-
   margin-top: 100px;
   align-items: start;
-
 }
 
-
-/* =====================================================
-   9. MAIN NAV LINKS
-===================================================== */
-
+/* Main nav links */
 .nav-links {
   list-style: none;
   padding: 0;
 }
 
 .nav-links li a {
-
   font-size: clamp(32px, 5vw, 60px);
   font-weight: 700;
   color: white;
-
   text-decoration: none;
   line-height: 1.1;
-
   display: block;
   margin-bottom: 20px;
-
   transition: opacity 0.3s ease;
-
 }
 
 .nav-links li a:hover {
   opacity: 0.7;
 }
 
-
-/* =====================================================
-   10. SECONDARY MENU LINKS
-===================================================== */
-
+/* Secondary nav */
 .menu-label {
-
   display: block;
   font-size: 14px;
-
   text-transform: uppercase;
   letter-spacing: 0.1em;
-
   color: rgba(255,255,255,0.5);
-
   margin-bottom: 30px;
-
 }
 
 .sub-links {
-
   display: flex;
   flex-direction: column;
   gap: 15px;
-
 }
 
 .sub-links a {
-
   font-size: 24px;
   color: white;
   text-decoration: none;
   font-weight: 300;
-
 }
 
-
 /* =====================================================
-   11. CLOSE BUTTON
+   MENU CLOSE BUTTON
 ===================================================== */
-
 .menu-close-btn {
-
   position: absolute;
   top: 50px;
   right: 5%;
-
   width: 60px;
   height: 60px;
-
   border-radius: 50%;
   border: 1px solid rgba(255,255,255,0.5);
-
   background: transparent;
   color: white;
-
   font-size: 30px;
-
   cursor: pointer;
-
   display: flex;
   align-items: center;
   justify-content: center;
-
 }
 
-
-/* =====================================================
-   12. MENU FOOTER LOGO
-===================================================== */
-
+/* Footer logo inside menu */
 .menu-footer-logo {
-
   position: absolute;
   bottom: 60px;
   left: 8%;
-
 }
 
 .katakano-logo-img {
@@ -440,28 +303,25 @@ p.body-large {
   opacity: 0.9;
 }
 
-
 /* =====================================================
-   13. MENU OPEN STATE
+   MENU OPEN STATE
 ===================================================== */
+.menu-open .brand-link {
+  color: #ffffff !important;
+}
 
 .menu-open .nav-pill {
-
   background-color: transparent !important;
   border-color: rgba(255,255,255,0.3) !important;
   color: #ffffff !important;
-
 }
 
 .menu-open .button-get-in-touch {
-
   opacity: 0;
   pointer-events: none;
   transform: translateX(20px);
-
 }
 
-/* Hide 'MENU' and Show 'CLOSE' */
 .menu-open .toggle-label {
   display: none !important;
 }
@@ -475,59 +335,40 @@ p.body-large {
   margin-right: 10px;
 }
 
-
 /* =====================================================
-   14. MENU ICON ANIMATION
+   MOBILE RESPONSIVENESS
 ===================================================== */
-
-.menu-open .line-1 {
-  transform: translateY(7px) rotate(45deg);
+@media (max-width: 768px) {
+  .nav-brand { left: 24px; top: 24px; }
+  .nav-actions { right: 24px; top: 24px; }
+  .brand-link { font-size: 0.65rem; max-width: 140px; line-height: 1.2; }
+  .nav-actions .button-get-in-touch { display: none; }
 }
-
-.menu-open .line-2 {
-  opacity: 0;
-  transform: translateX(-10px);
-}
-
-.menu-open .line-3 {
-  transform: translateY(-7px) rotate(-45deg);
-}
-
 
 /* =====================================================
    15. INTRO SECTION
 ===================================================== */
-
 .intro {
-
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-
   height: auto;
   padding: 60px 8%;
-
   background-color: var(--bg-light);
   text-align: center;
-
 }
 
 .intro-logo-wrapper {
-
   margin-bottom: 20px;
   order: -1;
-
 }
 
 .intro-logo {
-
   max-width: 400px;
   height: auto;
-
   display: block;
   margin: 0 auto;
-
 }
 
 .intro-container {
@@ -535,30 +376,29 @@ p.body-large {
 }
 
 .intro-text {
-
   font-size: 0.9rem;
   text-transform: uppercase;
   letter-spacing: 0.1em;
   color: var(--primary-dark);
-
   margin-bottom: 20px;
-
 }
 
+/* =====================================================
+   FOOTER
+===================================================== */
 .site-footer {
-  background-color: #f5f5f5; /* Light grey background */
+  background-color: #f5f5f5;
   border-top: 1px solid #e0e0e0;
-  font-family: 'Inter', sans-serif; /* Clean sans-serif for links */
+  font-family: 'Inter', sans-serif;
   color: #666;
 }
 
 .footer-grid {
   display: grid;
-  grid-template-columns: 1fr 320px; /* Main content and Sidebar width */
+  grid-template-columns: 1fr 320px;
   grid-template-rows: auto auto;
 }
 
-/* Vertical and Horizontal Grid Lines */
 .footer-main-content {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -589,7 +429,6 @@ p.body-large {
   line-height: 1.6;
 }
 
-/* Typography & Links */
 .footer-col a, .sidebar-top a, .sidebar-bottom a {
   display: block;
   text-decoration: none;
@@ -612,20 +451,17 @@ p.body-large {
   font-size: 15px !important;
 }
 
-/* Responsive */
+/* Responsive footer */
 @media (max-width: 1024px) {
   .footer-grid { grid-template-columns: 1fr; }
   .footer-main-content { grid-template-columns: 1fr; border-right: none; }
   .footer-sidebar { border-top: 1px solid #e0e0e0; }
 }
 
-
 /* =====================================================
-   17. RESPONSIVE
+   RESPONSIVE GRID / MENU
 ===================================================== */
-
 @media (max-width: 992px) {
-
   .overlay-content-grid {
     grid-template-columns: 1fr;
     gap: 40px;
@@ -640,5 +476,4 @@ p.body-large {
   .menu-close-btn {
     right: 20px;
   }
-
 }
