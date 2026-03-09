@@ -603,6 +603,45 @@
   justify-content: center;
 }
 
+/* GLOBAL PILL BUTTON - Use this anywhere */
+.button-get-in-touch,
+.nav-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  padding: 0 24px;
+  background-color: #ffffff;
+  border: 1px solid #EAEAEA;
+  border-radius: 100px;
+  color: #1a1a1a;
+  font-family: var(--font-main);
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.button-get-in-touch:hover,
+.nav-pill:hover {
+  background-color: #011d01;
+  border-color: #011d01;
+  color: #ffffff;
+  transform: translateY(-2px);
+}
+
+/* HEADER ONLY POSITIONING */
+.site-header .nav-actions {
+  position: fixed;
+  top: 40px;
+  right: 40px;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
 
 
 
