@@ -49,6 +49,7 @@ function initMenuToggle() {
 
 // Kick off the loading process once
 document.addEventListener('DOMContentLoaded', () => {
-    includeHTML('partials/header.html', 'header-holder');
+       includeHTML('/partials/header.html', 'header-holder');
     includeHTML('partials/footer.html', 'footer-holder'); 
+    
 });
