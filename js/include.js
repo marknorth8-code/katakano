@@ -4,114 +4,77 @@
  */
 
 async function loadPartials() {
-
     const headerContainer = document.getElementById('header-holder');
     const footerContainer = document.getElementById('footer-holder');
 
-    try {
-
-        /* ===============================
-           Load Header
-        =============================== */
-
-        if (headerContainer) {
-
+    /* --- LOAD HEADER --- */
+    if (headerContainer) {
+        try {
             const response = await fetch('./partials/header.html');
-
-            if (!response.ok) {
-                throw new Error(`Header status: ${response.status}`);
-            }
-
+            if (!response.ok) throw new Error(`Header status: ${response.status}`);
+            
             const headerHTML = await response.text();
             headerContainer.innerHTML = headerHTML;
 
-            // Wait for DOM to update before initializing menu
-            requestAnimationFrame(initMenuToggle);
-
+            // Initialize menu immediately after HTML is injected
+            initMenuToggle();
+        } catch (error) {
+            console.error("Error loading header:", error);
         }
-
-        /* ===============================
-           Load Footer
-        =============================== */
-
-        if (footerContainer) {
-
-            const response = await fetch('./partials/footer.html');
-
-            if (!response.ok) {
-                throw new Error(`Footer status: ${response.status}`);
-            }
-
-            footerContainer.innerHTML = await response.text();
-
-        }
-
-    } catch (error) {
-
-        console.error("Error loading partials:", error);
-
     }
 
+    /* --- LOAD FOOTER --- */
+    if (footerContainer) {
+        try {
+            const response = await fetch('./partials/footer.html');
+            if (!response.ok) throw new Error(`Footer status: ${response.status}`);
+            
+            footerContainer.innerHTML = await response.text();
+        } catch (error) {
+            console.error("Error loading footer:", error);
+        }
+    }
 }
-
 
 /**
  * Initialize Menu Toggle
  */
-
 function initMenuToggle() {
-
     const menuBtn = document.getElementById('menuToggle');
-
-    /* CSS uses .menu-overlay instead of #fullScreenMenu */
     const overlay = document.querySelector('.menu-overlay');
-
     const body = document.body;
 
     if (!menuBtn || !overlay) {
-
-        console.warn("Menu elements not found.");
+        console.warn("Menu elements not found in the loaded header HTML.");
         return;
-
     }
 
+    // Toggle Menu
     menuBtn.addEventListener('click', function (e) {
-
         e.preventDefault();
-
         const isOpen = overlay.classList.toggle('is-open');
-
         body.classList.toggle('menu-open');
-
-        /* lock page scroll */
+        
+        // Lock/Unlock scroll
         body.style.overflow = isOpen ? 'hidden' : '';
-
+        
+        // Update ARIA for accessibility
+        menuBtn.setAttribute('aria-expanded', isOpen);
     });
 
-
-    /* Close menu when clicking a link */
-
+    // Close menu when clicking any link inside the overlay
     const links = overlay.querySelectorAll('a');
-
     links.forEach(link => {
-
         link.addEventListener('click', () => {
-
             overlay.classList.remove('is-open');
-
             body.classList.remove('menu-open');
-
             body.style.overflow = '';
-
+            menuBtn.setAttribute('aria-expanded', 'false');
         });
-
     });
 
-    console.log("Menu initialized.");
-
+    console.log("Menu navigation initialized.");
 }
 
-
-/* Start after DOM ready */
-
+/* Start after DOM is ready */
 document.addEventListener('DOMContentLoaded', loadPartials);
