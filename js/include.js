@@ -1,6 +1,7 @@
 /**
  * js/include-header.js
- * Loads HTML partials and initializes interactive elements
+ * Loads HTML partials and initializes the floating pill menu.
+ * Only targets the menu overlay and its specific toggle button.
  */
 
 async function loadPartials() {
@@ -10,13 +11,14 @@ async function loadPartials() {
     /* --- LOAD HEADER --- */
     if (headerContainer) {
         try {
+            // Using Fetch API to get the partial file
             const response = await fetch('./partials/header.html');
-            if (!response.ok) throw new Error(`Header status: ${response.status}`);
+            if (!response.ok) throw new Error(`Header fetch failed: ${response.status}`);
             
             const headerHTML = await response.text();
             headerContainer.innerHTML = headerHTML;
 
-            // Initialize menu immediately after HTML is injected
+            // Initialize menu logic immediately after injection
             initMenuToggle();
         } catch (error) {
             console.error("Error loading header:", error);
@@ -27,7 +29,7 @@ async function loadPartials() {
     if (footerContainer) {
         try {
             const response = await fetch('./partials/footer.html');
-            if (!response.ok) throw new Error(`Footer status: ${response.status}`);
+            if (!response.ok) throw new Error(`Footer fetch failed: ${response.status}`);
             
             footerContainer.innerHTML = await response.text();
         } catch (error) {
@@ -38,31 +40,34 @@ async function loadPartials() {
 
 /**
  * Initialize Menu Toggle
+ * Manages the "MENU" to "CLOSE" transition and overlay visibility.
  */
 function initMenuToggle() {
     const menuBtn = document.getElementById('menuToggle');
     const overlay = document.querySelector('.menu-overlay');
     const body = document.body;
 
+    // Safety check to ensure elements exist in the partial
     if (!menuBtn || !overlay) {
-        console.warn("Menu elements not found in the loaded header HTML.");
         return;
     }
 
-    // Toggle Menu
+    // Main Toggle Event
     menuBtn.addEventListener('click', function (e) {
         e.preventDefault();
-        const isOpen = overlay.classList.toggle('is-open');
-        body.classList.toggle('menu-open');
         
-        // Lock/Unlock scroll
+        // Toggle 'is-open' for the overlay and 'menu-open' for global CSS hooks
+        const isOpen = overlay.classList.toggle('is-open');
+        body.classList.toggle('menu-open', isOpen);
+        
+        // Prevent background scrolling while menu is active
         body.style.overflow = isOpen ? 'hidden' : '';
         
-        // Update ARIA for accessibility
+        // Update ARIA for screen readers
         menuBtn.setAttribute('aria-expanded', isOpen);
     });
 
-    // Close menu when clicking any link inside the overlay
+    // Close menu automatically when any internal link is clicked
     const links = overlay.querySelectorAll('a');
     links.forEach(link => {
         link.addEventListener('click', () => {
@@ -72,9 +77,8 @@ function initMenuToggle() {
             menuBtn.setAttribute('aria-expanded', 'false');
         });
     });
-
-    console.log("Menu navigation initialized.");
 }
 
-/* Start after DOM is ready */
+// Modern best practice: Run after DOM is fully parsed
 document.addEventListener('DOMContentLoaded', loadPartials);
+
