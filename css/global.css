@@ -200,6 +200,7 @@ p.body-large {
   flex-direction: column;
   z-index: 10002;
   overflow-y: auto;
+   pointer-events: auto;
 }
 
 .menu-overlay.is-open { display: flex; }
@@ -260,16 +261,31 @@ p.body-large {
   background-color: rgba(255, 255, 255, 0.1) !important;
   border: 1px solid rgba(255, 255, 255, 0.4) !important;
   color: #ffffff !important;
+  z-index: 10005 !important;
+  pointer-events: auto !important;
 }
 
-.menu-open .toggle-label { visibility: hidden; position: relative; }
+/* Hide "MENU" text by shrinking it to 0 */
+.menu-open .toggle-label { 
+  font-size: 0 !important; 
+  position: relative; 
+  display: inline-block;
+  min-width: 45px; /* Ensures the pill doesn't "snap" or jump size */
+}
+
+/* Show "CLOSE" in its place */
 .menu-open .toggle-label::after {
   content: "CLOSE";
-  visibility: visible;
+  font-size: 0.7rem; 
+  letter-spacing: 0.1em;
+  color: #ffffff;
   position: absolute;
   left: 0;
-  top: 0;
+  top: 50%;
+  transform: translateY(-50%); /* Keeps it perfectly centered vertically */
+  visibility: visible;
 }
+
 
 /* =====================================================
    OVERLAY BRANDING & FOOTER
