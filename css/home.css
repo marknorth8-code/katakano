@@ -186,6 +186,38 @@
   color: #666;
 }
 
+/* 1. Reset the link to remove the default blue underline */
+.experience-link {
+  text-decoration: none; 
+  color: inherit;       /* Takes the color from your parent text */
+  display: inline-block;
+}
+
+.experience-title {
+  margin: 0;
+  display: inline-flex;
+  align-items: center;
+  font-family: sans-serif; /* Matches your image style */
+  cursor: pointer;
+}
+
+/* 2. Create the Chevron */
+.experience-title::after {
+  content: ' \203A'; /* This is the ( › ) character */
+  display: inline-block;
+  margin-left: 10px;
+  font-size: 1.5rem;
+  line-height: 1;
+  transition: transform 0.3s ease; /* The movement engine */
+}
+
+/* 3. The Micro-Movement Hover */
+.experience-link:hover .experience-title::after {
+  transform: translateX(8px); /* Slides it to the right */
+  color: #007aff;             /* Optional: highlight color on hover */
+}
+
+
 /* --- CONSOLIDATED RESPONSIVE (Tablets & Mobile) --- */
 
 @media (max-width: 1024px) {
