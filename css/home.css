@@ -186,56 +186,56 @@
   color: #666;
 }
 
-/* 1. Reset the link to remove the default blue underline */
 /* =========================================================
-   LINKED TITLES (Micro-Movement)
+   LINKED TITLES (Corrected)
    ========================================================= */
 
-/* Ensure the container doesn't force a blue underline */
 .experience-link {
   text-decoration: none; 
   color: inherit; 
-  display: block; /* Makes the whole area clickable */
+  display: block; 
 }
 
 .split-column-title {
-  border-top: 1px solid #eee; /* Adds the line from your original image */
+  border-top: 1px solid #eee;
   padding-top: 15px;
   margin-bottom: 5px;
+  width: fit-content; /* Keeps the arrow tucked next to the word */
 }
 
 .experience-title {
-  font-family: 'Playfair Display', serif; /* Keeps your branding consistent */
-  font-size: 1.25rem;
-  margin: 0;
+  font-family: 'Inter', sans-serif; 
+  font-size: 16px; /* Matches the text to the right */
+  font-weight: 600; 
   line-height: 1.3;
   color: #111;
   display: flex;
   align-items: center;
-  justify-content: b;
+  gap: 12px; /* This sets the exact distance to the chevron */
   cursor: pointer;
   transition: color 0.3s ease;
+  margin: 0;
 }
 
 /* The Chevron › */
 .experience-title::after {
-  content: '\203A'; /* Unicode for › */
-  display: inline-block;
-  margin-left: auto; /* Pushes chevron to the far right like your image */
-  font-family: sans-serif; /* Cleaner look for the icon */
-  font-size: 1.6rem;
+  content: '\203A'; 
+  font-family: sans-serif;
+  font-size: 1.4rem;
+  line-height: 1;
+  /* Removed margin-left: auto so it follows the 'gap' above */
   transition: transform 0.3s ease, color 0.3s ease;
 }
 
 /* Hover Effects */
 .experience-link:hover .experience-title {
-  color: #007aff; /* Optional: title turns blue on hover */
+  color: #666; /* Subtle fade instead of blue/bright grey */
 }
 
 .experience-link:hover .experience-title::after {
-  transform: translateX(5px); /* The "Micro-Movement" slide */
-  color: #007aff;
+  transform: translateX(5px); /* The Micro-Movement */
 }
+
 
 
 /* --- CONSOLIDATED RESPONSIVE (Tablets & Mobile) --- */
