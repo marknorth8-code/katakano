@@ -195,7 +195,7 @@
 
 /* TEXT COLUMN + DIVIDER */
 .split-column-text {
-  border-left: 1px solid #d6d6d6;
+  border-left: 2px solid #d6d6d6;
   padding-left: 30px;
   max-width: 520px;
 }
