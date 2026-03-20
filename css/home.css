@@ -84,7 +84,7 @@
 
 .editorial-title {
   font-family: 'Playfair Display', serif;
-  font-size: clamp(2rem, 5vw, 2rem);
+   font-size: clamp(1rem, 2.5vw, 1.9rem);
   line-height: 1.1;
   font-weight: 400;
   color: #111;
