@@ -546,7 +546,17 @@
   }
 }
 
+.pattern-divider {
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+}
 
+.pattern-divider svg {
+  width: 100%;
+  height: 120px;
+  display: block;
+}
 
 /* =========================================================
    CONTACT
