@@ -286,14 +286,20 @@
 .services-minimal {
   background-color: #fff;
   border-bottom: 1px solid #ececec;
+  padding-left: 0;
+  padding-right: 0;
 }
 
-/* 3-COLUMN LAYOUT */
+/* 3-COLUMN LAYOUT (ALIGNED WITH SECTION 2) */
 .services-container {
   display: grid;
   grid-template-columns: 0.7fr 1.1fr 1.6fr;
   gap: 60px;
   align-items: start;
+
+  /* Alignment with flush-text-container */
+  padding-left: 50px;
+  padding-right: 6%;
 }
 
 /* COLUMN 1: TITLE */
@@ -333,8 +339,6 @@
 .service-box {
   display: flex;
   flex-direction: column;
-  padding: 0;
-  border: none;
 }
 
 /* NUMBER */
@@ -376,16 +380,6 @@
 .learn-more::after {
   content: ' >';
   font-weight: 300;
-}
-
-.services-container {
-  display: grid;
-  grid-template-columns: 0.7fr 1.1fr 1.6fr;
-  gap: 60px;
-
-  /* ALIGNMENT FIX */
-  padding-left: 50px;   /* match Section 2 */
-  padding-right: 6%;    /* match Section 2 */
 }
 
 /* =========================================================
