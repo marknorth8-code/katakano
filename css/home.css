@@ -179,7 +179,7 @@
   display: grid;
   grid-template-columns: 240px 1fr;
   gap: 0;
-  padding: 35px 0;
+  padding: 0 0 35px 0; /* REMOVE top padding */
 }
 
 /* TITLE COLUMN */
