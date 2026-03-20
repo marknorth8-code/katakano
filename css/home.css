@@ -283,55 +283,53 @@
    SERVICES
    ========================================================= */
 
-.service-item {
-  margin-bottom: 25px;
-}
-
-.service-item h3 {
-  font-family: 'Playfair Display', serif;
-  font-size: 1.1rem;
-  margin-bottom: 5px;
-}
-
-.service-item p {
-  font-size: 0.9rem;
-  color: #666;
-}
-
 .services-minimal {
   background-color: #fff;
   border-bottom: 1px solid #ececec;
 }
 
-/* 3-column layout */
+/* 3-COLUMN LAYOUT */
 .services-container {
   display: grid;
-  grid-template-columns: 0.8fr 1.2fr 1.5fr;
+  grid-template-columns: 0.7fr 1.1fr 1.6fr;
   gap: 60px;
   align-items: start;
 }
 
-/* Column 1: Title */
+/* COLUMN 1: TITLE */
+.services-title {
+  padding-right: 20px;
+}
+
 .services-title h2 {
   font-family: 'Playfair Display', serif;
   font-size: clamp(28px, 3vw, 42px);
   margin: 0;
 }
 
-/* Column 2: Intro text */
+/* COLUMN 2: INTRO TEXT */
+.services-intro {
+  padding-right: 20px;
+}
+
 .services-intro p {
   font-size: 15px;
   color: #666;
   line-height: 1.6;
   max-width: 320px;
+  margin: 0;
 }
 
+/* COLUMN 3: SERVICES LIST */
 .services-list {
   display: flex;
   flex-direction: column;
   gap: 40px;
+  border-left: 1px solid #e5e5e5;
+  padding-left: 40px;
 }
 
+/* SERVICE ITEM */
 .service-box {
   display: flex;
   flex-direction: column;
@@ -339,43 +337,46 @@
   border: none;
 }
 
+/* NUMBER */
 .service-number {
   font-size: 11px;
-  letter-spacing: .3em;
+  letter-spacing: 0.3em;
   color: #aaa;
-  margin-bottom: 30px;
+  margin: 0 0 10px 0;
   font-weight: 600;
-   margin-top: 0;
 }
 
+/* TITLE */
 .service-box h3 {
   font-family: 'Playfair Display', serif;
-  font-size: 24px;
-  margin-bottom: 15px;
+  font-size: 18px;
+  margin: 0 0 8px 0;
 }
 
+/* TEXT */
 .service-content p {
-  font-size: 15px;
+  font-size: 14px;
   color: #777;
-  margin-bottom: 30px;
+  margin: 0 0 12px 0;
   line-height: 1.6;
 }
 
+/* LINK */
 .learn-more {
   font-size: 12px;
   text-transform: uppercase;
   letter-spacing: 0.1em;
   color: #111;
   text-decoration: none;
-  border-bottom: 1px solid #111;
-  padding-bottom: 4px;
+  border-bottom: 1px solid #bbb;
+  padding-bottom: 3px;
+  display: inline-block;
 }
 
-
-.service-box:hover .service-image img{
-  opacity:1;
+.learn-more::after {
+  content: ' >';
+  font-weight: 300;
 }
-
 
 /* =========================================================
    2. PARTNERSHIP STATEMENT
