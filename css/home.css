@@ -163,131 +163,121 @@
 }
 
 
+/* =========================================================
+   3-COL SPLIT: TITLE | BORDER | TEXT
+   ========================================================= */
 
-
-
-/* Container: Creates the 2-column side-by-side layout */
+/* Main Container: Stacks the rows vertically */
 .three-col-split {
   display: flex;
-  gap: 40px; /* Space between the columns */
-  align-items: flex-start;
-  padding: 20px;
+  flex-direction: column;
+  gap: 60px; /* Space between the two main rows */
+  padding: 20px 0;
 }
 
+/* Individual Row: Creates the Title (left) and Text (right) split */
 .split-item {
-  flex: 1; /* Makes both columns equal width */
+  display: grid;
+  grid-template-columns: 1fr 2.5fr; /* 1 part Title, 2.5 parts Text */
+  align-items: start;
+  gap: 0; /* Gap is handled by padding and border */
 }
 
-/* Header with Chevron */
+/* Left Column: Title */
 .experience-link {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
   text-decoration: none;
   color: #000;
-  margin-bottom: 15px;
+  padding-right: 40px; /* Space before the vertical line */
 }
 
 .experience-title {
-  font-family: serif;
-  font-size: 1.4rem;
+  font-family: 'Playfair Display', serif;
+  font-size: 1.8rem;
+  font-weight: 700;
+  line-height: 1.2;
   margin: 0;
-  font-weight: bold;
+  text-align: left;
 }
 
-.chevron {
-  font-size: 1.8rem;
-  margin-left: 10px;
+/* Right Column: Text & Vertical Border */
+.split-column-text {
+  padding-left: 40px; /* Space after the vertical line */
+  border-left: 1px solid #333; /* The vertical dividing line */
+}
+
+.split-column-text p {
+  font-family: 'Inter', sans-serif;
+  color: #1a1a1a;
+  line-height: 1.6;
+  font-size: 1.1rem;
+  margin-top: 0;
+  margin-bottom: 15px;
+}
+
+/* Link Styles */
+.learn-more-block, 
+.learn-more-inline {
+  color: #5b6d81; /* Muted blue/grey from image */
+  text-decoration: none;
+  font-size: 1.1rem;
+  display: inline-block;
+}
+
+.learn-more-inline {
+    margin-left: 5px;
+}
+
+/* Optional: Add chevron via CSS so you don't need it in HTML */
+.learn-more-block::after, 
+.learn-more-inline::after {
+  content: ' >';
   font-weight: 300;
 }
 
-/* Description Text */
-.split-column-text p {
-  color: #666;
-  line-height: 1.6;
-  font-size: 1rem;
-  margin-bottom: 20px;
-}
-
-/* Style for the "LEARN MORE >" at the bottom (Item 1) */
-.learn-more-block {
-  display: inline-block;
-  text-decoration: none;
-  color: #333;
-  font-size: 0.8rem;
-  letter-spacing: 1px;
-  border-bottom: 1px solid #333;
-  padding-bottom: 2px;
-}
-
-
-/* Hover Effects */
-.experience-link:hover .experience-title {
-  color: #666; /* Subtle fade instead of blue/bright grey */
-}
-
-
-
-/* --- CONSOLIDATED RESPONSIVE (Tablets & Mobile) --- */
+/* =========================================================
+   CONSOLIDATED RESPONSIVE (Tablets & Mobile)
+   ========================================================= */
 
 @media (max-width: 1024px) {
-  .flush-grid {
-    grid-template-columns: 1fr; /* Image stacks on top of text */
-  }
-  
-  .flush-image img {
-    width: 100vw;
-    height: 400px; /* Shorter height for mobile */
-  }
-
-  .flush-text-container {
-    padding: 40px 5% 60px 5%; /* Standard mobile padding */
-  }
-
-  .three-col-split {
-    grid-template-columns: 1fr; /* Middle & Right columns stack vertically */
-    gap: 15px; /* Tighter gap between title and its paragraph */
-  }
-  
-  .three-col-split .split-column-text {
-    margin-bottom: 30px; /* Space before the next title starts */
-  }
-}
-
-
-/* --- RESPONSIVE --- */
-
-@media (max-width: 1024px) {
-  .flush-grid {
+  /* Layout: Stack Image and Text */
+  .flush-grid, 
+  .info-split-grid,
+  .split-item {
     grid-template-columns: 1fr;
-    gap: 40px;
+    gap: 30px;
   }
-  
+
+  /* Image Adjustments */
   .flush-image img {
     width: 100vw;
     height: 400px;
   }
 
-  .flush-text {
-    padding: 0 5%;
+  /* Text Container Adjustments */
+  .flush-text-container {
+    padding: 40px 5% 60px 5%;
   }
-}
 
-
-/* --- RESPONSIVE --- */
-
-@media (max-width: 1024px) {
-  .info-split-grid {
-    grid-template-columns: 1fr;
-    gap: 60px;
+  /* Strategic Overview: Remove vertical border and add top border */
+  .split-column-text {
+    border-left: none;
+    border-top: 1px solid #eee;
+    padding-left: 0;
+    padding-top: 20px;
+    margin-top: 10px;
+    margin-bottom: 30px; /* Space before the next item */
   }
-  
-  /* Swaps text to the top on mobile for better flow */
+
+  /* Optional: Move text above image in specific layouts */
   .info-split-text {
     order: -1;
   }
 }
 
+/* Hover Effects */
+.experience-link:hover .experience-title {
+  color: #666;
+}
 
 
 /* =========================================================
