@@ -162,76 +162,78 @@
   padding-top: 40px; 
 }
 
-
 /* =========================================================
-   3-COL SPLIT: TITLE | BORDER | TEXT
+   3-COL SPLIT: TITLE | DIVIDER | TEXT
    ========================================================= */
 
-/* Main Container: Stacks the rows vertically */
+/* Container */
 .three-col-split {
   display: flex;
   flex-direction: column;
-  gap: 60px; /* Space between the two main rows */
+  gap: 50px;
   padding: 20px 0;
 }
 
-/* Individual Row: Creates the Title (left) and Text (right) split */
+/* Row: Title + Text */
 .split-item {
   display: grid;
-  grid-template-columns: 1fr 2.5fr; /* 1 part Title, 2.5 parts Text */
-  align-items: start;
-  gap: 0; /* Gap is handled by padding and border */
+  grid-template-columns: 240px 1fr;
+  gap: 0;
+  padding: 35px 0;
 }
 
-/* Left Column: Title */
+/* TITLE COLUMN */
 .experience-link {
   text-decoration: none;
   color: #000;
-  padding-right: 40px; /* Space before the vertical line */
+  padding-right: 30px;
 }
 
 .experience-title {
   font-family: 'Playfair Display', serif;
-  font-size: 1.8rem;
-  font-weight: 700;
-  line-height: 1.2;
+  font-size: 1.6rem;
+  font-weight: 600;
+  line-height: 1.25;
   margin: 0;
-  text-align: left;
 }
 
-/* Right Column: Text & Vertical Border */
+/* TEXT COLUMN + DIVIDER */
 .split-column-text {
-  padding-left: 40px; /* Space after the vertical line */
-  border-left: 1px solid #333; /* The vertical dividing line */
+  border-left: 1px solid #d6d6d6;
+  padding-left: 30px;
+  max-width: 520px;
 }
 
 .split-column-text p {
   font-family: 'Inter', sans-serif;
-  color: #1a1a1a;
-  line-height: 1.6;
-  font-size: 1.1rem;
-  margin-top: 0;
-  margin-bottom: 15px;
+  font-size: 1.05rem;
+  line-height: 1.65;
+  color: #4a4a4a;
+  margin: 0 0 18px 0;
 }
 
-/* Link Styles */
-.learn-more-block, 
-.learn-more-inline {
-  color: #5b6d81; /* Muted blue/grey from image */
+/* LEARN MORE */
+.learn-more {
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #333;
   text-decoration: none;
-  font-size: 1.1rem;
+  border-bottom: 1px solid #bbb;
+  padding-bottom: 3px;
   display: inline-block;
 }
 
-.learn-more-inline {
-    margin-left: 5px;
-}
-
-/* Optional: Add chevron via CSS so you don't need it in HTML */
-.learn-more-block::after, 
-.learn-more-inline::after {
+.learn-more::after {
   content: ' >';
   font-weight: 300;
+}
+
+/* RIGHT SIDE CONTAINER SPACING */
+.flush-text-container {
+  padding-left: 50px;
+  padding-right: 6%;
+  padding-top: 60px;
 }
 
 /* =========================================================
