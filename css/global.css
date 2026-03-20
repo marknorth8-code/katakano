@@ -5,6 +5,8 @@
   --primary-dark: #1a1a1a;
   --bg-light: #ffffff;
   --bg-menu: #011d01;
+  --font-main: 'Inter', sans-serif;
+  --base-font-size: 16px; 
 
   --black: #111111;
   --white: #ffffff;
@@ -27,8 +29,8 @@
 body {
   font-family: var(--font-main);
   font-weight: 400;
-  font-size: 17px;
-  line-height: 1.7;
+  font-size: 16px;
+  line-height: 1.6;
   color: var(--primary-dark);
   background: var(--bg-light);
   -webkit-font-smoothing: antialiased;
@@ -68,8 +70,8 @@ h3 {
 p.body-large {
   font-size: 1.25rem;
   color: #444;
-  line-height: 1.6;
-  max-width: 600px;
+  line-height: 1.5;
+  max-width: 650px;
 }
 
 /* =====================================================
