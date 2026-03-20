@@ -378,6 +378,16 @@
   font-weight: 300;
 }
 
+.services-container {
+  display: grid;
+  grid-template-columns: 0.7fr 1.1fr 1.6fr;
+  gap: 60px;
+
+  /* ALIGNMENT FIX */
+  padding-left: 50px;   /* match Section 2 */
+  padding-right: 6%;    /* match Section 2 */
+}
+
 /* =========================================================
    2. PARTNERSHIP STATEMENT
    ========================================================= */
