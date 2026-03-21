@@ -280,92 +280,86 @@
 
 
 /* =========================================================
-   SERVICES
+   SERVICES SECTION
    ========================================================= */
 
 .services-minimal {
   background-color: #fff;
   border-bottom: 1px solid #ececec;
-  padding-left: 0;
-  padding-right: 0;
+  padding: 100px 0; /* Vertical breathing room for the section */
 }
 
-/* 3-COLUMN LAYOUT (ALIGNED WITH SECTION 2) */
+/* 3-COLUMN GRID LAYOUT */
 .services-container {
   display: grid;
   grid-template-columns: 0.7fr 1.1fr 1.6fr;
   gap: 60px;
   align-items: start;
-
-  /* Alignment with flush-text-container */
   padding-left: 50px;
   padding-right: 6%;
 }
 
-/* COLUMN 1: TITLE */
+/* SHARED FLEX SETTINGS FOR COLUMNS 2 & 3 */
+/* This ensures the rows stay perfectly synced with a 100px gap */
+.services-intro-list, 
+.services-description-list {
+  display: flex;
+  flex-direction: column;
+  gap: 100px; 
+}
+
+/* COLUMN 1: MAIN TITLE */
 .services-title {
   padding-right: 20px;
 }
 
-.services-title h2 {
+.services-title p {
   font-family: 'Playfair Display', serif;
-  font-size: clamp(28px, 3vw, 42px);
+  font-size: clamp(24px, 2.5vw, 32px);
+  line-height: 1.4;
   margin: 0;
+  color: #111;
 }
 
-/* COLUMN 2: INTRO TEXT */
-.services-intro {
-  padding-right: 20px;
-}
-
-.services-intro p {
-  font-size: 15px;
-  color: #666;
-  line-height: 1.6;
-  max-width: 320px;
-  margin: 0;
-}
-
-/* COLUMN 3: SERVICES LIST */
-.services-list {
-  display: flex;
-  flex-direction: column;
-  gap: 40px;
-  border-left: 2px solid #e5e5e5;
-  padding-left: 40px;
-}
-
-/* SERVICE ITEM */
+/* COLUMN 2: SERVICE TITLES */
 .service-box {
   display: flex;
   flex-direction: column;
 }
 
-/* NUMBER */
 .service-number {
   font-size: 11px;
   letter-spacing: 0.3em;
   color: #aaa;
-  margin: 0 0 10px 0;
+  margin-bottom: 10px;
   font-weight: 600;
+  text-transform: uppercase;
 }
 
-/* TITLE */
 .service-box h3 {
   font-family: 'Playfair Display', serif;
   font-size: 18px;
-  margin: 0 0 8px 0;
+  margin: 0;
+  line-height: 1.2;
 }
 
-/* TEXT */
+/* COLUMN 3: SERVICE DESCRIPTIONS */
+.services-description-list {
+  border-left: 2px solid #e5e5e5;
+  padding-left: 40px;
+  /* Adjust this padding-top to shift the P text down to align with the H3 
+     (accounts for the height of the number above the H3) */
+  padding-top: 24px; 
+}
+
 .service-content p {
   font-size: 14px;
   color: #777;
-  margin: 0 0 12px 0;
+  margin: 0 0 15px 0;
   line-height: 1.6;
 }
 
-/* LINK */
+/* LEARN MORE LINK */
 .learn-more {
   font-size: 12px;
   text-transform: uppercase;
@@ -375,12 +369,37 @@
   border-bottom: 1px solid #bbb;
   padding-bottom: 3px;
   display: inline-block;
+  transition: all 0.3s ease;
+}
+
+.learn-more:hover {
+  border-bottom-color: #111;
 }
 
 .learn-more::after {
   content: ' >';
   font-weight: 300;
 }
+
+/* RESPONSIVE: Stack columns on smaller screens */
+@media (max-width: 991px) {
+  .services-container {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  
+  .services-description-list {
+    border-left: none;
+    padding-left: 0;
+    padding-top: 0;
+  }
+  
+  .services-intro-list, 
+  .services-description-list {
+    gap: 40px;
+  }
+}
+
 
 /* =========================================================
    2. PARTNERSHIP STATEMENT
