@@ -108,8 +108,8 @@ p.body-large {
 
 .nav-brand, 
 .nav-actions {
-  position: fixed;
-  top: 40px;
+  position: absolute;
+  top: 0px;
   z-index: 10001;
   display: flex;
   align-items: center;
