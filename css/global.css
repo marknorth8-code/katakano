@@ -109,8 +109,8 @@ p.body-large {
 .nav-brand, 
 .nav-actions {
   position: absolute;
-  top: 0px;
-  z-index: 10001;
+  top: 40px;
+  z-index: 10005;
   display: flex;
   align-items: center;
   pointer-events: auto;
@@ -198,7 +198,7 @@ p.body-large {
   position: fixed;
   inset: 0;
   background-color: var(--bg-menu);
-  padding: 140px 10% 80px;
+  padding: 0px 10% 80px;
   flex-direction: column;
   z-index: 10002;
   overflow-y: auto;
