@@ -326,8 +326,8 @@ p.body-large {
    MOBILE RESPONSIVENESS
 ===================================================== */
 @media (max-width: 768px) {
-  .nav-brand { left: 24px; top: 24px; }
-  .nav-actions { right: 24px; top: 24px; }
+  .nav-brand { left: 24px; top: 0px; }
+  .nav-actions { right: 24px; top: 0px; }
   .brand-link { font-size: 0.65rem; max-width: 140px; line-height: 1.2; }
   .nav-actions .button-get-in-touch { display: none; }
 }
