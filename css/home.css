@@ -280,7 +280,7 @@
 
 
 /* =========================================================
-   SERVICES SECTION (UPDATED LAYOUT)
+   SERVICES SECTION (FINAL ADJUSTMENT)
    ========================================================= */
 
 .services-minimal {
@@ -289,95 +289,85 @@
   padding: 100px 0;
 }
 
-/* 3-COLUMN GRID LAYOUT */
 .services-container {
   display: grid;
-  /* Shifted from 0.7fr 1.1fr to 0.95fr 0.85fr (~90px shift) */
-  grid-template-columns: 0.95fr 0.85fr 1.6fr; 
-  gap: 60px;
+  /* Updated: Column 1 is now significantly wider (1.2fr), 
+     pushing Column 2 (0.8fr) further to the right. 
+     Column 3 remains the widest (1.6fr). */
+  grid-template-columns: 1.2fr 0.8fr 1.6fr; 
+  gap: 40px; /* Reduced gap slightly to keep the look tight */
   align-items: start;
   padding-left: 50px;
   padding-right: 6%;
 }
 
-/* SHARED FLEX SETTINGS FOR COLUMNS 2 & 3 */
+/* Ensure Column 2 and 3 rows line up with the same gap */
 .services-intro-list, 
 .services-description-list {
   display: flex;
   flex-direction: column;
-  gap: 100px; /* Large space between rows */
+  gap: 120px; /* Increased to match the airy feel of your image */
 }
 
 /* COLUMN 1: MAIN TITLE */
-.services-title {
-  padding-right: 20px;
-}
-
 .services-title p {
   font-family: 'Playfair Display', serif;
-  font-size: clamp(24px, 2.5vw, 32px);
-  line-height: 1.4;
+  font-size: clamp(28px, 3vw, 38px); /* Larger size to fill the wider column */
+  line-height: 1.3;
   margin: 0;
   color: #111;
+  max-width: 450px; /* Prevents it from getting TOO wide on huge screens */
 }
 
 /* COLUMN 2: SERVICE TITLES */
-.service-box {
-  display: flex;
-  flex-direction: column;
-}
-
 .service-number {
-  font-size: 11px;
-  letter-spacing: 0.3em;
-  color: #aaa;
-  margin-bottom: 10px;
+  font-size: 10px;
+  letter-spacing: 0.4em;
+  color: #ccc;
+  margin-bottom: 15px;
   font-weight: 600;
   text-transform: uppercase;
 }
 
 .service-box h3 {
   font-family: 'Playfair Display', serif;
-  font-size: 18px;
+  font-size: 20px;
   margin: 0;
-  line-height: 1.2;
+  font-weight: 500;
 }
 
-/* COLUMN 3: SERVICE DESCRIPTIONS (Stays exactly where it is) */
+/* COLUMN 3: SERVICE DESCRIPTIONS */
 .services-description-list {
-  border-left: 2px solid #e5e5e5;
-  padding-left: 40px;
-  /* Aligns paragraph top with H3 top */
-  padding-top: 24px; 
+  border-left: 1px solid #eee; /* Thinner line for a more premium feel */
+  padding-left: 50px;
+  /* This aligns the description text top with the H3 title top */
+  padding-top: 30px; 
 }
 
 .service-content p {
-  font-size: 14px;
-  color: #777;
-  margin: 0 0 15px 0;
-  line-height: 1.6;
+  font-size: 15px;
+  color: #888;
+  margin: 0 0 20px 0;
+  line-height: 1.7;
+  max-width: 400px;
 }
 
 /* LEARN MORE LINK */
 .learn-more {
-  font-size: 12px;
+  font-size: 11px;
   text-transform: uppercase;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.15em;
   color: #111;
   text-decoration: none;
-  border-bottom: 1px solid #bbb;
-  padding-bottom: 3px;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 4px;
   display: inline-block;
-  transition: all 0.3s ease;
-}
-
-.learn-more:hover {
-  border-bottom-color: #111;
 }
 
 .learn-more::after {
   content: ' >';
   font-weight: 300;
+  margin-left: 5px;
 }
 
 
