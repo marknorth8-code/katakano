@@ -278,21 +278,19 @@
   color: #666;
 }
 
-
 /* =========================================================
-   SERVICES SECTION (FIXED TEXT SIZE)
+   SERVICES SECTION
    ========================================================= */
 
 .services-minimal {
   background-color: #fff;
   border-bottom: 1px solid #ececec;
-  padding: 120px 0; /* Vertical breathing room */
+  padding: 120px 0;
 }
 
 .services-container {
   display: grid;
-  /* Column 1 is wide (1.2fr), pushing Column 2 (0.8fr) to the right. 
-     Column 3 remains exactly where it was at 1.6fr. */
+  /* Column 1 is wide, Column 2 is pushed right, Column 3 stays put */
   grid-template-columns: 1.2fr 0.8fr 1.6fr; 
   gap: 60px;
   align-items: start;
@@ -305,18 +303,16 @@
 .services-description-list {
   display: flex;
   flex-direction: column;
-  gap: 110px; /* Adjust this for the space between services */
+  gap: 110px; /* Adjust this for row spacing */
 }
 
-/* COLUMN 1: MAIN TITLE (NOW FIXED SIZE) */
+/* COLUMN 1: INTRO TEXT (Normal paragraph size) */
 .services-title p {
-  font-family: 'Playfair Display', serif;
-  /* Changed from clamp to a fixed 'normal' paragraph size */
-  font-size: 20px; 
+  font-size: 18px; /* Standard body size */
   line-height: 1.6;
   margin: 0;
   color: #111;
-  max-width: 380px; /* Keeps the text from spanning the entire 1.2fr width */
+  max-width: 380px; 
 }
 
 /* COLUMN 2: SERVICE TITLES */
@@ -330,19 +326,17 @@
 }
 
 .service-box h3 {
-  font-family: 'Playfair Display', serif;
-  font-size: 19px;
+  /* REMOVED size/weight overrides so it matches your other H3s */
   margin: 0;
-  font-weight: 500;
   line-height: 1.2;
 }
 
-/* COLUMN 3: SERVICE DESCRIPTIONS (NO CHANGE TO POSITION) */
+/* COLUMN 3: SERVICE DESCRIPTIONS (Position unchanged) */
 .services-description-list {
   border-left: 1px solid #eee;
   padding-left: 50px;
-  /* Nudges description down to align top-edge with the H3 in Column 2 */
-  padding-top: 28px; 
+  /* Aligns the P text top with the H3 title top */
+  padding-top: 32px; 
 }
 
 .service-content p {
