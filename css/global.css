@@ -158,8 +158,9 @@ a {
 }
 
 /* =====================================================
-   HEADER & FLOATING PILL NAV (UNCHANGED)
+   HEADER & FLOATING PILL NAV
 ===================================================== */
+
 #header-holder {
   position: relative;
   width: 100%;
@@ -173,19 +174,30 @@ a {
   pointer-events: none;
 }
 
-.nav-brand, 
-.nav-actions {
+/* LEFT: scrolls with page */
+.nav-brand {
   position: absolute;
   top: 40px;
+  left: 60px;
   z-index: 10005;
   display: flex;
   align-items: center;
   pointer-events: auto;
+  height: 42px;
 }
 
-.nav-brand { left: 60px; height: 42px; }
-.nav-actions { right: 60px; gap: 12px; }
+/* RIGHT: fixed to viewport */
+.nav-actions {
+  position: fixed;
+  top: 40px;
+  right: 60px;
+  z-index: 10005;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
 
+/* Branding */
 .brand-link {
   font-size: 0.75rem;
   font-weight: 600;
@@ -195,6 +207,7 @@ a {
   text-decoration: none;
 }
 
+/* Buttons */
 .button-get-in-touch,
 .nav-pill {
   display: inline-flex;
