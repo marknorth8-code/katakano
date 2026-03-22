@@ -1,93 +1,53 @@
 /* ========================================================
-   HOME.CSS
-   ========================================================= */
-
-
-/* --- GLOBAL UTILITIES --- */
-
-.section-padding {
-  padding: 120px 0;
-}
-
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 5%;
-}
-
-.container p{
-  max-width:680px;
-}
-
+   HOME.CSS (CLEAN VERSION)
+   Only page-specific layout & composition
+========================================================= */
 
 
 /* =========================================================
    HERO LOGO BLOCK
-   ========================================================= */
+========================================================= */
 
-.hero-logo-block{
-  background:#fff;
-  padding:180px 5% 140px 5%;
-  border-bottom:1px solid #eee;
+.hero-logo-block {
+  background: #fff;
+  padding: 180px 5% 140px 5%;
+  border-bottom: 1px solid #eee;
 }
 
-.hero-logo-wrapper{
-  max-width:1200px;
-  margin:auto;
-  display:flex;
-  justify-content:center;
-  align-items:center;
+.hero-logo-wrapper {
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.hero-logo-image{
-  width:220px;
-  height:auto;
-  display:block;
+.hero-logo-image {
+  width: 220px;
+  height: auto;
+  display: block;
 }
-
 
 
 /* =========================================================
-   1. HERO EDITORIAL GRID
-   ========================================================= */
+   HERO EDITORIAL
+========================================================= */
 
 .hero-editorial {
-  padding: 100px 0% 30px 0%;
+  padding: 100px 0 30px 0;
   background-color: #fff;
-}
-
-
-.hero-logo {
-  font-family: 'Playfair Display', serif;
-  font-size: 2.5rem;
-  text-align: center;
-  margin-bottom: 30px;
-  color: #111;
 }
 
 .hero-header {
   text-align: center;
   max-width: 900px;
-  /* Changed bottom margin from 80px to 30px */
-  margin: 0 auto 30px auto; 
-}
-
-.sub-heading-caps {
-  font-family: 'Inter', sans-serif;
-  text-transform: uppercase;
-  letter-spacing: 0.2em;
-  font-size: 0.75rem;
-  color: #666;
-  display: block;
-  margin-bottom: 20px;
+  margin: 0 auto 30px auto;
 }
 
 .hero-editorial .editorial-title {
-  font-family: 'Playfair Display', serif;
   font-size: clamp(1.2rem, 2.2vw, 2rem);
   line-height: 1.1;
   font-weight: 400;
-  color: #111;
   white-space: nowrap;
 }
 
@@ -100,41 +60,13 @@
 
 .hero-image-main img {
   width: 100%;
-  height: auto;
   display: block;
 }
 
-/* Hero Right Side Content */
-
-.body-large {
-  font-size: 1.2rem;
-  line-height: 1.6;
-  color: #333;
-  margin-bottom: 40px;
-}
-
-
 
 /* =========================================================
-   IMAGE DIVIDERS
-   ========================================================= */
-
-.image-divider{
-  width:100%;
-  height:420px;
-  overflow:hidden;
-  border-top:1px solid #eee;
-  border-bottom:1px solid #eee;
-}
-
-.image-divider img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  display:block;
-}
-
-/* --- FLUSH STRATEGIC OVERVIEW --- */
+   FLUSH STRATEGIC OVERVIEW
+========================================================= */
 
 .flush-info-section {
   padding: 60px 0;
@@ -145,9 +77,8 @@
 
 .flush-grid {
   display: grid;
-  grid-template-columns: 50vw 1fr; /* Image stays exactly half screen */
-  align-items: start; /* Keeps text aligned to the top of the image */
-  gap: 0;
+  grid-template-columns: 50vw 1fr;
+  align-items: start;
 }
 
 .flush-image img {
@@ -157,44 +88,28 @@
   display: block;
 }
 
+.flush-text-container {
+  padding-left: 50px;
+  padding-right: 6%;
+}
+
 
 /* =========================================================
-   3-COL SPLIT: TITLE | DIVIDER | TEXT
-   ========================================================= */
+   3-COL SPLIT (LAYOUT ONLY)
+========================================================= */
 
-/* Container */
 .three-col-split {
   display: flex;
   flex-direction: column;
   gap: 50px;
-  padding: 0px 0;
 }
 
-/* Row: Title + Text */
 .split-item {
   display: grid;
   grid-template-columns: 240px 1fr;
-  gap: 0;
-  padding: 0 0 35px 0; /* REMOVE top padding */
+  padding-bottom: 35px;
 }
 
-/* TITLE COLUMN */
-.experience-link {
-  text-decoration: none;
-  color: #000;
-  padding-right: 30px;
-   padding-left: 20px;
-}
-
-.experience-title {
-  font-family: 'Playfair Display', serif;
-  font-size: 1.25rem;
-  font-weight: 600;
-  line-height: 1.25;
-  margin: 0;
-}
-
-/* TEXT COLUMN + DIVIDER */
 .split-column-text {
   border-left: 2px solid #d6d6d6;
   padding-left: 30px;
@@ -202,85 +117,15 @@
 }
 
 .split-column-text p {
-  font-family: 'Inter', sans-serif;
   font-size: 1.05rem;
   line-height: 1.65;
-  color: #4a4a4a;
-  margin: 0 0 18px 0;
+  margin-bottom: 18px;
 }
 
-/* LEARN MORE */
-.learn-more {
-  font-size: 13px;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: #333;
-  text-decoration: none;
-  border-bottom: 1px solid #bbb;
-  padding-bottom: 3px;
-  display: inline-block;
-}
-
-.learn-more::after {
-  content: ' >';
-  font-weight: 300;
-}
-
-/* RIGHT SIDE CONTAINER SPACING */
-.flush-text-container {
-  padding-left: 50px;
-  padding-right: 6%;
-  padding-top: 00px;
-}
 
 /* =========================================================
-   CONSOLIDATED RESPONSIVE (Tablets & Mobile)
-   ========================================================= */
-
-@media (max-width: 1024px) {
-  /* Layout: Stack Image and Text */
-  .flush-grid, 
-  .info-split-grid,
-  .split-item {
-    grid-template-columns: 1fr;
-    gap: 30px;
-  }
-
-  /* Image Adjustments */
-  .flush-image img {
-    width: 100vw;
-    height: 400px;
-  }
-
-  /* Text Container Adjustments */
-  .flush-text-container {
-    padding: 40px 5% 60px 5%;
-  }
-
-  /* Strategic Overview: Remove vertical border and add top border */
-  .split-column-text {
-    border-left: none;
-    border-top: 1px solid #eee;
-    padding-left: 0;
-    padding-top: 00px;
-    margin-top: 10px;
-    margin-bottom: 30px; /* Space before the next item */
-  }
-
-  /* Optional: Move text above image in specific layouts */
-  .info-split-text {
-    order: -1;
-  }
-}
-
-/* Hover Effects */
-.experience-link:hover .experience-title {
-  color: #666;
-}
-
-/* =========================================================
-   SERVICES SECTION
-   ========================================================= */
+   SERVICES SECTION (LAYOUT ONLY)
+========================================================= */
 
 .services-minimal {
   background-color: #fff;
@@ -290,91 +135,42 @@
 
 .services-container {
   display: grid;
-  /* Column 1 is wide, Column 2 is pushed right, Column 3 stays put */
-  grid-template-columns: 1.2fr 0.8fr 1.6fr; 
+  grid-template-columns: 1.2fr 0.8fr 1.6fr;
   gap: 60px;
   align-items: start;
   padding-left: 50px;
   padding-right: 6%;
 }
 
-/* SYNCED VERTICAL SPACING FOR ROWS */
-.services-intro-list, 
+.services-intro-list,
 .services-description-list {
   display: flex;
   flex-direction: column;
-  gap: 110px; /* Adjust this for row spacing */
+  gap: 110px;
 }
 
-/* COLUMN 1: INTRO TEXT (Normal paragraph size) */
-.services-title p {
-  font-size: 18px; /* Standard body size */
-  line-height: 1.6;
-  margin: 0;
-  color: #111;
-  max-width: 380px; 
-}
-
-/* COLUMN 2: SERVICE TITLES */
-.service-number {
-  font-size: 10px;
-  letter-spacing: 0.4em;
-  color: #ccc;
-  margin-bottom: 12px;
-  font-weight: 600;
-  text-transform: uppercase;
-}
-
-.service-box h3 {
-  /* REMOVED size/weight overrides so it matches your other H3s */
-  margin: 0;
-  line-height: 1.2;
-}
-
-/* COLUMN 3: SERVICE DESCRIPTIONS (Position unchanged) */
 .services-description-list {
   border-left: 1px solid #eee;
   padding-left: 50px;
-  /* Aligns the P text top with the H3 title top */
-  padding-top: 32px; 
+  padding-top: 32px;
 }
 
 .service-content p {
   font-size: 15px;
-  color: #777;
-  margin: 0 0 18px 0;
   line-height: 1.7;
+  margin-bottom: 18px;
   max-width: 420px;
-}
-
-/* LEARN MORE LINK */
-.learn-more {
-  font-size: 11px;
-  text-transform: uppercase;
-  letter-spacing: 0.12em;
-  color: #111;
-  text-decoration: none;
-  border-bottom: 1px solid #ddd;
-  padding-bottom: 3px;
-  display: inline-block;
-}
-
-.learn-more::after {
-  content: ' >';
-  font-weight: 300;
-  margin-left: 4px;
 }
 
 
 /* =========================================================
-   2. PARTNERSHIP STATEMENT
-   ========================================================= */
+   QUOTE SECTION
+========================================================= */
 
 .quote-section {
-   background-color: #f9f9f9; 
+  background-color: #f9f9f9;
   text-align: center;
-  border-top: 1px solid #f9f9f9;
-  padding-bottom: 0 !important; /* Forces the bottom gap to close */
+  padding-bottom: 0 !important;
 }
 
 .quote-wrapper {
@@ -383,205 +179,71 @@
 }
 
 .display-quote {
-  font-family: 'Playfair Display', serif;
   font-size: clamp(2.5rem, 6vw, 4.5rem);
   line-height: 1.1;
-  color: #111;
-  margin: 0 0 40px 0;
-  border: none;
-  padding: 0;
-  font-weight: 400;
+  margin-bottom: 40px;
 }
 
 .quote-meta {
   display: flex;
   flex-direction: column;
-  /* 1. This pushes the whole block to the right */
-  align-items: flex-end; 
+  align-items: flex-end;
   gap: 8px;
-  /* 2. This creates the 60px gap from the screen edge */
   padding-right: 60px;
 }
 
-.quote-meta .author, 
-.quote-meta .title {
-  /* 3. This ensures the text lines themselves are right-aligned */
-  text-align: right; 
-}
-
-
-@media (max-width: 768px) {
-  .display-quote {
-    font-size: 2.2rem;
-  }
-}
 
 /* =========================================================
-   GEOGRAPHIC PRESENCE (Aligned with Services)
-   ========================================================= */
+   GEOGRAPHIC PRESENCE (VARIANT)
+========================================================= */
 
-/* Match Services layout exactly */
 .geographic-presence .services-container {
   grid-template-columns: 0.7fr 1.1fr 1.6fr;
 }
 
-/* Optional: slightly tighter spacing for this section */
-.geographic-presence .services-list {
-  gap: 35px;
-}
-
-/* Optional: refine text tone slightly */
-.geographic-presence .service-content p {
-  color: #666;
-}
-
-/* Responsive */
-@media (max-width: 992px) {
-  .geographic-presence .services-container {
-    grid-template-columns: 1fr;
-  }
-
-  .geographic-presence .services-list {
-    border-left: none;
-    padding-left: 0;
-    margin-top: 20px;
-  }
-}
 
 /* =========================================================
-   EXPERIENCE
-   ========================================================= */
+   EXPERIENCE SECTION
+========================================================= */
 
-.experience-section{
-  padding: 80px 0%;
-  background:#fff;
-  border-top:1px solid #eee;
-    overflow: hidden; /* Prevents any image overflow issues */
+.experience-section {
+  padding: 80px 0;
+  background: #fff;
+  border-top: 1px solid #eee;
+  overflow: hidden;
 }
 
 .experience-grid {
   display: grid;
-  /* Left column (image) takes half the screen, Right column (text) takes the rest */
-  grid-template-columns: 50vw 1fr; 
-  gap: 0; /* Remove gap so we can control text spacing manually */
-  align-items: center;
-}
-
-.section-label{
-  font-family:'Inter',sans-serif;
-  text-transform:uppercase;
-  letter-spacing:0.2em;
-  font-size:12px;
-  color:#777;
-  display:block;
-  margin-bottom:20px;
-}
-
-.experience-text h2{
-  font-family:'Playfair Display',serif;
-  font-size:clamp(32px,3vw,42px);
-  line-height:1.2;
-  margin-bottom:28px;
-}
-
-.experience-lead{
-  font-size:18px;
-  line-height:1.6;
-  color:#333;
-  margin-bottom:22px;
-  max-width:520px;
+  grid-template-columns: 50vw 1fr;
 }
 
 .experience-text {
-  /* This padding creates the "virtual" container for the text on the right */
-  padding-left: 80px; 
-  padding-right: 10%; 
+  padding-left: 80px;
+  padding-right: 10%;
 }
 
-.experience-text p{
-  font-size:15.5px;
-  line-height:1.7;
-  color:#666;
-  margin-bottom:18px;
-  max-width:520px;
-}
-
-.experience-visual img{
-  width:100%;
-  height:640px;
-  object-fit:cover;
-  display:block;
-}
-
-
-@media (max-width: 1024px) {
-  .experience-grid {
-    grid-template-columns: 1fr;
-    gap: 0; /* Remove gap so image/text flow nicely */
-  }
-
-  .experience-visual img {
-    height: 520px;
-    width: 100vw; /* Ensures image stays flush edge-to-edge on mobile */
-  }
-
-  .experience-text {
-    padding: 60px 5%; /* This now safely resets the desktop padding only on mobile */
-  }
-}
-
-.pattern-divider {
+.experience-visual img {
   width: 100%;
-  overflow: hidden;
-  line-height: 0;
+  height: 640px;
+  object-fit: cover;
 }
 
-.pattern-divider svg {
-  width: 100%;
-  height: 120px;
-  display: block;
-}
 
 /* =========================================================
-   CONTACT
-   ========================================================= */
+   CONTACT SECTION
+========================================================= */
 
-.contact-section{
+.contact-section {
   padding: 120px 5%;
-  background:#f9f9f9;
-  border-top:1px solid #eee;
+  background: #f9f9f9;
+  border-top: 1px solid #eee;
 }
 
-.contact-container{
-  max-width:900px;
-  margin:auto;
-  text-align:center;
-}
-
-.contact-label{
-  font-family:'Inter',sans-serif;
-  text-transform:uppercase;
-  letter-spacing:.22em;
-  font-size:12px;
-  color:#777;
-  display:block;
-  margin-bottom:20px;
-}
-
-.contact-heading{
-  font-family:'Playfair Display',serif;
-  font-size:clamp(36px,4vw,48px);
-  font-weight:400;
-  margin-bottom:30px;
-}
-
-.contact-description{
-  font-family:'Inter',sans-serif;
-  font-size:16px;
-  line-height:1.7;
-  color:#666;
-  max-width:680px;
-  margin:0 auto 50px auto;
+.contact-container {
+  max-width: 900px;
+  margin: auto;
+  text-align: center;
 }
 
 .contact-action {
@@ -590,83 +252,56 @@
   justify-content: center;
 }
 
-/* GLOBAL PILL BUTTON - Use this anywhere */
-.button-get-in-touch,
-.nav-pill {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  height: 40px;
-  padding: 0 24px;
-  background-color: #ffffff;
-  border: 1px solid #EAEAEA;
-  border-radius: 100px;
-  color: #1a1a1a;
-  font-family: var(--font-main);
-  font-size: 0.7rem;
-  font-weight: 500;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  text-decoration: none;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.button-get-in-touch:hover,
-.nav-pill:hover {
-  background-color: #011d01;
-  border-color: #011d01;
-  color: #ffffff;
-  transform: translateY(-2px);
-}
-
-/* HEADER ONLY POSITIONING */
-.site-header .nav-actions {
-  position: fixed;
-  top: 40px;
-  right: 40px;
-  display: flex;
-  gap: 12px;
-  align-items: center;
-}
-
-
 
 /* =========================================================
    RESPONSIVE
-   ========================================================= */
+========================================================= */
 
-@media (max-width:1100px){
+@media (max-width: 1024px) {
 
-  .services-container{
-    grid-template-columns:1fr 1fr;
+  .flush-grid,
+  .split-item {
+    grid-template-columns: 1fr;
+    gap: 30px;
   }
 
-  .services-header{
-    grid-row:1;
-    grid-column:1 / span 2;
-    border-right:none;
+  .flush-image img {
+    width: 100vw;
+    height: 400px;
+  }
+
+  .flush-text-container {
+    padding: 40px 5% 60px 5%;
+  }
+
+  .split-column-text {
+    border-left: none;
+    border-top: 1px solid #eee;
+    padding-left: 0;
+    margin-top: 10px;
+    margin-bottom: 30px;
+  }
+
+  .experience-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .experience-visual img {
+    height: 520px;
+    width: 100vw;
+  }
+
+  .experience-text {
+    padding: 60px 5%;
   }
 
 }
 
-@media (max-width:768px){
+@media (max-width: 768px) {
 
   .hero-grid,
-  .experience-grid,
-  .services-container{
-    grid-template-columns:1fr;
-  }
-
-  .services-header{
-    grid-row:auto;
-  }
-
-  .service-box{
-    border-right:none !important;
+  .services-container {
+    grid-template-columns: 1fr;
   }
 
 }
-
-
-
