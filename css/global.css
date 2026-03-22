@@ -264,7 +264,6 @@ a {
   background-color: var(--bg-menu);
   padding: 0 10% 80px;
 
-  display: flex;
   flex-direction: column;
 
   z-index: 10002;
@@ -276,7 +275,66 @@ a {
   display: flex;
 }
 
-.menu-overlay.is-open { display: flex; }
+
+/* =====================================================
+   MENU CONTENT (RESTORE VISIBILITY)
+===================================================== */
+
+.overlay-content-grid {
+  display: grid;
+  grid-template-columns: 2.2fr 1fr 1fr;
+  gap: 40px;
+  margin-top: 40px;
+  width: 100%;
+}
+
+/* Main nav */
+.nav-links {
+  list-style: none;
+  padding: 0;
+}
+
+.nav-links li a {
+  font-size: clamp(32px, 5vw, 60px);
+  font-weight: 700;
+  color: #ffffff; /* CRITICAL */
+  text-decoration: none;
+  line-height: 1.1;
+  display: block;
+  margin-bottom: 20px;
+}
+
+/* Section labels */
+.menu-label {
+  display: block;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: rgba(255, 255, 255, 0.5); /* CRITICAL */
+  margin-bottom: 30px;
+  font-weight: 600;
+}
+
+/* Secondary links */
+.sub-links {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.sub-links a {
+  font-size: 24px;
+  color: #ffffff; /* CRITICAL */
+  text-decoration: none;
+  font-weight: 300;
+}
+
+/* Hover */
+.nav-links li a:hover,
+.sub-links a:hover {
+  opacity: 0.7;
+}
+
 
 /* =====================================================
    INTRO SECTION (UNCHANGED)
