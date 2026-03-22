@@ -263,7 +263,17 @@ a {
   inset: 0;
   background-color: var(--bg-menu);
   padding: 0 10% 80px;
+
+  display: flex;
+  flex-direction: column;
+
   z-index: 10002;
+  overflow-y: auto;
+  pointer-events: auto;
+}
+
+.menu-overlay.is-open {
+  display: flex;
 }
 
 .menu-overlay.is-open { display: flex; }
