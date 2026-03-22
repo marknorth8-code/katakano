@@ -120,6 +120,7 @@ a {
   border-bottom: 1px solid var(--border-mid);
   padding-bottom: 3px;
   display: inline-block;
+   font-weight: 500;
 }
 
 .learn-more::after {
