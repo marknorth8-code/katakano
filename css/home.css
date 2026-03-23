@@ -89,7 +89,8 @@
 }
 
 .flush-text-container {
-  padding-left: 50px;
+  padding-top: 0;
+   padding-left: 50px;
   padding-right: 6%;
 }
 
@@ -201,7 +202,7 @@
 .flush-info-section .flush-grid {
   display: grid;
   grid-template-columns: 1fr 50vw; /* TEXT | IMAGE */
-  align-items: center;
+  align-items: start;
 }
 
 /* IMAGE: full right half, flush to edge */
@@ -214,7 +215,8 @@
 
 /* TEXT CONTAINER */
 .flush-text-container {
-  padding-left: 80px;
+ padding-top: 0;
+   padding-left: 80px;
   padding-right: 80px;
   max-width: 520px;
 }
