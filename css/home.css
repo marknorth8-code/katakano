@@ -194,6 +194,68 @@
 
 
 /* =========================================================
+   HOW WE WORK (REVERSE FLUSH VARIANT)
+========================================================= */
+
+/* Keep same base grid but reversed proportions */
+.flush-info-section .flush-grid {
+  display: grid;
+  grid-template-columns: 1fr 50vw; /* TEXT | IMAGE */
+  align-items: center;
+}
+
+/* IMAGE: full right half, flush to edge */
+.flush-info-section .flush-image img {
+  width: 100%;
+  height: 700px;
+  object-fit: cover;
+  display: block;
+}
+
+/* TEXT CONTAINER */
+.flush-text-container {
+  padding-left: 80px;
+  padding-right: 80px;
+  max-width: 520px;
+}
+
+/* REMOVE old split system interference */
+.flush-info-section .three-col-split,
+.flush-info-section .split-item,
+.flush-info-section .split-column-text {
+  display: block;
+  border: none;
+  padding: 0;
+  max-width: none;
+}
+
+/* TITLE */
+.flush-info-section h3 {
+  margin-bottom: 20px;
+}
+
+/* DIVIDER LINE */
+.flush-info-section h3::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 2px;
+  background: #111;
+  margin-top: 20px;
+  margin-bottom: 25px;
+}
+
+/* BODY TEXT */
+.flush-info-section .flush-text-container p {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  margin-bottom: 20px;
+  color: #444;
+}
+
+
+
+/* =========================================================
    GEOGRAPHIC PRESENCE (VARIANT)
 ========================================================= */
 
