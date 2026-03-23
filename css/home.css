@@ -106,13 +106,14 @@
 }
 
 .split-item {
-  display: grid;
+  display: block;
   grid-template-columns: 240px 1fr;
   padding-bottom: 35px;
 }
 
 .split-column-text {
-  border-left: 2px solid #d6d6d6;
+  display: block;
+   border-left: 2px solid #d6d6d6;
   padding-left: 30px;
   max-width: 520px;
 }
@@ -123,6 +124,10 @@
   margin-bottom: 18px;
 }
 
+.learn-more {
+  display: inline-block;
+  margin-top: 15px; /* Adds a bit of breathing room below the paragraph */
+}
 
 /* =========================================================
    SERVICES SECTION (LAYOUT ONLY)
