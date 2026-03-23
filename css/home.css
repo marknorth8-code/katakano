@@ -225,7 +225,7 @@
 .flush-info-section .three-col-split,
 .flush-info-section .split-item,
 .flush-info-section .split-column-text {
-  display: block;
+  display: flex;
   border: none;
   padding: 0;
   max-width: none;
